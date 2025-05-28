@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html>
 <head>
-    
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
@@ -10,35 +9,73 @@
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 
-    <!-- Google fonts-->
+    <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
 
     <!-- Core theme CSS -->
     <link href="css/styles.css" rel="stylesheet" />
+
     <style>
         body[lang="ar"] {
             direction: rtl;
             font-family: 'Cairo', sans-serif;
         }
-        body[lang="ar"] {
-            direction: rtl;
+
+        body[lang="en"] {
+            direction: ltr;
             font-family: 'Montserrat', sans-serif;
         }
-        .lang-toggle {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            z-index: 9999;
-        }
-    </style>
-    
-</head>
-<body id="page-top" lang="ar">
 
-    <!-- Navigation-->
+        /* زر اللغة */
+        .navbar .lang-toggle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1030;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+        }
+
+        body[lang="ar"] .navbar .lang-toggle {
+            left: 15px;
+            right: auto;
+        }
+
+        body[lang="en"] .navbar .lang-toggle {
+            right: 15px;
+            left: auto;
+        }
+
+        /* تنسيق القائمة حسب اللغة */
+        body[lang="ar"] .navbar-nav {
+            margin-left: 0 !important;
+            margin-right: auto !important;
+            text-align: right;
+        }
+
+        body[lang="en"] .navbar-nav {
+            margin-right: 0 !important;
+            margin-left: auto !important;
+            text-align: left;
+        }
+
+        /* قلب اتجاه عناصر الشريط عند تغيير اللغة */
+        body[lang="ar"] #navbarResponsive {
+            flex-direction: row-reverse;
+        }
+
+        body[lang="en"] #navbarResponsive {
+            flex-direction: row;
+        }
+
+    </style>
+</head>
+<body id="page-top">
+
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>
@@ -47,90 +84,121 @@
                 Menu
                 <i class="fas fa-bars ms-1"></i>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" data-en="Services" data-ar="الخدمات" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" data-en="Portfolio" data-ar="أعمالنا" href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" data-en="About" data-ar="من نحن" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" data-en="Team" data-ar="الفريق" href="#team">Team</a></li>
-                    <li class="nav-item"><a class="nav-link" data-en="Contact" data-ar="اتصل بنا" href="#contact">Contact</a></li>
-                        <!-- Language Toggle Button -->
-    <button class="btn btn-secondary lang-toggle" onclick="toggleLanguage()">العربية</button>
+                <ul class="navbar-nav text-uppercase py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" data-en="Services" data-ar="الخدمات" href="#services">الخدمات</a></li>
+                    <li class="nav-item"><a class="nav-link" data-en="Portfolio" data-ar="أعمالنا" href="#portfolio">أعمالنا</a></li>
+                    <li class="nav-item"><a class="nav-link" data-en="About" data-ar="من نحن" href="#about">من نحن</a></li>
+                    <li class="nav-item"><a class="nav-link" data-en="Team" data-ar="الفريق" href="#team">الفريق</a></li>
+                    <li class="nav-item"><a class="nav-link" data-en="Contact" data-ar="اتصل بنا" href="#contact">اتصل بنا</a></li>
                 </ul>
+                <button class="btn btn-secondary lang-toggle" onclick="toggleLanguage()">English</button>
             </div>
         </div>
     </nav>
 
-    <!-- Masthead-->
+    <!-- Masthead -->
     <header class="masthead">
         <div class="container">
-            <div class="masthead-subheading" data-en="Welcome To Our Studio!" data-ar="مرحبًا بكم في استوديو شركتنا!">Welcome To Our Studio!</div>
-            <div class="masthead-heading text-uppercase" data-en="It's Nice To Meet You" data-ar="تشرفنا بمقابلتك">It's Nice To Meet You</div>
-            <a class="btn btn-primary btn-xl text-uppercase" href="#services" data-en="Tell Me More" data-ar="أخبرني المزيد">Tell Me More</a>
+            <div class="masthead-subheading" data-en="Welcome To Our Studio!" data-ar="مرحبًا بكم في استوديو شركتنا!">مرحبًا بكم في استوديو شركتنا!</div>
+            <div class="masthead-heading text-uppercase" data-en="It's Nice To Meet You" data-ar="تشرفنا بمقابلتك">تشرفنا بمقابلتك</div>
+            <a class="btn btn-primary btn-xl text-uppercase" href="#services" data-en="Tell Me More" data-ar="أخبرني المزيد">أخبرني المزيد</a>
         </div>
     </header>
 
     <script>
+        const defaultLang = 'ar'; // يمكن تغييره إلى 'en' حسب الحاجة
+
         function toggleLanguage() {
             const currentLang = document.body.getAttribute('lang');
             const newLang = currentLang === 'en' ? 'ar' : 'en';
-            document.body.setAttribute('lang', newLang);
-            document.querySelector('.lang-toggle').textContent = newLang === 'en' ? 'العربية' : 'English';
+            setLanguage(newLang);
+        }
+
+        function setLanguage(lang) {
+            document.body.setAttribute('lang', lang);
+            document.documentElement.setAttribute('dir', lang === 'en' ? 'ltr' : 'rtl');
+            document.querySelector('.lang-toggle').textContent = lang === 'en' ? 'العربية' : 'English';
 
             document.querySelectorAll('[data-en]').forEach(el => {
-                el.textContent = el.getAttribute(`data-${newLang}`);
+                el.textContent = el.getAttribute(`data-${lang}`);
             });
         }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            setLanguage(defaultLang);
+        });
     </script>
+
+
     <!-- Services-->
-<section class="page-section" id="services">
-    <div class="container">
-        <div class="text-center">
-            <h2 class="section-heading text-uppercase" data-en="Services" data-ar="الخدمات">Services</h2>
-            <h3 class="section-subheading text-muted" data-en="Lorem ipsum dolor sit amet consectetur."
-                data-ar="هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة.">Lorem ipsum dolor sit amet consectetur.</h3>
+    <section class="page-section" id="services">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase" data-en="Services" data-ar="الخدمات">الخدمات</h2>
+                <h3 class="section-subheading text-muted" data-en="Lorem ipsum dolor sit amet consectetur."
+                    data-ar="هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة.">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة.</h3>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3" data-en="E-Commerce" data-ar="التجارة الإلكترونية">التجارة الإلكترونية</h4>
+                    <p class="text-muted" data-en="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
+                        data-ar="هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربي.">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربي.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3" data-en="Responsive Design" data-ar="تصميم متجاوب">تصميم متجاوب</h4>
+                    <p class="text-muted" data-en="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
+                        data-ar="تصميم الموقع بحيث يتوافق مع جميع الشاشات والأجهزة هو عنصر أساسي.">تصميم الموقع بحيث يتوافق مع جميع الشاشات والأجهزة هو عنصر أساسي.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3" data-en="Web Security" data-ar="أمان الويب">أمان الويب</h4>
+                    <p class="text-muted" data-en="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
+                        data-ar="نضمن لك أعلى مستويات الأمان والخصوصية في موقعك.">نضمن لك أعلى مستويات الأمان والخصوصية في موقعك.</p>
+                </div>
+            </div>
         </div>
-        <div class="row text-center">
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                </span>
-                <h4 class="my-3" data-en="E-Commerce" data-ar="التجارة الإلكترونية">E-Commerce</h4>
-                <p class="text-muted" data-en="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
-                    data-ar="هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربي.">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            </div>
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-                </span>
-                <h4 class="my-3" data-en="Responsive Design" data-ar="تصميم متجاوب">Responsive Design</h4>
-                <p class="text-muted" data-en="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
-                    data-ar="تصميم الموقع بحيث يتوافق مع جميع الشاشات والأجهزة هو عنصر أساسي.">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            </div>
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-                </span>
-                <h4 class="my-3" data-en="Web Security" data-ar="أمان الويب">Web Security</h4>
-                <p class="text-muted" data-en="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
-                    data-ar="نضمن لك أعلى مستويات الأمان والخصوصية في موقعك.">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            </div>
-        </div>
-    </div>
-</section>
+            <div class="text-center mt-4">
+    <a href="products.html" class="btn btn-outline-primary btn-lg">
+        رؤية بقية المنتجات <i class="fas fa-arrow-left me-2"></i>
+    </a>
+</div>
+    </section>
 <!-- Portfolio Grid-->
 <section class="page-section bg-light" id="portfolio">
     <div class="container">
         <div class="text-center">
-            <h2 class="section-heading text-uppercase" data-en="Portfolio" data-ar="أعمالنا">Portfolio</h2>
+            <h2 class="section-heading text-uppercase" data-en="Portfolio" data-ar="أعمالنا">أعمالنا</h2>
             <h3 class="section-subheading text-muted" data-en="Lorem ipsum dolor sit amet consectetur."
-                data-ar="نُقدم مجموعة مختارة من أعمالنا المميزة.">Lorem ipsum dolor sit amet consectetur.</h3>
+                data-ar="نُقدم مجموعة مختارة من أعمالنا المميزة.">نُقدم مجموعة مختارة من أعمالنا المميزة.</h3>
         </div>
         <div class="row">
             <div class="col-lg-4 col-sm-6 mb-4">
+
+
+
+
+
+
+
+
+
+
+
+
+
                 <!-- Portfolio item 1-->
                 <div class="portfolio-item">
                     <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
@@ -140,8 +208,8 @@
                         <img class="img-fluid" src="assets/img/portfolio/1.jpg" alt="..." />
                     </a>
                     <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading" data-en="Threads" data-ar="خيوط">Threads</div>
-                        <div class="portfolio-caption-subheading text-muted" data-en="Illustration" data-ar="رسم توضيحي">Illustration</div>
+                        <div class="portfolio-caption-heading" data-en="Threads" data-ar="خيوط">خيوط</div>
+                        <div class="portfolio-caption-subheading text-muted" data-en="Illustration" data-ar="رسم توضيحي">رسم توضيحي</div>
                     </div>
                 </div>
             </div>
@@ -155,8 +223,8 @@
                         <img class="img-fluid" src="assets/img/portfolio/2.jpg" alt="..." />
                     </a>
                     <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading" data-en="Explore" data-ar="اكتشف">Explore</div>
-                        <div class="portfolio-caption-subheading text-muted" data-en="Graphic Design" data-ar="تصميم جرافيك">Graphic Design</div>
+                        <div class="portfolio-caption-heading" data-en="Explore" data-ar="اكتشف">اكتشف</div>
+                        <div class="portfolio-caption-subheading text-muted" data-en="Graphic Design" data-ar="تصميم جرافيك">تصميم جرافيك</div>
                     </div>
                 </div>
             </div>
@@ -170,8 +238,8 @@
                         <img class="img-fluid" src="assets/img/portfolio/3.jpg" alt="..." />
                     </a>
                     <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading" data-en="Finish" data-ar="النهاية">Finish</div>
-                        <div class="portfolio-caption-subheading text-muted" data-en="Identity" data-ar="هوية">Identity</div>
+                        <div class="portfolio-caption-heading" data-en="Finish" data-ar="النهاية">النهاية</div>
+                        <div class="portfolio-caption-subheading text-muted" data-en="Identity" data-ar="هوية">هوية</div>
                     </div>
                 </div>
             </div>
@@ -185,8 +253,8 @@
                         <img class="img-fluid" src="assets/img/portfolio/4.jpg" alt="..." />
                     </a>
                     <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading" data-en="Lines" data-ar="خطوط">Lines</div>
-                        <div class="portfolio-caption-subheading text-muted" data-en="Branding" data-ar="العلامة التجارية">Branding</div>
+                        <div class="portfolio-caption-heading" data-en="Lines" data-ar="خطوط">خطوط</div>
+                        <div class="portfolio-caption-subheading text-muted" data-en="Branding" data-ar="العلامة التجارية">العلامة التجارية</div>
                     </div>
                 </div>
             </div>
@@ -200,8 +268,8 @@
                         <img class="img-fluid" src="assets/img/portfolio/5.jpg" alt="..." />
                     </a>
                     <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading" data-en="Southwest" data-ar="الجنوب الغربي">Southwest</div>
-                        <div class="portfolio-caption-subheading text-muted" data-en="Website Design" data-ar="تصميم مواقع">Website Design</div>
+                        <div class="portfolio-caption-heading" data-en="Southwest" data-ar="الجنوب الغربي">الجنوب الغربي</div>
+                        <div class="portfolio-caption-subheading text-muted" data-en="Website Design" data-ar="تصميم مواقع">تصميم مواقع</div>
                     </div>
                 </div>
             </div>
@@ -215,14 +283,21 @@
                         <img class="img-fluid" src="assets/img/portfolio/6.jpg" alt="..." />
                     </a>
                     <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading" data-en="Window" data-ar="نافذة">Window</div>
-                        <div class="portfolio-caption-subheading text-muted" data-en="Photography" data-ar="تصوير">Photography</div>
+                        <div class="portfolio-caption-heading" data-en="Window" data-ar="نافذة">نافذة</div>
+                        <div class="portfolio-caption-subheading text-muted" data-en="Photography" data-ar="تصوير">تصوير</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="text-center mt-4">
+    <a href="products.html" class="btn btn-outline-primary btn-lg">
+        رؤية بقية المنتجات <i class="fas fa-arrow-left me-2"></i>
+    </a>
+</div>
+
 </section>
+
 <!-- About-->
 <section class="page-section" id="about">
     <div class="container">
@@ -325,6 +400,11 @@
             </div>
         </div>
     </div>
+        <div class="text-center mt-4">
+    <a href="products.html" class="btn btn-outline-primary btn-lg">
+        رؤية بقية المنتجات <i class="fas fa-arrow-left me-2"></i>
+    </a>
+</div>
 </section>
 
         <!-- Clients-->
@@ -414,34 +494,45 @@
     </div>
 </footer>
 
-<!-- Portfolio item 1 modal popup-->
+<!-- Portfolio item 1 modal popup -->
 <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-xl">
         <div class="modal-content">
-            <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+            <div class="close-modal" data-bs-dismiss="modal">
+                <img src="assets/img/close-icon.svg" alt="Close modal" />
+            </div>
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-lg-8">
+                    <div class="col-lg-10">
                         <div class="modal-body">
-                            <!-- Project details-->
+                            <!-- Project details -->
                             <h2 class="text-uppercase" data-en="Project Name" data-ar="اسم المشروع">Project Name</h2>
-                            <p class="item-intro text-muted" data-en="Lorem ipsum dolor sit amet consectetur." data-ar="وصف مختصر للمشروع.">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1.jpg" alt="..." />
-                            <p data-en="Use this area to describe your project..." data-ar="استخدم هذا القسم لوصف مشروعك وتفاصيله...">Use this area to describe your project...</p>
+                            <p class="item-intro text-muted" data-en="Short description of the project." data-ar="وصف مختصر للمشروع.">Short description of the project.</p>
+
+                            <!-- Main image -->
+                            <img id="mainImage1" class="img-fluid d-block mx-auto mb-4" src="assets/img/portfolio/1.jpg" alt="Main project image" />
+
+                            <!-- Thumbnails -->
+                            <div class="d-flex justify-content-center gap-2 flex-wrap">
+                                <img src="assets/img/portfolio/1.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
+                                <img src="assets/img/portfolio/1.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
+                                <img src="assets/img/portfolio/2.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
+                                <img src="assets/img/portfolio/2.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
+                            </div>
+
+                            <!-- Description -->
+                            <p data-en="Use this area to describe your project." data-ar="استخدم هذا القسم لوصف المشروع.">Use this area to describe your project.</p>
+
                             <ul class="list-inline">
-                                <li>
-                                    <strong data-en="Client:" data-ar="العميل:">Client:</strong>
-                                    <span data-en="Threads" data-ar="خيوط">Threads</span>
-                                </li>
-                                <li>
-                                    <strong data-en="Category:" data-ar="الفئة:">Category:</strong>
-                                    <span data-en="Illustration" data-ar="رسم توضيحي">Illustration</span>
-                                </li>
+                                <li><strong data-en="Client:" data-ar="العميل:">Client:</strong> <span data-en="Threads" data-ar="خيوط">Threads</span></li>
+                                <li><strong data-en="Category:" data-ar="الفئة:">Category:</strong> <span data-en="Illustration" data-ar="رسم توضيحي">Illustration</span></li>
                             </ul>
-                            <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button" data-en="Close Project" data-ar="إغلاق المشروع">
+
+                            <!-- Product request button -->
+                            <a class="btn btn-primary btn-xl text-uppercase" href="products.html">
                                 <i class="fas fa-xmark me-1"></i>
-                                Close Project
-                            </button>
+                                <span data-en="Request Product" data-ar="طلب المنتج">Request Product</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -449,34 +540,47 @@
         </div>
     </div>
 </div>
+
+
 <!-- Portfolio item 2 modal popup-->
 <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-xl">
         <div class="modal-content">
-            <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="إغلاق النافذة" /></div>
+            <div class="close-modal" data-bs-dismiss="modal">
+                <img src="assets/img/close-icon.svg" alt="Close modal" />
+            </div>
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-lg-8">
+                    <div class="col-lg-10">
                         <div class="modal-body">
-                            <!-- Project details-->
-                            <h2 class="text-uppercase">اسم المشروع</h2>
-                            <p class="item-intro text-muted">لوريم إيبسوم دولار سيت أميت.</p>
-                            <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/2.jpg" alt="..." />
-                            <p>استخدم هذا القسم لوصف مشروعك. لوريم إيبسوم دولار سيت أميت، كونسيكتيتور أديبيسيسنج إيليت. بلانديتيس دولوريم كولبا إنسيدنت ماينوس ديغنيزيموس ديزيريونت ريبيلات أبيريام كواسي سونت أوفيسيا إكسبيديتا بيتايت كيوبيديتاتي، مايويرس ريبوديانداي، نوستروم، ريشيينديس فاكر نيمو!</p>
+                            <!-- Project details -->
+                            <h2 class="text-uppercase" data-en="Project Name" data-ar="اسم المشروع">Project Name</h2>
+                            <p class="item-intro text-muted" data-en="Short description of the project." data-ar="وصف مختصر للمشروع.">Short description of the project.</p>
+
+                            <!-- Main image -->
+                            <img id="mainImage1" class="img-fluid d-block mx-auto mb-4" src="assets/img/portfolio/1.jpg" alt="Main project image" />
+
+                            <!-- Thumbnails -->
+                            <div class="d-flex justify-content-center gap-2 flex-wrap">
+                                <img src="assets/img/portfolio/1.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
+                                <img src="assets/img/portfolio/1.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
+                                <img src="assets/img/portfolio/2.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
+                                <img src="assets/img/portfolio/2.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
+                            </div>
+
+                            <!-- Description -->
+                            <p data-en="Use this area to describe your project." data-ar="استخدم هذا القسم لوصف المشروع.">Use this area to describe your project.</p>
+
                             <ul class="list-inline">
-                                <li>
-                                    <strong>العميل:</strong>
-                                    Explore
-                                </li>
-                                <li>
-                                    <strong>الفئة:</strong>
-                                    التصميم الجرافيكي
-                                </li>
+                                <li><strong data-en="Client:" data-ar="العميل:">Client:</strong> <span data-en="Threads" data-ar="خيوط">Threads</span></li>
+                                <li><strong data-en="Category:" data-ar="الفئة:">Category:</strong> <span data-en="Illustration" data-ar="رسم توضيحي">Illustration</span></li>
                             </ul>
-                            <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+
+                            <!-- Product request button -->
+                            <a class="btn btn-primary btn-xl text-uppercase" href="products.html">
                                 <i class="fas fa-xmark me-1"></i>
-                                إغلاق المشروع
-                            </button>
+                                <span data-en="Request Product" data-ar="طلب المنتج">Request Product</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -484,35 +588,47 @@
         </div>
     </div>
 </div>
+
 
 <!-- Portfolio item 3 modal popup-->
 <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-xl">
         <div class="modal-content">
-            <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="إغلاق النافذة" /></div>
+            <div class="close-modal" data-bs-dismiss="modal">
+                <img src="assets/img/close-icon.svg" alt="Close modal" />
+            </div>
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-lg-8">
+                    <div class="col-lg-10">
                         <div class="modal-body">
-                            <!-- Project details-->
-                            <h2 class="text-uppercase">اسم المشروع</h2>
-                            <p class="item-intro text-muted">لوريم إيبسوم دولار سيت أميت.</p>
-                            <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/3.jpg" alt="..." />
-                            <p>استخدم هذا القسم لوصف مشروعك. لوريم إيبسوم دولار سيت أميت، كونسيكتيتور أديبيسيسنج إيليت. بلانديتيس دولوريم كولبا إنسيدنت ماينوس ديغنيزيموس ديزيريونت ريبيلات أبيريام كواسي سونت أوفيسيا إكسبيديتا بيتايت كيوبيديتاتي، مايويرس ريبوديانداي، نوستروم، ريشيينديس فاكر نيمو!</p>
+                            <!-- Project details -->
+                            <h2 class="text-uppercase" data-en="Project Name" data-ar="اسم المشروع">Project Name</h2>
+                            <p class="item-intro text-muted" data-en="Short description of the project." data-ar="وصف مختصر للمشروع.">Short description of the project.</p>
+
+                            <!-- Main image -->
+                            <img id="mainImage1" class="img-fluid d-block mx-auto mb-4" src="assets/img/portfolio/1.jpg" alt="Main project image" />
+
+                            <!-- Thumbnails -->
+                            <div class="d-flex justify-content-center gap-2 flex-wrap">
+                                <img src="assets/img/portfolio/1.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
+                                <img src="assets/img/portfolio/1.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
+                                <img src="assets/img/portfolio/2.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
+                                <img src="assets/img/portfolio/2.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
+                            </div>
+
+                            <!-- Description -->
+                            <p data-en="Use this area to describe your project." data-ar="استخدم هذا القسم لوصف المشروع.">Use this area to describe your project.</p>
+
                             <ul class="list-inline">
-                                <li>
-                                    <strong>العميل:</strong>
-                                    Finish
-                                </li>
-                                <li>
-                                    <strong>الفئة:</strong>
-                                    الهوية البصرية
-                                </li>
+                                <li><strong data-en="Client:" data-ar="العميل:">Client:</strong> <span data-en="Threads" data-ar="خيوط">Threads</span></li>
+                                <li><strong data-en="Category:" data-ar="الفئة:">Category:</strong> <span data-en="Illustration" data-ar="رسم توضيحي">Illustration</span></li>
                             </ul>
-                            <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+
+                            <!-- Product request button -->
+                            <a class="btn btn-primary btn-xl text-uppercase" href="products.html">
                                 <i class="fas fa-xmark me-1"></i>
-                                إغلاق المشروع
-                            </button>
+                                <span data-en="Request Product" data-ar="طلب المنتج">Request Product</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -520,35 +636,47 @@
         </div>
     </div>
 </div>
+
 
 <!-- Portfolio item 4 modal popup-->
 <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-xl">
         <div class="modal-content">
-            <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="إغلاق النافذة" /></div>
+            <div class="close-modal" data-bs-dismiss="modal">
+                <img src="assets/img/close-icon.svg" alt="Close modal" />
+            </div>
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-lg-8">
+                    <div class="col-lg-10">
                         <div class="modal-body">
-                            <!-- Project details-->
-                            <h2 class="text-uppercase">اسم المشروع</h2>
-                            <p class="item-intro text-muted">لوريم إيبسوم دولار سيت أميت.</p>
-                            <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/4.jpg" alt="..." />
-                            <p>استخدم هذا القسم لوصف مشروعك. لوريم إيبسوم دولار سيت أميت، كونسيكتيتور أديبيسيسنج إيليت. بلانديتيس دولوريم كولبا إنسيدنت ماينوس ديغنيزيموس ديزيريونت ريبيلات أبيريام كواسي سونت أوفيسيا إكسبيديتا بيتايت كيوبيديتاتي، مايويرس ريبوديانداي، نوستروم، ريشيينديس فاكر نيمو!</p>
+                            <!-- Project details -->
+                            <h2 class="text-uppercase" data-en="Project Name" data-ar="اسم المشروع">Project Name</h2>
+                            <p class="item-intro text-muted" data-en="Short description of the project." data-ar="وصف مختصر للمشروع.">Short description of the project.</p>
+
+                            <!-- Main image -->
+                            <img id="mainImage1" class="img-fluid d-block mx-auto mb-4" src="assets/img/portfolio/1.jpg" alt="Main project image" />
+
+                            <!-- Thumbnails -->
+                            <div class="d-flex justify-content-center gap-2 flex-wrap">
+                                <img src="assets/img/portfolio/1.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
+                                <img src="assets/img/portfolio/1.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
+                                <img src="assets/img/portfolio/2.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
+                                <img src="assets/img/portfolio/2.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
+                            </div>
+
+                            <!-- Description -->
+                            <p data-en="Use this area to describe your project." data-ar="استخدم هذا القسم لوصف المشروع.">Use this area to describe your project.</p>
+
                             <ul class="list-inline">
-                                <li>
-                                    <strong>العميل:</strong>
-                                    Lines
-                                </li>
-                                <li>
-                                    <strong>الفئة:</strong>
-                                    العلامات التجارية
-                                </li>
+                                <li><strong data-en="Client:" data-ar="العميل:">Client:</strong> <span data-en="Threads" data-ar="خيوط">Threads</span></li>
+                                <li><strong data-en="Category:" data-ar="الفئة:">Category:</strong> <span data-en="Illustration" data-ar="رسم توضيحي">Illustration</span></li>
                             </ul>
-                            <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+
+                            <!-- Product request button -->
+                            <a class="btn btn-primary btn-xl text-uppercase" href="products.html">
                                 <i class="fas fa-xmark me-1"></i>
-                                إغلاق المشروع
-                            </button>
+                                <span data-en="Request Product" data-ar="طلب المنتج">Request Product</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -556,35 +684,47 @@
         </div>
     </div>
 </div>
+
 
 <!-- Portfolio item 5 modal popup-->
 <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-xl">
         <div class="modal-content">
-            <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="إغلاق النافذة" /></div>
+            <div class="close-modal" data-bs-dismiss="modal">
+                <img src="assets/img/close-icon.svg" alt="Close modal" />
+            </div>
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-lg-8">
+                    <div class="col-lg-10">
                         <div class="modal-body">
-                            <!-- Project details-->
-                            <h2 class="text-uppercase">اسم المشروع</h2>
-                            <p class="item-intro text-muted">لوريم إيبسوم دولار سيت أميت.</p>
-                            <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/5.jpg" alt="..." />
-                            <p>استخدم هذا القسم لوصف مشروعك. لوريم إيبسوم دولار سيت أميت، كونسيكتيتور أديبيسيسنج إيليت. بلانديتيس دولوريم كولبا إنسيدنت ماينوس ديغنيزيموس ديزيريونت ريبيلات أبيريام كواسي سونت أوفيسيا إكسبيديتا بيتايت كيوبيديتاتي، مايويرس ريبوديانداي، نوستروم، ريشيينديس فاكر نيمو!</p>
+                            <!-- Project details -->
+                            <h2 class="text-uppercase" data-en="Project Name" data-ar="اسم المشروع">Project Name</h2>
+                            <p class="item-intro text-muted" data-en="Short description of the project." data-ar="وصف مختصر للمشروع.">Short description of the project.</p>
+
+                            <!-- Main image -->
+                            <img id="mainImage1" class="img-fluid d-block mx-auto mb-4" src="assets/img/portfolio/1.jpg" alt="Main project image" />
+
+                            <!-- Thumbnails -->
+                            <div class="d-flex justify-content-center gap-2 flex-wrap">
+                                <img src="assets/img/portfolio/1.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
+                                <img src="assets/img/portfolio/1.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
+                                <img src="assets/img/portfolio/2.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
+                                <img src="assets/img/portfolio/2.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
+                            </div>
+
+                            <!-- Description -->
+                            <p data-en="Use this area to describe your project." data-ar="استخدم هذا القسم لوصف المشروع.">Use this area to describe your project.</p>
+
                             <ul class="list-inline">
-                                <li>
-                                    <strong>العميل:</strong>
-                                    Southwest
-                                </li>
-                                <li>
-                                    <strong>الفئة:</strong>
-                                    تصميم المواقع
-                                </li>
+                                <li><strong data-en="Client:" data-ar="العميل:">Client:</strong> <span data-en="Threads" data-ar="خيوط">Threads</span></li>
+                                <li><strong data-en="Category:" data-ar="الفئة:">Category:</strong> <span data-en="Illustration" data-ar="رسم توضيحي">Illustration</span></li>
                             </ul>
-                            <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+
+                            <!-- Product request button -->
+                            <a class="btn btn-primary btn-xl text-uppercase" href="products.html">
                                 <i class="fas fa-xmark me-1"></i>
-                                إغلاق المشروع
-                            </button>
+                                <span data-en="Request Product" data-ar="طلب المنتج">Request Product</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -593,34 +733,46 @@
     </div>
 </div>
 
+
 <!-- Portfolio item 6 modal popup-->
 <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-xl">
         <div class="modal-content">
-            <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="إغلاق النافذة" /></div>
+            <div class="close-modal" data-bs-dismiss="modal">
+                <img src="assets/img/close-icon.svg" alt="Close modal" />
+            </div>
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-lg-8">
+                    <div class="col-lg-10">
                         <div class="modal-body">
-                            <!-- Project details-->
-                            <h2 class="text-uppercase">اسم المشروع</h2>
-                            <p class="item-intro text-muted">لوريم إيبسوم دولار سيت أميت.</p>
-                            <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/6.jpg" alt="..." />
-                            <p>استخدم هذا القسم لوصف مشروعك. لوريم إيبسوم دولار سيت أميت، كونسيكتيتور أديبيسيسنج إيليت. بلانديتيس دولوريم كولبا إنسيدنت ماينوس ديغنيزيموس ديزيريونت ريبيلات أبيريام كواسي سونت أوفيسيا إكسبيديتا بيتايت كيوبيديتاتي، مايويرس ريبوديانداي، نوستروم، ريشيينديس فاكر نيمو!</p>
+                            <!-- Project details -->
+                            <h2 class="text-uppercase" data-en="Project Name" data-ar="اسم المشروع">Project Name</h2>
+                            <p class="item-intro text-muted" data-en="Short description of the project." data-ar="وصف مختصر للمشروع.">Short description of the project.</p>
+
+                            <!-- Main image -->
+                            <img id="mainImage1" class="img-fluid d-block mx-auto mb-4" src="assets/img/portfolio/1.jpg" alt="Main project image" />
+
+                            <!-- Thumbnails -->
+                            <div class="d-flex justify-content-center gap-2 flex-wrap">
+                                <img src="assets/img/portfolio/1.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
+                                <img src="assets/img/portfolio/1.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
+                                <img src="assets/img/portfolio/2.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
+                                <img src="assets/img/portfolio/2.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
+                            </div>
+
+                            <!-- Description -->
+                            <p data-en="Use this area to describe your project." data-ar="استخدم هذا القسم لوصف المشروع.">Use this area to describe your project.</p>
+
                             <ul class="list-inline">
-                                <li>
-                                    <strong>العميل:</strong>
-                                    Window
-                                </li>
-                                <li>
-                                    <strong>الفئة:</strong>
-                                    التصوير الفوتوغرافي
-                                </li>
+                                <li><strong data-en="Client:" data-ar="العميل:">Client:</strong> <span data-en="Threads" data-ar="خيوط">Threads</span></li>
+                                <li><strong data-en="Category:" data-ar="الفئة:">Category:</strong> <span data-en="Illustration" data-ar="رسم توضيحي">Illustration</span></li>
                             </ul>
-                            <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+
+                            <!-- Product request button -->
+                            <a class="btn btn-primary btn-xl text-uppercase" href="products.html">
                                 <i class="fas fa-xmark me-1"></i>
-                                إغلاق المشروع
-                            </button>
+                                <span data-en="Request Product" data-ar="طلب المنتج">Request Product</span>
+                            </a>
                         </div>
                     </div>
                 </div>

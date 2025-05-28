@@ -85,3 +85,33 @@ window.addEventListener('DOMContentLoaded', event => {
         // تغيير الخط تلقائياً حسب اللغة
         document.body.classList.toggle("arabic", currentLang === "ar");
     });
+
+    function toggleLanguage() {
+        const nav = document.getElementById('mainNav');
+        const currentLang = nav.getAttribute('lang');
+        const newLang = currentLang === 'en' ? 'ar' : 'en';
+        nav.setAttribute('lang', newLang);
+
+        document.querySelector('.lang-toggle').textContent = newLang === 'en' ? 'العربية' : 'English';
+
+        document.querySelectorAll('[data-en]').forEach(el => {
+            el.textContent = el.getAttribute(`data-${newLang}`);
+        });
+    }
+
+//<!-- JavaScript for updating main image -->
+    function setMainImage(imageId, src) {
+        document.getElementById(imageId).src = src;
+    }
+
+    // Function to apply language
+    function applyLanguage() {
+        const lang = document.documentElement.lang || 'en';
+        document.querySelectorAll('[data-en]').forEach(el => {
+            el.textContent = el.getAttribute(`data-${lang}`) || el.textContent;
+        });
+    }
+
+    // Run on page load
+    document.addEventListener("DOMContentLoaded", applyLanguage);
+

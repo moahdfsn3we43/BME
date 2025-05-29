@@ -10938,6 +10938,8 @@ p {
   }
 }
 header.masthead {
+  position: relative;
+  z-index: 1;
   padding-top: 10.5rem;
   padding-bottom: 6rem;
   text-align: center;
@@ -10947,7 +10949,20 @@ header.masthead {
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
+  overflow: hidden; /* مهم لحصر التراكب داخل الهيدر */
 }
+
+header.masthead::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* قيمة الشفافية هنا */
+  z-index: -1; /* تحت النص ولكن فوق الخلفية */
+}
+
 header.masthead .masthead-subheading {
   font-size: 1.5rem;
   font-style: italic;
@@ -11311,5 +11326,8 @@ section#contact form#contactForm :-ms-input-placeholder {
   font-size: 0.9rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
+
+
 
 

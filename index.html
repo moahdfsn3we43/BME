@@ -1,144 +1,193 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Agency - Start Bootstrap Theme</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>عرب لاب للأدوية والمستلزمات الطبية</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 
-    <!-- Google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- Core theme CSS -->
-    <link href="css/styles.css" rel="stylesheet" />
+  <!-- Core theme CSS -->
+  <link href="css/styles.css" rel="stylesheet" />
 
-    <style>
-        body[lang="ar"] {
-            direction: rtl;
-            font-family: 'Cairo', sans-serif;
-        }
+  <style>
+    body[lang="ar"] {
+      direction: rtl;
+      font-family: 'Cairo', sans-serif;
+    }
 
-        body[lang="en"] {
-            direction: ltr;
-            font-family: 'Montserrat', sans-serif;
-        }
+    body[lang="en"] {
+      direction: ltr;
+      font-family: 'Montserrat', sans-serif;
+    }
 
-        /* زر اللغة */
-        .navbar .lang-toggle {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1030;
-    background-color: transparent;
-    border: 1px solid white;
-    color: white;
-        }
+    .navbar {
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
 
-        body[lang="ar"] .navbar .lang-toggle {
-            left: 15px;
-            right: auto;
-        }
+    .navbar.transparent {
+      background-color: transparent !important;
+      box-shadow: none;
+    }
 
-        body[lang="en"] .navbar .lang-toggle {
-            right: 15px;
-            left: auto;
-        }
+    .navbar.scrolled {
+      background-color: #ffffff !important;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
 
-        /* تنسيق القائمة حسب اللغة */
-        body[lang="ar"] .navbar-nav {
-            margin-left: 0 !important;
-            margin-right: auto !important;
-            text-align: right;
-        }
+    /* روابط الشريط */
+    .navbar.transparent .navbar-nav .nav-link,
+    .navbar.transparent .lang-toggle {
+      color: #ffffff;
+    }
 
-        body[lang="en"] .navbar-nav {
-            margin-right: 0 !important;
-            margin-left: auto !important;
-            text-align: left;
-        }
+    .navbar.scrolled .navbar-nav .nav-link,
+    .navbar.scrolled .lang-toggle {
+      color: #000000 !important;
+    }
 
-        /* قلب اتجاه عناصر الشريط عند تغيير اللغة */
-        body[lang="ar"] #navbarResponsive {
-            flex-direction: row-reverse;
-        }
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link:focus {
+      color: #007bff !important;
+    }
 
-        body[lang="en"] #navbarResponsive {
-            flex-direction: row;
-        }
+    /* زر تغيير اللغة */
+    .navbar .lang-toggle {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1030;
+      background-color: transparent;
+      border: 1px solid currentColor;
+      transition: all 0.3s ease;
+    }
 
-    </style>
+    .navbar .lang-toggle:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      border-color: #007bff;
+      color: #007bff;
+    }
+
+    body[lang="ar"] .navbar .lang-toggle {
+      left: 15px;
+      right: auto;
+    }
+
+    body[lang="en"] .navbar .lang-toggle {
+      right: 15px;
+      left: auto;
+    }
+
+    body[lang="ar"] .navbar-nav {
+      margin-left: 0 !important;
+      margin-right: auto !important;
+      text-align: right;
+    }
+
+    body[lang="en"] .navbar-nav {
+      margin-right: 0 !important;
+      margin-left: auto !important;
+      text-align: left;
+    }
+
+    body[lang="ar"] #navbarResponsive {
+      flex-direction: row-reverse;
+    }
+
+    body[lang="en"] #navbarResponsive {
+      flex-direction: row;
+    }
+
+    .navbar-logo {
+      width: 180px;
+      height: auto;
+    }
+  </style>
 </head>
 <body id="page-top">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars ms-1"></i>
-            </button>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top transparent" id="mainNav">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars ms-1"></i>
+      </button>
+      <a href="index.html">
+        <img src="assets/img/navbar-logo.svg" alt="Logo" class="navbar-logo">
+      </a>
 
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav text-uppercase py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" data-en="Services" data-ar="الخدمات" href="#services">الخدمات</a></li>
-                    <li class="nav-item"><a class="nav-link" data-en="Portfolio" data-ar="أعمالنا" href="#portfolio">أعمالنا</a></li>
-                    <li class="nav-item"><a class="nav-link" data-en="About" data-ar="من نحن" href="#about">من نحن</a></li>
-                    <li class="nav-item"><a class="nav-link" data-en="Team" data-ar="الفريق" href="#team">الفريق</a></li>
-                    <li class="nav-item"><a class="nav-link" data-en="Contact" data-ar="اتصل بنا" href="#contact">اتصل بنا</a></li>
-                </ul>
-                <button class="btn btn-secondary lang-toggle" onclick="toggleLanguage()">English</button>
-            </div>
-        </div>
-    </nav>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase py-4 py-lg-0">
+          <li class="nav-item"><a class="nav-link" data-en="Services" data-ar="الخدمات" href="#services">الخدمات</a></li>
+          <li class="nav-item"><a class="nav-link" data-en="Portfolio" data-ar="أعمالنا" href="#portfolio">أعمالنا</a></li>
+          <li class="nav-item"><a class="nav-link" data-en="About" data-ar="من نحن" href="#about">من نحن</a></li>
+          <li class="nav-item"><a class="nav-link" data-en="Team" data-ar="الفريق" href="#team">الفريق</a></li>
+          <li class="nav-item"><a class="nav-link" data-en="Contact" data-ar="اتصل بنا" href="#contact">اتصل بنا</a></li>
+        </ul>
+        <button class="btn lang-toggle" onclick="toggleLanguage()">English</button>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Masthead -->
-    <header class="masthead">
-        <div class="container">
-            <div class="masthead-subheading" data-en="Welcome To Our Studio!" data-ar="مرحبًا بكم في استوديو شركتنا!">مرحبًا بكم في استوديو شركتنا!</div>
-            <div class="masthead-heading text-uppercase" data-en="It's Nice To Meet You" data-ar="تشرفنا بمقابلتك">تشرفنا بمقابلتك</div>
-            <a class="btn btn-primary btn-xl text-uppercase" href="#services" data-en="Tell Me More" data-ar="أخبرني المزيد">أخبرني المزيد</a>
-        </div>
-    </header>
+  <!-- Masthead -->
+  <header class="masthead">
+    <div class="container">
+      <div class="masthead-heading text-uppercase" data-en="Arab Lab" data-ar="عرب لاب">تشرفنا بمقابلتك</div>
+      <div class="masthead-heading text-uppercase" data-en="Medicines & Medical Supplies" data-ar=" للأدوية والمستلزمات الطبية">تشرفنا بمقابلتك</div>
+      <div class="masthead-subheading" data-en="Medical Equipment Experts" data-ar="خبراء التجهيزات الطبية">خبراء التجهيزات الطبية</div>
+      <a class="btn btn-primary btn-xl text-uppercase" href="#services" data-en="Tell Me More" data-ar="أخبرني المزيد">أخبرني المزيد</a>
+    </div>
+  </header>
 
-    <script>
-        const defaultLang = 'ar'; // يمكن تغييره إلى 'en' حسب الحاجة
+  <script>
+    const defaultLang = 'ar';
 
-        function toggleLanguage() {
-            const currentLang = document.body.getAttribute('lang');
-            const newLang = currentLang === 'en' ? 'ar' : 'en';
-            setLanguage(newLang);
-        }
+    function toggleLanguage() {
+      const currentLang = document.body.getAttribute('lang');
+      const newLang = currentLang === 'en' ? 'ar' : 'en';
+      setLanguage(newLang);
+    }
 
-        function setLanguage(lang) {
-            document.body.setAttribute('lang', lang);
-            document.documentElement.setAttribute('dir', lang === 'en' ? 'ltr' : 'rtl');
-            document.querySelector('.lang-toggle').textContent = lang === 'en' ? 'العربية' : 'English';
+    function setLanguage(lang) {
+      document.body.setAttribute('lang', lang);
+      document.documentElement.setAttribute('dir', lang === 'en' ? 'ltr' : 'rtl');
+      document.querySelector('.lang-toggle').textContent = lang === 'en' ? 'العربية' : 'English';
 
-            document.querySelectorAll('[data-en]').forEach(el => {
-                el.textContent = el.getAttribute(`data-${lang}`);
-            });
-        }
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${lang}`);
+      });
+    }
 
-        document.addEventListener("DOMContentLoaded", () => {
-            setLanguage(defaultLang);
-        });
-    </script>
+    document.addEventListener("DOMContentLoaded", () => {
+      setLanguage(defaultLang);
+    });
 
-
+    // Scroll effect for navbar background and text colors
+    window.addEventListener('scroll', function () {
+      const navbar = document.getElementById('mainNav');
+      if (window.scrollY > 50) {
+        navbar.classList.remove('transparent');
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+        navbar.classList.add('transparent');
+      }
+    });
+  </script>
     <!-- Services-->
     <section class="page-section" id="services">
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase" data-en="Services" data-ar="الخدمات">الخدمات</h2>
-                <h3 class="section-subheading text-muted" data-en="Lorem ipsum dolor sit amet consectetur."
-                    data-ar="هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة.">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة.</h3>
+                <h3 class="section-subheading text-muted" data-en=""
+                data-ar="">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة.</h3>
             </div>
             <div class="row text-center">
                 <div class="col-md-4">
@@ -146,35 +195,56 @@
                         <i class="fas fa-circle fa-stack-2x text-primary"></i>
                         <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="my-3" data-en="E-Commerce" data-ar="التجارة الإلكترونية">التجارة الإلكترونية</h4>
-                    <p class="text-muted" data-en="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
-                        data-ar="هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربي.">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربي.</p>
+                    <h4 class="my-3" data-en="Equipment" data-ar="تجهيزات ">التجارة الإلكترونية</h4>
+                    <p class="text-muted" data-en="Medical Equipment for Hospitals, Laboratories, and Diagnostic Centers"
+                    data-ar="تجهيز مستشفيات - مختبرات - معامل طبية">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربي.</p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fas fa-circle fa-stack-2x text-primary"></i>
                         <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="my-3" data-en="Responsive Design" data-ar="تصميم متجاوب">تصميم متجاوب</h4>
-                    <p class="text-muted" data-en="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
-                        data-ar="تصميم الموقع بحيث يتوافق مع جميع الشاشات والأجهزة هو عنصر أساسي.">تصميم الموقع بحيث يتوافق مع جميع الشاشات والأجهزة هو عنصر أساسي.</p>
+                    <h4 class="my-3" data-en="Maintenance " data-ar="صيانة">تصميم متجاوب</h4>
+                    <p class="text-muted" data-en="Maintenance of Medical Devices and Equipment"
+                    data-ar="صيانة الأجهزة والمعدات الطبية">تصميم الموقع بحيث يتوافق مع جميع الشاشات والأجهزة هو عنصر أساسي.</p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fas fa-circle fa-stack-2x text-primary"></i>
                         <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="my-3" data-en="Web Security" data-ar="أمان الويب">أمان الويب</h4>
-                    <p class="text-muted" data-en="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
-                        data-ar="نضمن لك أعلى مستويات الأمان والخصوصية في موقعك.">نضمن لك أعلى مستويات الأمان والخصوصية في موقعك.</p>
+                    <h4 class="my-3" data-en="Planning" data-ar=" تخطيط">أمان الويب</h4>
+                    <p class="text-muted" data-en="Project Planning and Implementation "
+                    data-ar="تخطيط وتنفيذ المشاريع">نضمن لك أعلى مستويات الأمان والخصوصية في موقعك.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3" data-en="Consultations" data-ar="استشارات">تصميم متجاوب</h4>
+                    <p class="text-muted" data-en=""
+                    data-ar="">تصميم الموقع بحيث يتوافق مع جميع الشاشات والأجهزة هو عنصر أساسي.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3" data-en="Medical Supplies" data-ar="التوريدات الطبية">تصميم متجاوب</h4>
+                    <p class="text-muted" data-en=""
+                    data-ar="">تصميم الموقع بحيث يتوافق مع جميع الشاشات والأجهزة هو عنصر أساسي.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3" data-en="Training" data-ar="تدريب">تصميم متجاوب</h4>
+                    <p class="text-muted" data-en=""
+                        data-ar="">تصميم الموقع بحيث يتوافق مع جميع الشاشات والأجهزة هو عنصر أساسي.</p>
                 </div>
             </div>
-        </div>
-            <div class="text-center mt-4">
-    <a href="products.html" class="btn btn-outline-primary btn-lg">
-        رؤية بقية المنتجات <i class="fas fa-arrow-left me-2"></i>
-    </a>
-</div>
     </section>
 <!-- Portfolio Grid-->
 <section class="page-section bg-light" id="portfolio">
@@ -434,7 +504,7 @@
       <h3 class="section-subheading text-muted" data-en="We’re here to help and answer any question you might have." data-ar="نحن هنا للرد على استفساراتك وتقديم الدعم اللازم.">We’re here to help and answer any question you might have.</h3>
     </div>
 
-    <form action="https://formsubmit.co/alaashehab990@gmail.com" method="POST">
+    <form action="https://formsubmit.co/563ad72b5a@emaily.pro" method="POST">
       <!-- Anti-spam -->
       <input type="hidden" name="_honey" style="display:none">
       <input type="hidden" name="_captcha" value="false">

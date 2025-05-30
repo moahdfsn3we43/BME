@@ -1,31 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Thank You</title>
+  <meta charset="UTF-8">
+  <title>شكرًا لك</title>
+  <meta http-equiv="refresh" content="5;url=index.html"> <!-- إعادة التوجيه -->
   <style>
     body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      font-family: sans-serif;
+      font-family: 'Cairo', sans-serif;
+      background-color: #f8f9fa;
       text-align: center;
+      padding-top: 100px;
+      direction: rtl;
+    }
+    h1 {
+      color: #28a745;
+    }
+    p {
+      color: #6c757d;
     }
   </style>
-  <script>
-    setTimeout(() => {
-      window.location.href = "index.html";
-    }, 5000); // تحويل بعد 5 ثوانٍ
-  </script>
 </head>
 <body>
-  <div>
-    <h1 data-en="Thank you for your message!" data-ar="شكرًا لتواصلك معنا!">Thank you for your message!</h1>
-    <h1 data-en="شكرًا لتواصلك معنا!!" data-ar="شكرًا لتواصلك معنا!">شكرًا لتواصلك معنا!</h1>
-    <p data-en="You will be redirected shortly..." data-ar="سيتم تحويلك تلقائيًا خلال لحظات...">You will be redirected shortly...</p>
-    <p data-en="You will be redirected shortly..." data-ar="سيتم تحويلك تلقائيًا خلال لحظات...">سيتم تحويلك تلقائيًا خلال لحظات...</p>
-  </div>
+  <h1>شكرًا لتواصلك معنا!</h1>
+  <p>سيتم تحويلك تلقائيًا إلى الصفحة الرئيسية خلال لحظات...</p>
 </body>
 </html>

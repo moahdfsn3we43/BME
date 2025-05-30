@@ -324,24 +324,15 @@
 <!-- Portfolio Grid-->
 <section class="page-section bg-light" id="portfolio">
     <div class="container">
-        <div class="text-center">
-            <h2 class="section-heading text-uppercase" data-en="Our Products" data-ar="منتجاتنا">منتجاتنا</h2>
-            <h3 class="section-subheading text-muted" data-en="We present a curated selection of our outstanding products."
-                data-ar="نُقدم مجموعة مختارة من منتجاتنا المميزة.">نُقدم مجموعة مختارة من منتجاتنا المميزة.</h3>
-        </div>
+        <a href="products.html" style="text-decoration: none; color: inherit; cursor: pointer;">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase" data-en="Our Products" data-ar="منتجاتنا">منتجاتنا</h2>
+                <h3 class="section-subheading text-muted" data-en="We present a curated selection of our outstanding products."
+                    data-ar="نُقدم مجموعة مختارة من منتجاتنا المميزة.">نُقدم مجموعة مختارة من منتجاتنا المميزة.</h3>
+            </div>
+        </a>
         <div class="row">
             <div class="col-lg-4 col-sm-6 mb-4">
-
-
-
-
-
-
-
-
-
-
-
 
 
                 <!-- Portfolio item 1-->
@@ -493,11 +484,17 @@
                     <div class="timeline-body"><p class="text-muted" data-en="Lorem ipsum dolor sit amet, consectetur adipisicing elit..." data-ar="بدأنا التوسع الثاني، مدعومين بالخبرة والإنجازات السابقة نحو آفاق جديدة.">Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p></div>
                 </div>
             </li>
-            <li class="timeline-inverted">
-                <div class="timeline-image">
-                    <h4 data-en="Be Part<br />Of Our<br />Story!" data-ar="كن جزءًا<br />من قصتنا!">Be Part<br />Of Our<br />Story!</h4>
-                </div>
-            </li>
+<li class="timeline-inverted">
+  <div class="timeline-image">
+    <h4 
+      data-en="Be Part Of Our Story!" 
+      data-ar="كن جزءًا من قصتنا!">
+      Be Part Of Our Story!
+    </h4>
+  </div>
+</li>
+
+
         </ul>
     </div>
 </section>
@@ -577,6 +574,7 @@
                 </div>
             </div>
         </div>
+
 <!-- Contact -->
 <section class="page-section" id="contact">
   <div class="container">
@@ -657,7 +655,7 @@
                     <div class="col-lg-10">
                         <div class="modal-body">
                             <!-- Project details -->
-                            <h2 class="text-uppercase" data-en="Project Name" data-ar="اسم المشروع">Project Name</h2>
+                            <h2 class="text-uppercase" data-en="Project Name" data-ar="اسم الجوال">Project Name</h2>
                             <p class="item-intro text-muted" data-en="Short description of the project." data-ar="وصف مختصر للمشروع.">Short description of the project.</p>
 
                             <!-- Main image -->
@@ -680,8 +678,7 @@
                             </ul>
 
                             <!-- Product request button -->
-                            <a class="btn btn-primary btn-xl text-uppercase" href="products.html">
-                                <i class="fas fa-xmark me-1"></i>
+                            <a id="requestProductBtn" class="btn btn-primary btn-xl text-uppercase" href="#">
                                 <span data-en="Request Product" data-ar="طلب المنتج">Request Product</span>
                             </a>
                         </div>
@@ -691,7 +688,6 @@
         </div>
     </div>
 </div>
-
 
 <!-- Portfolio item 2 modal popup-->
 <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
@@ -705,18 +701,18 @@
                     <div class="col-lg-10">
                         <div class="modal-body">
                             <!-- Project details -->
-                            <h2 class="text-uppercase" data-en="Project Name" data-ar="اسم المشروع">Project Name</h2>
-                            <p class="item-intro text-muted" data-en="Short description of the project." data-ar="وصف مختصر للمشروع.">Short description of the project.</p>
+                            <h2 class="productName text-uppercase" data-en="Project Name" data-ar="اسم المشروع">Project Name</h2>
+                            <p class="productDescription item-intro text-muted" data-en="Short description of the project." data-ar="وصف مختصر للمشروع.">Short description of the project.</p>
 
                             <!-- Main image -->
-                            <img id="mainImage1" class="img-fluid d-block mx-auto mb-4" src="assets/img/portfolio/1.jpg" alt="Main project image" />
+                            <img id="mainImage2" class="img-fluid d-block mx-auto mb-4" src="assets/img/portfolio/1.jpg" alt="Main project image" />
 
                             <!-- Thumbnails -->
                             <div class="d-flex justify-content-center gap-2 flex-wrap">
-                                <img src="assets/img/portfolio/1.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
-                                <img src="assets/img/portfolio/1.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
-                                <img src="assets/img/portfolio/2.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
-                                <img src="assets/img/portfolio/2.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
+                                <img src="assets/img/portfolio/1.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage2', this.src)">
+                                <img src="assets/img/portfolio/1.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage2', this.src)">
+                                <img src="assets/img/portfolio/2.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage2', this.src)">
+                                <img src="assets/img/portfolio/2.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage2', this.src)">
                             </div>
 
                             <!-- Description -->
@@ -728,8 +724,7 @@
                             </ul>
 
                             <!-- Product request button -->
-                            <a class="btn btn-primary btn-xl text-uppercase" href="products.html">
-                                <i class="fas fa-xmark me-1"></i>
+                            <a class="requestProductBtn btn btn-primary btn-xl text-uppercase" href="#">
                                 <span data-en="Request Product" data-ar="طلب المنتج">Request Product</span>
                             </a>
                         </div>
@@ -741,7 +736,9 @@
 </div>
 
 
-<!-- Portfolio item 3 modal popup-->
+
+
+<!-- Portfolio item 3 modal popup -->
 <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
@@ -753,40 +750,41 @@
                     <div class="col-lg-10">
                         <div class="modal-body">
                             <!-- Project details -->
-                            <h2 class="text-uppercase" data-en="Project Name" data-ar="اسم المشروع">Project Name</h2>
-                            <p class="item-intro text-muted" data-en="Short description of the project." data-ar="وصف مختصر للمشروع.">Short description of the project.</p>
+                            <h2 class="text-uppercase" data-en="Project 3" data-ar="المشروع 3">Project 3</h2>
+                            <p class="item-intro text-muted" data-en="Short description for project 3." data-ar="وصف مختصر للمشروع 3.">Short description for project 3.</p>
 
                             <!-- Main image -->
-                            <img id="mainImage1" class="img-fluid d-block mx-auto mb-4" src="assets/img/portfolio/1.jpg" alt="Main project image" />
+                            <img id="mainImage3" class="img-fluid d-block mx-auto mb-4" src="assets/img/portfolio/7.jpg" alt="Main project image" />
 
                             <!-- Thumbnails -->
                             <div class="d-flex justify-content-center gap-2 flex-wrap">
-                                <img src="assets/img/portfolio/1.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
-                                <img src="assets/img/portfolio/1.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
-                                <img src="assets/img/portfolio/2.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
-                                <img src="assets/img/portfolio/2.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
+                                <img src="assets/img/portfolio/7.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage3', this.src)">
+                                <img src="assets/img/portfolio/8.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage3', this.src)">
+                                <img src="assets/img/portfolio/9.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage3', this.src)">
+                                <img src="assets/img/portfolio/10.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage3', this.src)">
                             </div>
 
                             <!-- Description -->
-                            <p data-en="Use this area to describe your project." data-ar="استخدم هذا القسم لوصف المشروع.">Use this area to describe your project.</p>
+                            <p data-en="Detailed description of project 3." data-ar="وصف مفصل للمشروع 3.">Detailed description of project 3.</p>
 
                             <ul class="list-inline">
-                                <li><strong data-en="Client:" data-ar="العميل:">Client:</strong> <span data-en="Threads" data-ar="خيوط">Threads</span></li>
-                                <li><strong data-en="Category:" data-ar="الفئة:">Category:</strong> <span data-en="Illustration" data-ar="رسم توضيحي">Illustration</span></li>
+                                <li><strong data-en="Client:" data-ar="العميل:">Client:</strong> <span data-en="Client 3" data-ar="العميل 3">Client 3</span></li>
+                                <li><strong data-en="Category:" data-ar="الفئة:">Category:</strong> <span data-en="Branding" data-ar="العلامة التجارية">Branding</span></li>
                             </ul>
 
                             <!-- Product request button -->
-                            <a class="btn btn-primary btn-xl text-uppercase" href="products.html">
-                                <i class="fas fa-xmark me-1"></i>
+                            <a id="requestProductBtn3" class="btn btn-primary btn-xl text-uppercase" href="#">
                                 <span data-en="Request Product" data-ar="طلب المنتج">Request Product</span>
                             </a>
                         </div>
-                    </div>
+                    </div> 
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
 
 
 <!-- Portfolio item 4 modal popup-->
@@ -824,8 +822,7 @@
                             </ul>
 
                             <!-- Product request button -->
-                            <a class="btn btn-primary btn-xl text-uppercase" href="products.html">
-                                <i class="fas fa-xmark me-1"></i>
+                            <a id="requestProductBtn4" class="btn btn-primary btn-xl text-uppercase" href="#">
                                 <span data-en="Request Product" data-ar="طلب المنتج">Request Product</span>
                             </a>
                         </div>
@@ -835,6 +832,7 @@
         </div>
     </div>
 </div>
+
 
 
 <!-- Portfolio item 5 modal popup-->
@@ -872,8 +870,7 @@
                             </ul>
 
                             <!-- Product request button -->
-                            <a class="btn btn-primary btn-xl text-uppercase" href="products.html">
-                                <i class="fas fa-xmark me-1"></i>
+                            <a id="requestProductBtn5" class="btn btn-primary btn-xl text-uppercase" href="#">
                                 <span data-en="Request Product" data-ar="طلب المنتج">Request Product</span>
                             </a>
                         </div>
@@ -883,6 +880,7 @@
         </div>
     </div>
 </div>
+
 
 
 <!-- Portfolio item 6 modal popup-->
@@ -920,8 +918,7 @@
                             </ul>
 
                             <!-- Product request button -->
-                            <a class="btn btn-primary btn-xl text-uppercase" href="products.html">
-                                <i class="fas fa-xmark me-1"></i>
+                            <a id="requestProductBtn6" class="btn btn-primary btn-xl text-uppercase" href="#">
                                 <span data-en="Request Product" data-ar="طلب المنتج">Request Product</span>
                             </a>
                         </div>
@@ -932,14 +929,12 @@
     </div>
 </div>
 
+<form id="contactForm" data-sb-form-api-token="API_TOKEN">
+
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
     </body>
 </html>

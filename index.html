@@ -26,18 +26,14 @@
       font-family: 'Montserrat', sans-serif;
     }
 
-    .navbar {
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
+    /* تعديل خلفية الشريط لتكون سوداء شفافة دائمًا */
     .navbar.transparent {
-      background-color: transparent !important;
+      background-color: rgba(0, 0, 0, 0.6) !important;
       box-shadow: none;
     }
 
-    .navbar.scrolled {
-      background-color: #ffffff !important;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    .navbar {
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
 
     /* روابط الشريط */
@@ -46,14 +42,15 @@
       color: #ffffff;
     }
 
-    .navbar.scrolled .navbar-nav .nav-link,
-    .navbar.scrolled .lang-toggle {
-      color: #000000 !important;
-    }
-
     .navbar-nav .nav-link:hover,
     .navbar-nav .nav-link:focus {
       color: #007bff !important;
+    }
+
+    /* تمييز الرابط النشط */
+    .navbar-nav .nav-link.active {
+      color: #007bff !important;
+      font-weight: bold;
     }
 
     /* زر تغيير اللغة */
@@ -104,7 +101,7 @@
     }
 
     .navbar-logo {
-      width: 180px;
+      width: 150px;
       height: auto;
     }
   </style>
@@ -112,47 +109,21 @@
 <body id="page-top">
 
   <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top transparent" id="mainNav">
-  <div class="container">
-    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      Menu
-      <i class="fas fa-bars ms-1"></i>
-    </button>
-    <a href="index.html">
-      <img src="assets/img/navbar-logo.svg" alt="Logo" class="navbar-logo">
-    </a>
-  </div>
-</nav>
-<style>
-/* زر التوغل (Menu) الافتراضي عند الخلفية الشفافة */
-.custom-toggler {
-  color: #fff;           /* لون الأيقونة */
-  border: 1px solid #fff; /* إطار أبيض */
-}
-
-/* عندما يتغير الشريط العلوي (عند التمرير) */
-.navbar-scrolled .custom-toggler {
-  color: #000;           /* لون الأيقونة أسود */
-  border-color: #000;    /* الإطار أسود */
-}
-</style>
-<script>
-  window.addEventListener('scroll', function () {
-    const navbar = document.getElementById('mainNav');
-    if (window.scrollY > 50) {
-      navbar.classList.add('navbar-scrolled');
-    } else {
-      navbar.classList.remove('navbar-scrolled');
-    }
-  });
-</script>
-
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top transparent" id="mainNav">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars ms-1"></i>
+      </button>
+      <a href="index.html">
+        <img src="assets/img/navbar-logo.svg" alt="Logo" class="navbar-logo">
+      </a>
 
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase py-4 py-lg-0">
           <li class="nav-item"><a class="nav-link" data-en="Services" data-ar="الخدمات" href="#services">الخدمات</a></li>
-          <li class="nav-item"><a class="nav-link" data-en="Portfolio" data-ar="أعمالنا" href="#portfolio">أعمالنا</a></li>
+          <li class="nav-item"><a class="nav-link" data-en="Products" data-ar="المنتجات" href="#portfolio">المنتجات</a></li>
           <li class="nav-item"><a class="nav-link" data-en="About" data-ar="من نحن" href="#about">من نحن</a></li>
           <li class="nav-item"><a class="nav-link" data-en="Team" data-ar="الفريق" href="#team">الفريق</a></li>
           <li class="nav-item"><a class="nav-link" data-en="Contact" data-ar="اتصل بنا" href="#contact">اتصل بنا</a></li>
@@ -162,113 +133,191 @@
     </div>
   </nav>
 
-  <!-- Masthead -->
-  <header class="masthead">
-    <div class="container">
-      <div class="masthead-heading text-uppercase" data-en="Arab Lab" data-ar="عرب لاب">تشرفنا بمقابلتك</div>
-      <div class="masthead-heading text-uppercase" data-en="Medicines & Medical Supplies" data-ar=" للأدوية والمستلزمات الطبية">تشرفنا بمقابلتك</div>
-      <div class="masthead-subheading" data-en="Medical Equipment Experts" data-ar="خبراء التجهيزات الطبية">خبراء التجهيزات الطبية</div>
-      <a class="btn btn-primary btn-xl text-uppercase" href="#services" data-en="Tell Me More" data-ar="أخبرني المزيد">أخبرني المزيد</a>
-    </div>
-  </header>
-
-  <script>
-    const defaultLang = 'ar';
-
-    function toggleLanguage() {
-      const currentLang = document.body.getAttribute('lang');
-      const newLang = currentLang === 'en' ? 'ar' : 'en';
-      setLanguage(newLang);
+<!-- Masthead -->
+<header class="masthead">
+  <style>
+    .masthead {
+      text-align: center;
+      padding: 100px 0;
+      overflow: hidden;
     }
 
-    function setLanguage(lang) {
-      document.body.setAttribute('lang', lang);
-      document.documentElement.setAttribute('dir', lang === 'en' ? 'ltr' : 'rtl');
-      document.querySelector('.lang-toggle').textContent = lang === 'en' ? 'العربية' : 'English';
-
-      document.querySelectorAll('[data-en]').forEach(el => {
-        el.textContent = el.getAttribute(`data-${lang}`);
-      });
+    .masthead-subheading {
+      font-size: 70px;
+      font-weight: normal;
+      margin-bottom: 70px;
+      max-width: 100%;
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      setLanguage(defaultLang);
+    .masthead-title
+    {
+              font-size: 80px;
+      font-weight: bold;
+      line-height: 1.1;
+      margin-bottom: 30px;
+      max-width: 100%;
+      word-break: break-word;
+    }
+    .masthead-subtitle {
+      font-size: 80px;
+      font-weight: normal;
+      line-height: 1.1;
+      margin-bottom: 30px;
+      max-width: 100%;
+      word-break: break-word;
+    }
+
+    @media (max-width: 500px) {
+      .masthead-title
+      {
+                font-size: 50px;
+
+      }
+      .masthead-subtitle,
+      .masthead-subheading {
+        font-size: 40px;
+      }
+    }
+  </style>
+
+  <div class="container">
+    <div class="masthead-title text-uppercase" data-en="Arab Lab" data-ar="عرب لاب">عرب لاب</div>
+    <div class="masthead-subtitle text-uppercase" data-en="Medicines & Medical Supplies" data-ar="للأدوية والمستلزمات الطبية">للأدوية والمستلزمات الطبية</div>
+    <div class="masthead-subheading" data-en="Medical Equipment Experts" data-ar="خبراء التجهيزات الطبية">خبراء التجهيزات الطبية</div>
+    <a class="btn btn-primary btn-xl text-uppercase" href="#services" data-en="Tell Me More" data-ar="أخبرني المزيد">أخبرني المزيد</a>
+  </div>
+</header>
+
+
+<!-- JavaScript -->
+<script>
+  const defaultLang = 'ar';
+
+  function toggleLanguage() {
+    const currentLang = document.body.getAttribute('lang');
+    const newLang = currentLang === 'en' ? 'ar' : 'en';
+    setLanguage(newLang);
+  }
+
+  function setLanguage(lang) {
+    document.body.setAttribute('lang', lang);
+    document.documentElement.setAttribute('dir', lang === 'en' ? 'ltr' : 'rtl');
+    document.querySelector('.lang-toggle').textContent = lang === 'en' ? 'العربية' : 'English';
+
+    // تحديث النصوص العادية
+    document.querySelectorAll('[data-en]').forEach(el => {
+      el.textContent = el.getAttribute(`data-${lang}`);
     });
 
-    // Scroll effect for navbar background and text colors
-    window.addEventListener('scroll', function () {
-      const navbar = document.getElementById('mainNav');
-      if (window.scrollY > 50) {
-        navbar.classList.remove('transparent');
-        navbar.classList.add('scrolled');
+    // تحديث زر رؤية بقية الفريق
+    const teamBtn = document.getElementById('viewTeamBtn');
+    const teamText = teamBtn?.querySelector('.btn-text');
+    const teamIcon = document.getElementById('btnArrowIcon');
+    if (teamBtn && teamText && teamIcon) {
+      teamText.textContent = teamBtn.getAttribute(`data-${lang}`);
+      if (lang === 'en') {
+        teamIcon.classList.remove('fa-arrow-right');
+        teamIcon.classList.add('fa-arrow-left');
       } else {
-        navbar.classList.remove('scrolled');
-        navbar.classList.add('transparent');
+        teamIcon.classList.remove('fa-arrow-left');
+        teamIcon.classList.add('fa-arrow-right');
+      }
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    setLanguage(defaultLang);
+  });
+
+  // إبراز العنصر النشط أثناء التمرير
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".navbar .nav-link");
+
+  function activateNavLink() {
+    let scrollY = window.pageYOffset;
+
+    sections.forEach(current => {
+      const sectionHeight = current.offsetHeight;
+      const sectionTop = current.offsetTop - 80;
+      const sectionId = current.getAttribute("id");
+
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        navLinks.forEach(link => {
+          link.classList.remove("active");
+          if (link.getAttribute("href").includes(sectionId)) {
+            link.classList.add("active");
+          }
+        });
       }
     });
-  </script>
+  }
+
+  window.addEventListener("scroll", activateNavLink);
+</script>
+
+
     <!-- Services-->
     <section class="page-section" id="services">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase" data-en="Services" data-ar="الخدمات">الخدمات</h2>
+                <h2 class="section-heading text-uppercase" data-en="Our Services" data-ar="خدماتنا">خدماتنا</h2>
                 <h3 class="section-subheading text-muted" data-en=""
-                data-ar="">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة.</h3>
+                data-ar=""></h3></h3>
             </div>
             <div class="row text-center">
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
-                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+<span class="fa-stack-2x gradient-circle"></span>
+<i class="fas fa-stethoscope fa-stack-1x fa-inverse"></i>  <!-- أيقونة سماعة طبية -->
                     </span>
-                    <h4 class="my-3" data-en="Equipment" data-ar="تجهيزات ">التجارة الإلكترونية</h4>
+                    <h4 class="my-3" data-en="Equipment" data-ar="تجهيزات ">تجهيزات</h4>
                     <p class="text-muted" data-en="Medical Equipment for Hospitals, Laboratories, and Diagnostic Centers"
-                    data-ar="تجهيز مستشفيات - مختبرات - معامل طبية">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربي.</p>
+                    data-ar="تجهيز مستشفيات - مختبرات - معامل طبية">تجهيز مستشفيات - مختبرات - معامل طبية</p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
-                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+<span class="fa-stack-2x gradient-circle"></span>
+<i class="fas fa-tools fa-stack-1x fa-inverse"></i> <!-- أيقونة أدوات -->
                     </span>
-                    <h4 class="my-3" data-en="Maintenance " data-ar="صيانة">تصميم متجاوب</h4>
+                    <h4 class="my-3" data-en="Maintenance " data-ar="صيانة">صيانة</h4>
                     <p class="text-muted" data-en="Maintenance of Medical Devices and Equipment"
-                    data-ar="صيانة الأجهزة والمعدات الطبية">تصميم الموقع بحيث يتوافق مع جميع الشاشات والأجهزة هو عنصر أساسي.</p>
+                    data-ar="صيانة الأجهزة والمعدات الطبية">صيانة الأجهزة والمعدات الطبية</p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
-                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+<span class="fa-stack-2x gradient-circle"></span>
+<i class="fas fa-project-diagram fa-stack-1x fa-inverse"></i> <!-- أيقونة تخطيط -->
                     </span>
-                    <h4 class="my-3" data-en="Planning" data-ar=" تخطيط">أمان الويب</h4>
+                    <h4 class="my-3" data-en="Planning" data-ar=" تخطيط">تخطيط</h4>
                     <p class="text-muted" data-en="Project Planning and Implementation "
-                    data-ar="تخطيط وتنفيذ المشاريع">نضمن لك أعلى مستويات الأمان والخصوصية في موقعك.</p>
+                    data-ar="تخطيط وتنفيذ المشاريع">تخطيط وتنفيذ المشاريع</p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
-                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+<span class="fa-stack-2x gradient-circle"></span>
+<i class="fas fa-comments fa-stack-1x fa-inverse"></i> <!-- أيقونة تعليقات -->
                     </span>
-                    <h4 class="my-3" data-en="Consultations" data-ar="استشارات">تصميم متجاوب</h4>
+                    <h4 class="my-3" data-en="Consultations" data-ar="استشارات">استشارات</h4>
                     <p class="text-muted" data-en=""
-                    data-ar="">تصميم الموقع بحيث يتوافق مع جميع الشاشات والأجهزة هو عنصر أساسي.</p>
+                    data-ar=""></p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
-                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+<span class="fa-stack-2x gradient-circle"></span>
+<i class="fas fa-pills fa-stack-1x fa-inverse"></i> <!-- أيقونة حبوب -->
                     </span>
-                    <h4 class="my-3" data-en="Medical Supplies" data-ar="التوريدات الطبية">تصميم متجاوب</h4>
+                    <h4 class="my-3" data-en="Medical Supplies" data-ar="التوريدات الطبية">التوريدات الطبية</h4>
                     <p class="text-muted" data-en=""
-                    data-ar="">تصميم الموقع بحيث يتوافق مع جميع الشاشات والأجهزة هو عنصر أساسي.</p>
+                    data-ar=""></p></p> 
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
-                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+<span class="fa-stack-2x gradient-circle"></span>
+<i class="fas fa-chalkboard-teacher fa-stack-1x fa-inverse"></i> <!-- أيقونة مدرب -->
                     </span>
-                    <h4 class="my-3" data-en="Training" data-ar="تدريب">تصميم متجاوب</h4>
+                    <h4 class="my-3" data-en="Training" data-ar="تدريب">تدريب</h4>
                     <p class="text-muted" data-en=""
-                        data-ar="">تصميم الموقع بحيث يتوافق مع جميع الشاشات والأجهزة هو عنصر أساسي.</p>
+                        data-ar=""></p>
                 </div>
             </div>
     </section>
@@ -276,9 +325,9 @@
 <section class="page-section bg-light" id="portfolio">
     <div class="container">
         <div class="text-center">
-            <h2 class="section-heading text-uppercase" data-en="Portfolio" data-ar="أعمالنا">أعمالنا</h2>
-            <h3 class="section-subheading text-muted" data-en="Lorem ipsum dolor sit amet consectetur."
-                data-ar="نُقدم مجموعة مختارة من أعمالنا المميزة.">نُقدم مجموعة مختارة من أعمالنا المميزة.</h3>
+            <h2 class="section-heading text-uppercase" data-en="Our Products" data-ar="منتجاتنا">منتجاتنا</h2>
+            <h3 class="section-subheading text-muted" data-en="We present a curated selection of our outstanding products."
+                data-ar="نُقدم مجموعة مختارة من منتجاتنا المميزة.">نُقدم مجموعة مختارة من منتجاتنا المميزة.</h3>
         </div>
         <div class="row">
             <div class="col-lg-4 col-sm-6 mb-4">
@@ -386,10 +435,12 @@
             </div>
         </div>
     </div>
-    <div class="text-center mt-4">
-    <a href="products.html" class="btn btn-outline-primary btn-lg">
-        رؤية بقية المنتجات <i class="fas fa-arrow-left me-2"></i>
-    </a>
+<div class="text-center mt-4">
+  <a href="products.html" class="btn btn-outline-primary btn-lg" id="viewTeamBtn"
+     data-ar="رؤية بقية المنتجات" data-en="View the Rest of the products">
+    <span class="btn-text">رؤية بقية المنتجات</span>
+    <i id="btnArrowIcon" class="fas fa-arrow-right ms-2"></i>
+  </a>
 </div>
 
 </section>
@@ -398,8 +449,8 @@
 <section class="page-section" id="about">
     <div class="container">
         <div class="text-center">
-            <h2 class="section-heading text-uppercase" data-en="About" data-ar="من نحن">About</h2>
-            <h3 class="section-subheading text-muted" data-en="Lorem ipsum dolor sit amet consectetur." data-ar="نبذة عن مسيرتنا ونشأتنا.">Lorem ipsum dolor sit amet consectetur.</h3>
+            <h2 class="section-heading text-uppercase" data-en="About Us" data-ar="من نحن">About</h2>
+            <h3 class="section-subheading text-muted" data-en="An overview of our journey and origin." data-ar="نبذة عن مسيرتنا ونشأتنا.">An overview of our journey and origin.</h3>
         </div>
         <ul class="timeline">
             <li>
@@ -456,7 +507,7 @@
     <div class="container">
         <div class="text-center">
             <h2 class="section-heading text-uppercase" data-en="Our Amazing Team" data-ar="فريقنا الرائع">Our Amazing Team</h2>
-            <h3 class="section-subheading text-muted" data-en="Lorem ipsum dolor sit amet consectetur." data-ar="نخبة من المتخصصين يقودون رؤيتنا.">Lorem ipsum dolor sit amet consectetur.</h3>
+            <h3 class="section-subheading text-muted" data-en="A team of top specialists driving our vision." data-ar="نخبة من المتخصصين يقودون رؤيتنا.">A team of top specialists driving our vision.</h3>
         </div>
         <div class="row">
             <div class="col-lg-4">
@@ -492,16 +543,20 @@
         </div>
         <div class="row">
             <div class="col-lg-8 mx-auto text-center">
-                <p class="large text-muted" data-en="Lorem ipsum dolor sit amet, consectetur adipisicing elit..." data-ar="فريقنا مكون من محترفين شغوفين بخدمة عملائنا وتحقيق أفضل النتائج.">Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                <p class="large text-muted" data-en="Our team consists of passionate professionals dedicated to serving our clients and achieving the best results." data-ar="فريقنا مكون من محترفين شغوفين بخدمة عملائنا وتحقيق أفضل النتائج.">Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
             </div>
         </div>
     </div>
-        <div class="text-center mt-4">
-    <a href="products.html" class="btn btn-outline-primary btn-lg">
-        رؤية بقية المنتجات <i class="fas fa-arrow-left me-2"></i>
-    </a>
+<div class="text-center mt-4">
+  <a href="team.html" class="btn btn-outline-primary btn-lg" id="viewTeamBtn"
+     data-ar="رؤية بقية الفريق" data-en="View the Rest of the Team">
+    <span class="btn-text">رؤية بقية الفريق</span>
+    <i id="btnArrowIcon" class="fas fa-arrow-right ms-2"></i>
+  </a>
 </div>
-</section>
+    
+
+
 
         <!-- Clients-->
         <div class="py-5">
@@ -576,7 +631,7 @@
 <footer class="footer py-4">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-4 text-lg-start" data-en="Copyright © Your Website 2023" data-ar="حقوق النشر © موقعك 2023">Copyright © Your Website 2023</div>
+            <div class="col-lg-4 text-lg-start" data-en="Copyright © Eng.Mohammad Alkhattabi 2025" data-ar="حقوق النشر © م/محمد الخطابي 2025">Copyright © Your Website 2023</div>
             <div class="col-lg-4 my-3 my-lg-0">
                 <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                 <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -881,10 +936,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>

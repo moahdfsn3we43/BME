@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>المنتجات</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/styles.css" rel="stylesheet" />
+
+ <style>
+    
+    body[lang="ar"] {
+      direction: rtl;
+      font-family: 'Cairo', sans-serif;
+    }
+
+    body[lang="en"] {
+      direction: ltr;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* تعديل خلفية الشريط لتكون سوداء شفافة دائمًا */
+    .navbar.transparent {
+      background-color: rgba(0, 0, 0, 0.6) !important;
+      box-shadow: none;
+    }
+
+    .navbar {
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* روابط الشريط */
+    .navbar.transparent .navbar-nav .nav-link,
+    .navbar.transparent .lang-toggle {
+      color: #ffffff;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link:focus {
+      color: #007bff !important;
+    }
+
+    /* تمييز الرابط النشط */
+    .navbar-nav .nav-link.active {
+      color: #007bff !important;
+      font-weight: bold;
+    }
+
+    /* زر تغيير اللغة */
+    .navbar .lang-toggle {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1030;
+      background-color: transparent;
+      border: 1px solid currentColor;
+      transition: all 0.3s ease;
+    }
+
+    .navbar .lang-toggle:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      border-color: #007bff;
+      color: #007bff;
+    }
+
+    body[lang="ar"] .navbar .lang-toggle {
+      left: 15px;
+      right: auto;
+    }
+
+    body[lang="en"] .navbar .lang-toggle {
+      right: 15px;
+      left: auto;
+    }
+
+    body[lang="ar"] .navbar-nav {
+      margin-left: 0 !important;
+      margin-right: auto !important;
+      text-align: right;
+    }
+
+    body[lang="en"] .navbar-nav {
+      margin-right: 0 !important;
+      margin-left: auto !important;
+      text-align: left;
+    }
+
+    body[lang="ar"] #navbarResponsive {
+      flex-direction: row-reverse;
+    }
+
+    body[lang="en"] #navbarResponsive {
+      flex-direction: row;
+    }
+
+    .navbar-logo {
+      width: 150px;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body id="page-top" lang="ar">
+<!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top transparent" id="mainNav">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars ms-1"></i>
+      </button>
+      <a href="index.html">
+        <img src="assets/img/navbar-logo.svg" alt="Logo" class="navbar-logo">
+      </a>
+
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase py-4 py-lg-0">
+          <li class="nav-item"><a class="nav-link" data-en="Services" data-ar="الخدمات" href="index.html#services">الخدمات</a></li>
+          <li class="nav-item"><a class="nav-link" data-en="Products" data-ar="المنتجات" href="index.html#portfolio">المنتجات</a></li>
+          <li class="nav-item"><a class="nav-link" data-en="About" data-ar="من نحن" href="#index.htmlabout">من نحن</a></li>
+          <li class="nav-item"><a class="nav-link" data-en="Clients" data-ar="العملاء" href="#index.htmlclients">العملاء</a></li>
+          <li class="nav-item"><a class="nav-link" data-en="Team" data-ar="الفريق" href="#index.htmlteam">الفريق</a></li>
+          <li class="nav-item"><a class="nav-link" data-en="Contact" data-ar="اتصل بنا" href="#index.htmlcontact">اتصل بنا</a></li>
+        </ul>
+        <button class="btn lang-toggle" onclick="toggleLanguage()">English</button>
+      </div>
+    </div>
+  </nav>
+
+
+<!-- JavaScript -->
+<script>
+  const defaultLang = 'ar';
+
+  function toggleLanguage() {
+    const currentLang = document.body.getAttribute('lang');
+    const newLang = currentLang === 'en' ? 'ar' : 'en';
+    setLanguage(newLang);
+  }
+
+  function setLanguage(lang) {
+    document.body.setAttribute('lang', lang);
+    document.documentElement.setAttribute('dir', lang === 'en' ? 'ltr' : 'rtl');
+    document.querySelector('.lang-toggle').textContent = lang === 'en' ? 'العربية' : 'English';
+
+    // تحديث النصوص العادية
+    document.querySelectorAll('[data-en]').forEach(el => {
+      el.textContent = el.getAttribute(`data-${lang}`);
+    });
+
+    // تحديث زر رؤية بقية الفريق
+    const teamBtn = document.getElementById('viewTeamBtn');
+    const teamText = teamBtn?.querySelector('.btn-text');
+    const teamIcon = document.getElementById('btnArrowIcon');
+    if (teamBtn && teamText && teamIcon) {
+      teamText.textContent = teamBtn.getAttribute(`data-${lang}`);
+      if (lang === 'en') {
+        teamIcon.classList.remove('fa-arrow-right');
+        teamIcon.classList.add('fa-arrow-left');
+      } else {
+        teamIcon.classList.remove('fa-arrow-left');
+        teamIcon.classList.add('fa-arrow-right');
+      }
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    setLanguage(defaultLang);
+  });
+
+  // إبراز العنصر النشط أثناء التمرير
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".navbar .nav-link");
+
+  function activateNavLink() {
+    let scrollY = window.pageYOffset;
+
+    sections.forEach(current => {
+      const sectionHeight = current.offsetHeight;
+      const sectionTop = current.offsetTop - 80;
+      const sectionId = current.getAttribute("id");
+
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        navLinks.forEach(link => {
+          link.classList.remove("active");
+          if (link.getAttribute("href").includes(sectionId)) {
+            link.classList.add("active");
+          }
+        });
+      }
+    });
+  }
+
+  window.addEventListener("scroll", activateNavLink);
+</script>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  main {
+    flex: 1;
+  }
+
+  footer {
+    margin-top: auto;
+  }
+
+  .py-5:last-child {
+    padding-bottom: 0 !important;
+  }
+</style>
+
+<!-- Products Section -->
+ 
+    <div class="py-5">
+
+      <div class="row align-items-center">
+        <div style="height: 70px;"></div>
+        
+<div class="col-md-3 col-sm-6 my-3">
+  <a href="#!">
+    <img 
+      style="width: 300px; height: auto;" 
+      class="img-fluid img-brand d-block mx-auto" 
+      src="assets/img/logos/World_Health_Organization_Logo.svg" 
+      alt="WHO Logo" 
+      aria-label="WHO Logo" 
+    />
+  </a>
+</div>
+<div class="col-md-3 col-sm-6 my-3">
+  <a href="#!">
+    <img 
+      style="width: 350px; height: auto;" 
+      class="img-fluid img-brand d-block mx-auto" 
+      src="assets/img/logos/save-the-children-logo.svg" 
+      alt="save the childern Logo" 
+      aria-label="save the childern Logo" 
+    />
+  </a>
+</div>
+<div class="col-md-3 col-sm-6 my-3">
+  <a href="#!">
+    <img 
+      style="width: 250px; height: auto;" 
+      class="img-fluid img-brand d-block mx-auto" 
+      src="assets/img/logos/International_Organization_for_Migration_logo.svg" 
+      alt="INO Logo" 
+      aria-label="INO Logo" 
+    />
+  </a>
+</div>
+<div class="col-md-3 col-sm-6 my-3">
+  <a href="#!">
+    <img 
+      style="width: 250px; height: auto;" 
+      class="img-fluid img-brand d-block mx-auto" 
+      src="assets/img/logos/UNFPA_logo.svg" 
+      alt="UNFPA Logo" 
+      aria-label="UNFPA Logo" 
+    />
+  </a>
+</div>
+<div class="col-md-3 col-sm-6 my-3">
+  <a href="#!">
+    <img 
+      style="width: 250px; height: auto;" 
+      class="img-fluid img-brand d-block mx-auto" 
+      src="assets/img/logos/care-international-logo-vector.svg" 
+      alt="care Logo" 
+      aria-label="care Logo" 
+    />
+  </a>
+</div>
+<div class="col-md-3 col-sm-6 my-3">
+  <a href="#!">
+    <img 
+      style="width: 300px; height: auto;" 
+      class="img-fluid img-brand d-block mx-auto" 
+      src="assets/img/logos/oxfam.svg" 
+      alt="oxfam Logo" 
+      aria-label="oxfam Logo" 
+    />
+  </a>
+</div>
+<div class="col-md-3 col-sm-6 my-3">
+  <a href="#!">
+    <img 
+      style="width: 350px; height: auto;" 
+      class="img-fluid img-brand d-block mx-auto" 
+      src="assets/img/logos/Mercy-corps.svg" 
+      alt="Mercy-corps Logo" 
+      aria-label="Mercy-corps Logo" 
+    />
+  </a>
+</div>
+<div class="col-md-3 col-sm-6 my-3">
+  <a href="#!">
+    <img 
+      style="width: 250px; height: auto;" 
+      class="img-fluid img-brand d-block mx-auto" 
+      src="assets/img/logos/unicef.svg" 
+      alt="unicef Logo" 
+      aria-label="unicef Logo" 
+    />
+  </a>
+</div>
+<div class="col-md-3 col-sm-6 my-3">
+  <a href="#!">
+    <img 
+      style="width: 250px; height: auto;" 
+      class="img-fluid img-brand d-block mx-auto" 
+      src="assets/img/logos/rescue.svg" 
+      alt="rescue Logo" 
+      aria-label="rescue Logo" 
+    />
+  </a>
+</div>
+<div class="col-md-3 col-sm-6 my-3">
+  <a href="#!">
+    <img 
+      style="width: 250px; height: auto;" 
+      class="img-fluid img-brand d-block mx-auto" 
+      src="assets/img/logos/MSF.svg" 
+      alt="MSF Logo" 
+      aria-label="MSF Logo" 
+    />
+  </a>
+</div>
+<div class="col-md-3 col-sm-6 my-3">
+  <a href="#!">
+    <img 
+      style="width: 200px; height: auto;" 
+      class="img-fluid img-brand d-block mx-auto" 
+      src="assets/img/logos/islamic.svg" 
+      alt="islamic Logo" 
+      aria-label="islamic Logo" 
+    />
+  </a>
+</div>
+<div class="col-md-3 col-sm-6 my-3">
+  <a href="#!">
+    <img 
+      style="width: 250px; height: auto;" 
+      class="img-fluid img-brand d-block mx-auto" 
+      src="assets/img/logos/fao-logo-blue-3lines-en.svg" 
+      alt="fao Logo" 
+      aria-label="fao Logo" 
+    />
+  </a>
+</div>
+<div class="col-md-3 col-sm-6 my-3">
+  <a href="#!">
+    <img 
+      style="width: 200px; height: auto;" 
+      class="img-fluid img-brand d-block mx-auto" 
+      src="assets/img/logos/sdff.svg" 
+      alt="sdff Logo" 
+      aria-label="sdff Logo" 
+    />
+  </a>
+</div>
+<div class="col-md-3 col-sm-6 my-3">
+  <a href="#!">
+    <img 
+      style="width: 200px; height: auto;" 
+      class="img-fluid img-brand d-block mx-auto" 
+      src="assets/img/logos/timeline-relief-international-logo.svg" 
+      alt="relief Logo" 
+      aria-label="relief Logo" 
+    />
+  </a>
+</div>
+<div class="col-md-3 col-sm-6 my-3">
+  <a href="#!">
+    <img 
+      style="width: 200px; height: auto;" 
+      class="img-fluid img-brand d-block mx-auto" 
+      src="assets/img/logos/sdf.svg" 
+      alt="sdf Logo" 
+      aria-label="sdf Logo" 
+    />
+  </a>
+  </div>
+
+<!-- JavaScript to Change Main Image -->
+<script>
+    function setMainImage(imageId, src) {
+        document.getElementById(imageId).src = src;
+    }
+</script>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    <!-- Footer-->
+    <footer class="footer py-4" style="background-color: #c8c8c8;">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-4 text-lg-start" data-en="Copyright © Eng.Mohammad Alkhattabi 2025" data-ar="حقوق النشر © م/محمد الخطابي 2025">
+            Copyright © Your Website 2023
+          </div>
+          <div class="col-lg-4 my-3 my-lg-0">
+            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <a class="link-dark text-decoration-none me-3" href="#!" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
+            <a class="link-dark text-decoration-none" href="#!" data-en="Terms of Use" data-ar="شروط الاستخدام">Terms of Use</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript and closing tags -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
+
+

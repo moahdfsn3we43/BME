@@ -119,13 +119,24 @@ let currentLang = "en";
 // دالة لتبديل نصوص العناصر حسب اللغة المختارة
 function applyLanguage() {
     const lang = document.documentElement.lang || 'en';
+
+    // تغيير النصوص
     document.querySelectorAll('[data-en]').forEach(el => {
         const newText = el.getAttribute(`data-${lang}`);
         if (newText !== null) {
             el.textContent = newText;
         }
     });
+
+    // تغيير placeholder في الحقول
+    document.querySelectorAll('[data-en-placeholder]').forEach(el => {
+        const newPlaceholder = el.getAttribute(`data-${lang}-placeholder`);
+        if (newPlaceholder !== null) {
+            el.placeholder = newPlaceholder;
+        }
+    });
 }
+
 
 // دالة تغيير الصورة الرئيسية لأي منتج
 function setMainImage(imageId, src) {

@@ -61,44 +61,45 @@ window.addEventListener('DOMContentLoaded', event => {
 
             this.textContent = lang.langToggle;
 
-            // تغيير الخط تلقائياً حسب اللغة
             document.body.classList.toggle("arabic", currentLang === "ar");
 
-            // تغيير النصوص في كل العناصر التي تحتوي على data-en و data-ar
             applyLanguage();
         });
     }
 
-    // تعيين اللغة عند تحميل الصفحة
     applyLanguage();
 
-    // ربط أزرار طلب المنتج لكل مودال
-    document.querySelectorAll('.portfolio-modal .btn.btn-primary').forEach(btn => {
-        btn.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            // إيجاد المودال الأب
-            const modal = this.closest('.modal-content');
-            if (!modal) return;
-
-            // جلب اسم المشروع والوصف من النصوص داخل المودال
-            const productName = modal.querySelector('h2')?.textContent.trim() || '';
-            const productDesc = modal.querySelector('p.item-intro')?.textContent.trim() || '';
-
-            // تكوين رسالة الطلب
-            const message = `طلب المنتج: ${productName}\nالوصف: ${productDesc}`;
-
-            // تشفير الرابط مع الرسالة
-            const contactPageURL = `contact.html?message=${encodeForURL(message)}`;
-
-            // تحويل المستخدم لصفحة التواصل
-            window.location.href = contactPageURL;
+    // Blur active element on modal close to fix accessibility warning
+    document.querySelectorAll('[id^="portfolioModal"]').forEach(modal => {
+        modal.addEventListener('hide.bs.modal', () => {
+            if (document.activeElement instanceof HTMLElement) {
+                document.activeElement.blur();
+            }
         });
     });
 
+    // Bind setup for modal when shown
+    document.querySelectorAll('[id^="portfolioModal"]').forEach(modal => {
+        modal.addEventListener('show.bs.modal', () => {
+            setTimeout(() => setupRequestProductLinks(modal), 100);
+        });
+    });
+
+    const button = document.querySelector('.button');
+    if (button) {
+        button.addEventListener('click', () => {
+            const defaultState = button.querySelector('.state--default');
+            const sentState = button.querySelector('.state--sent');
+            if (defaultState && sentState) {
+                defaultState.style.opacity = '0';
+                defaultState.style.pointerEvents = 'none';
+                sentState.style.opacity = '1';
+                sentState.style.pointerEvents = 'auto';
+            }
+        });
+    }
 });
 
-// ترجمة النصوص
 const translations = {
     en: {
         mastheadHeading: "It's Nice To Meet You",
@@ -116,19 +117,14 @@ const translations = {
 
 let currentLang = "en";
 
-// دالة لتبديل نصوص العناصر حسب اللغة المختارة
 function applyLanguage() {
     const lang = document.documentElement.lang || 'en';
-
-    // تغيير النصوص
     document.querySelectorAll('[data-en]').forEach(el => {
         const newText = el.getAttribute(`data-${lang}`);
         if (newText !== null) {
             el.textContent = newText;
         }
     });
-
-    // تغيير placeholder في الحقول
     document.querySelectorAll('[data-en-placeholder]').forEach(el => {
         const newPlaceholder = el.getAttribute(`data-${lang}-placeholder`);
         if (newPlaceholder !== null) {
@@ -137,8 +133,6 @@ function applyLanguage() {
     });
 }
 
-
-// دالة تغيير الصورة الرئيسية لأي منتج
 function setMainImage(imageId, src) {
     const mainImage = document.getElementById(imageId);
     if (mainImage) {
@@ -146,21 +140,45 @@ function setMainImage(imageId, src) {
     }
 }
 
-// دالة تشفير النص للروابط
 function encodeForURL(text) {
     return encodeURIComponent(text);
 }
 
-// دالة تغيير الاتجاه للصفحة والشريط العلوي
-    function toggleLanguage() {
-        const nav = document.getElementById('mainNav');
-        const currentLang = nav.getAttribute('lang');
-        const newLang = currentLang === 'en' ? 'ar' : 'en';
-        nav.setAttribute('lang', newLang);
+function toggleLanguage() {
+    const nav = document.getElementById('mainNav');
+    const currentLang = nav.getAttribute('lang');
+    const newLang = currentLang === 'en' ? 'ar' : 'en';
+    nav.setAttribute('lang', newLang);
+    document.querySelector('.lang-toggle').textContent = newLang === 'en' ? 'العربية' : 'English';
+    document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${newLang}`);
+    });
+}
 
-        document.querySelector('.lang-toggle').textContent = newLang === 'en' ? 'العربية' : 'English';
-
-        document.querySelectorAll('[data-en]').forEach(el => {
-            el.textContent = el.getAttribute(`data-${newLang}`);
-        });
+function setupRequestProductLinks(modal) {
+    if (!modal) return;
+    const productTitleElement = modal.querySelector('h4.text-uppercase');
+    if (!productTitleElement) return;
+    const productName = productTitleElement.textContent.trim();
+    const brandStrong = modal.querySelector('p strong[data-en="Brand:"]');
+    let brandName = '';
+    if (brandStrong && brandStrong.parentElement) {
+        brandName = brandStrong.parentElement.textContent.replace(brandStrong.textContent, '').trim();
     }
+    const modelStrong = modal.querySelector('p strong[data-en="Model:"]');
+    let modelName = '';
+    if (modelStrong && modelStrong.parentElement) {
+        modelName = modelStrong.parentElement.textContent.replace(modelStrong.textContent, '').trim();
+    }
+    let message = productName;
+    if (brandName) message += `\nالعلامة التجارية: ${brandName}`;
+    if (modelName) message += `\nالموديل: ${modelName}`;
+    const contactPageUrl = 'contact.html';
+    const urlWithMessage = `${contactPageUrl}?message=${encodeURIComponent(message)}`;
+    modal.querySelectorAll('.requestProductBtn, .requestProductBtnMobile').forEach(btn => {
+        btn.setAttribute('href', urlWithMessage);
+    });
+}
+
+
+

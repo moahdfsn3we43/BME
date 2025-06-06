@@ -126,12 +126,12 @@
 
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase py-4 py-lg-0">
-          <li class="nav-item"><a class="nav-link" data-en="Services" data-ar="الخدمات" href="index.html#services">الخدمات</a></li>
-          <li class="nav-item"><a class="nav-link" data-en="Products" data-ar="المنتجات" href="index.html#portfolio">المنتجات</a></li>
-          <li class="nav-item"><a class="nav-link" data-en="About" data-ar="من نحن" href="#index.htmlabout">من نحن</a></li>
-          <li class="nav-item"><a class="nav-link" data-en="Clients" data-ar="العملاء" href="#index.htmlclients">العملاء</a></li>
-          <li class="nav-item"><a class="nav-link" data-en="Team" data-ar="الفريق" href="#index.htmlteam">الفريق</a></li>
-          <li class="nav-item"><a class="nav-link" data-en="Contact" data-ar="اتصل بنا" href="#index.htmlcontact">اتصل بنا</a></li>
+          <li class="nav-item"><a class="nav-link" data-en="Services" data-ar="الخدمات" href="index.html">الخدمات</a></li>
+          <li class="nav-item"><a class="nav-link" data-en="Products" data-ar="المنتجات" href="products.html">المنتجات</a></li>
+          <li class="nav-item"><a class="nav-link" data-en="About" data-ar="من نحن" href="index.html">من نحن</a></li>
+          <li class="nav-item"><a class="nav-link" data-en="Clients" data-ar="العملاء" href="#Portfolio">العملاء</a></li>
+          <!-- <li class="nav-item"><a class="nav-link" data-en="Team" data-ar="الفريق" href="#index.htmlteam">الفريق</a></li> -->
+          <li class="nav-item"><a class="nav-link" data-en="Contact" data-ar="اتصل بنا" href="contact.html">اتصل بنا</a></li>
         </ul>
         <button class="btn lang-toggle" onclick="toggleLanguage()">English</button>
       </div>
@@ -417,12 +417,63 @@
         <div class="row align-items-center">
           <div class="col-lg-4 text-lg-start" data-en="Copyright © Eng.Mohammad Alkhattabi 2025" data-ar="حقوق النشر © م/محمد الخطابي 2025">
             Copyright © Your Website 2023
+          
           </div>
-          <div class="col-lg-4 my-3 my-lg-0">
-            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          </div>
+      <div class="col-lg-4 my-3 my-lg-0 d-flex justify-content-center gap-3">
+
+          <style>
+  .social-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 1rem;
+    border: 1px solid rgba(255 255 255 / 0.3);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 5px; /* مسافة بين الأزرار */
+  }
+  .social-btn:hover {
+    transform: scale(1.1) translateY(-8px);
+  }
+  .social-icon {
+    width: 20px;
+    height: 20px;
+    fill: white;
+    display: block; /* إزالة تأثير margin افتراضي */
+  }
+  
+</style>
+
+
+
+<!-- Facebook Button -->
+<a href="#!" aria-label="Facebook" class="social-btn" style="background: linear-gradient(to bottom right, #1877f2, #0043ce); color: white; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 8px; text-decoration: none;">
+<i class="fab fa-facebook-f" style="font-size: 24px;"></i>
+
+</a>
+
+<!-- WhatsApp Button -->
+<a href="#!" aria-label="WhatsApp" class="social-btn" style="background: linear-gradient(to bottom right, #25d366, #128c7e); color: white; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 8px; text-decoration: none;">
+  <i class="fab fa-whatsapp" style="font-size: 24px;"></i>
+</a>
+
+<!-- Instagram Button -->
+<a href="#!" aria-label="Instagram" class="social-btn" style="background: linear-gradient(to bottom right, #f58529, #dd2a7b, #8134af, #515bd4); color: white; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 8px; text-decoration: none;">
+  <i class="fab fa-instagram" style="font-size: 24px;" ></i>
+</a>
+
+<!-- Telegram Button -->
+<a href="#!" aria-label="Telegram" class="social-btn" style="background: linear-gradient(to bottom right, #0088cc, #004c99); 
+color: white; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 10px; text-decoration: none;">
+  <i class="fab fa-telegram-plane" style="font-size: 24px;"></i>
+</a>
+
+
+      </div>
           <div class="col-lg-4 text-lg-end">
             <a class="link-dark text-decoration-none me-3" href="#!" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
             <a class="link-dark text-decoration-none" href="#!" data-en="Terms of Use" data-ar="شروط الاستخدام">Terms of Use</a>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -31,6 +31,7 @@
       background-color: rgba(0, 0, 0, 0.6) !important;
       box-shadow: none;
     }
+
 
     .navbar {
       transition: background-color 0.3s ease, box-shadow 0.3s ease;
@@ -126,13 +127,14 @@
           <li class="nav-item"><a class="nav-link" data-en="Products" data-ar="المنتجات" href="products.html">المنتجات</a></li>
           <li class="nav-item"><a class="nav-link" data-en="About" data-ar="من نحن" href="#about">من نحن</a></li>
           <li class="nav-item"><a class="nav-link" data-en="Customers" data-ar="العملاء" href="clients.html">العملاء</a></li>
-          <li class="nav-item"><a class="nav-link" data-en="Team" data-ar="الفريق" href="#team">الفريق</a></li>
+          <!-- <li class="nav-item"><a class="nav-link" data-en="Team" data-ar="الفريق" href="#team">الفريق</a></li> -->
           <li class="nav-item"><a class="nav-link" data-en="Contact" data-ar="اتصل بنا" href="#contact">اتصل بنا</a></li>
         </ul>
         <button class="btn lang-toggle" onclick="toggleLanguage()">English</button>
       </div>
     </div>
   </nav>
+
 
 <!-- Masthead -->
 <header class="masthead">
@@ -335,98 +337,125 @@
         <div class="row">
             <div class="col-lg-4 col-sm-6 mb-4">
 
+<style>.shadow-3d {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-                <!-- Portfolio item 1-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/1.jpg" alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading" data-en="Threads" data-ar="خيوط">خيوط</div>
-                        <div class="portfolio-caption-subheading text-muted" data-en="Illustration" data-ar="رسم توضيحي">رسم توضيحي</div>
-                    </div>
-                </div>
+.shadow-3d:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+
+}
+</style>
+
+<!-- Portfolio item 1-->
+    <div class="shadow-3d">
+    <div class="portfolio-item">
+        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+            <div class="portfolio-hover">
+                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
             </div>
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <!-- Portfolio item 2-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/2.jpg" alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading" data-en="Explore" data-ar="اكتشف">اكتشف</div>
-                        <div class="portfolio-caption-subheading text-muted" data-en="Graphic Design" data-ar="تصميم جرافيك">تصميم جرافيك</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <!-- Portfolio item 3-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/3.jpg" alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading" data-en="Finish" data-ar="النهاية">النهاية</div>
-                        <div class="portfolio-caption-subheading text-muted" data-en="Identity" data-ar="هوية">هوية</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                <!-- Portfolio item 4-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/4.jpg" alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading" data-en="Lines" data-ar="خطوط">خطوط</div>
-                        <div class="portfolio-caption-subheading text-muted" data-en="Branding" data-ar="العلامة التجارية">العلامة التجارية</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-                <!-- Portfolio item 5-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/5.jpg" alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading" data-en="Southwest" data-ar="الجنوب الغربي">الجنوب الغربي</div>
-                        <div class="portfolio-caption-subheading text-muted" data-en="Website Design" data-ar="تصميم مواقع">تصميم مواقع</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <!-- Portfolio item 6-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/6.jpg" alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading" data-en="Window" data-ar="نافذة">نافذة</div>
-                        <div class="portfolio-caption-subheading text-muted" data-en="Photography" data-ar="تصوير">تصوير</div>
-                    </div>
-                </div>
-            </div>
+            <img class="img-fluid" src="assets/img/portfolio/d1-p1.jpg" alt="..." />
+        </a>
+        <div class="portfolio-caption">
+            <div class="portfolio-caption-heading" data-en="Biological Microscope" data-ar="مجهر بيولوجي">مجهر بيولوجي</div>
+            <div class="portfolio-caption-subheading text-muted" data-en="OLYMPUS CX23" data-ar="OLYMPUS CX23">OLYMPUS CX23</div>
+        </div>
         </div>
     </div>
+</div>
+
+<!-- Portfolio item 2-->
+<div class="col-lg-4 col-sm-6 mb-4">
+    <div class="shadow-3d">
+    <div class="portfolio-item">
+        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+            <div class="portfolio-hover">
+                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+            </div>
+            <img class="img-fluid" src="assets/img/portfolio/d2-p1.png" alt="..." />
+        </a>
+        <div class="portfolio-caption">
+            <div class="portfolio-caption-heading" data-en="Biochemistry analyzer" data-ar="محلل الكيمياء الحيوية">محلل الكيمياء الحيوية</div>
+            <div class="portfolio-caption-subheading text-muted" data-en="OLYMPUS CX23" data-ar="BIOLABO Kenza Max BioChemisTry">BIOLABO Kenza Max BioChemisTry</div>
+        </div>
+        </div>
+    </div>
+</div>  
+
+<!-- Portfolio item 3-->
+<div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+    <div class="shadow-3d">
+    <div class="portfolio-item">
+        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+            <div class="portfolio-hover">
+                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+            </div>
+            <img class="img-fluid" src="assets/img/portfolio/d3-p1.png" alt="..." />
+        </a>
+        <div class="portfolio-caption">
+            <div class="portfolio-caption-heading" data-en="Electrocardiograph (ECG)" data-ar="جهاز تخطيط كهربائية القلب">جهاز تخطيط كهربائية القلب</div>
+            <div class="portfolio-caption-subheading text-muted" data-en="TRIONARA Kardio 1210" data-ar="TRIONARA Kardio 1210">TRIONARA Kardio 1210</div>
+        </div>
+        </div>
+    </div>
+</div>
+<!-- Portfolio item 4-->
+<div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+      <div class="shadow-3d">
+
+    <div class="portfolio-item">
+        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
+            <div class="portfolio-hover">
+                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+            </div>
+            <img class="img-fluid" src="assets/img/portfolio/d4-p1.png" alt="..." />
+        </a>
+        <div class="portfolio-caption">
+            <div class="portfolio-caption-heading" data-en="Microscope Digital Camera" data-ar="كاميرا رقمية للمجهر">كاميرا رقمية للمجهر</div>
+            <div class="portfolio-caption-subheading text-muted" data-en="Olympus EP50" data-ar="Olympus EP50">Olympus EP50</div>
+        </div>
+    </div>
+    </div>
+</div>
+
+<!-- Portfolio item 5-->
+<div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+      <div class="shadow-3d">
+    <div class="portfolio-item">
+        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
+            <div class="portfolio-hover">
+                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+            </div>
+            <img class="img-fluid" src="assets/img/portfolio/d5-p1.png" alt="..." />
+        </a>
+        <div class="portfolio-caption">
+            <div class="portfolio-caption-heading" data-en="Bed Side Monitor" data-ar="شاشة مراقبة بجانب السرير">شاشة مراقبة بجانب السرير</div>
+            <div class="portfolio-caption-subheading text-muted" data-en="TRIONARA VITUS 18" data-ar="TRIONARA VITUS 18"></div>
+        </div>
+    </div>
+    </div>
+</div>
+
+<!-- Portfolio item 6-->
+<div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+      <div class="shadow-3d">
+            <div class="portfolio-item">
+        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
+            <div class="portfolio-hover">
+                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+            </div>
+            <img class="img-fluid" src="assets/img/portfolio/d6-p1.png" alt="..." />
+        </a>
+        <div class="portfolio-caption">
+            <div class="portfolio-caption-heading" data-en="Central Monitoring System" data-ar="نظام المراقبة المركزي"></div>
+            <div class="portfolio-caption-subheading text-muted" data-en="TRIONARA VITUS CS" data-ar="TRIONARA VITUS CS">TRIONARA VITUS CS</div>
+    </div>
+    </div>
+    </div>
+</div>
+
 <div class="text-center mt-4">
   <a href="products.html" class="btn btn-outline-primary btn-lg" id="viewTeamBtn"
      data-ar="رؤية بقية المنتجات" data-en="View the Rest of the products">
@@ -436,6 +465,96 @@
 </div>
 
 </section>
+
+<!-- From Uiverse.io by vinodjangid07 --> 
+<button class="button" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+  <svg class="svgIcon" viewBox="0 0 384 512">
+    <path
+      d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+    ></path>
+  </svg>
+</button>
+
+<style>
+.button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 0px 4px rgba(0, 113, 38, 0.253);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+}
+
+.svgIcon {
+  width: 20px; /* حجم أصغر */
+  height: 20px; /* ارتفاع متناسب */
+  transition-duration: 0.3s;
+}
+
+.svgIcon path {
+  fill: white;
+}
+
+.button:hover {
+  width: 140px;
+  border-radius: 50px;
+  transition-duration: 0.3s;
+  background: linear-gradient(45deg, #28a745, #1e90ff); /* تدرج أخضر إلى أزرق */
+  align-items: center;
+}
+
+.button:hover .svgIcon {
+  transition-duration: 0.3s;
+  transform: translateY(-200%);
+}
+
+.button::before {
+  position: absolute;
+  bottom: -20px;
+  content: "العودة للأعلى";
+  color: white;
+  font-size: 0px;
+  opacity: 0;
+  transition: font-size 0.3s, opacity 0.3s, bottom 0.3s;
+}
+
+.button:hover::before {
+  font-size: 13px;
+  opacity: 1;
+  bottom: unset;
+}
+
+/* تعطيل تأثير hover في الشاشات الصغيرة (الهواتف) */
+@media (max-width: 768px) {
+  .button:hover {
+    width: 50px !important;
+    border-radius: 50% !important;
+    background: rgb(20, 20, 20) !important;
+    align-items: center !important;
+  }
+  
+  .button:hover .svgIcon {
+    transform: translateY(0) !important;
+  }
+  
+  .button:hover::before {
+    font-size: 0 !important;
+    opacity: 0 !important;
+  }
+}
+</style>
+
 
 <!-- About-->
 <section class="page-section" id="about">
@@ -570,7 +689,7 @@
 </div>
 </section>
 
-<!-- Team-->
+<!-- Team
 <section class="page-section" id="team">
     <div class="container">
         <div class="text-center">
@@ -622,7 +741,7 @@
     <i id="btnArrowIcon" class="fas fa-arrow-right ms-2"></i>
   </a>
 </div>
-</section>
+</section> -->
 <!-- Contact -->
 <section class="page-section" id="contact">
   <div class="container">
@@ -679,307 +798,778 @@
 
 <!-- Footer-->
 <footer class="footer py-4">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-4 text-lg-start" data-en="Copyright © Eng.Mohammad Alkhattabi 2025" data-ar="حقوق النشر © م/محمد الخطابي 2025">Copyright © Your Website 2023</div>
-            <div class="col-lg-4 my-3 my-lg-0">
-                <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-            <div class="col-lg-4 text-lg-end">
-                <a class="link-dark text-decoration-none me-3" href="#!" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
-                <a class="link-dark text-decoration-none" href="#!" data-en="Terms of Use" data-ar="شروط الاستخدام">Terms of Use</a>
-            </div>
-        </div>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-4 text-lg-start" data-en="Copyright © Eng.Mohammad Alkhattabi 2025" data-ar="حقوق النشر © م/محمد الخطابي 2025">
+        Copyright © Your Website 2023
+      </div>
+      <div class="col-lg-4 my-3 my-lg-0 d-flex justify-content-center gap-3">
+
+<style>
+  .social-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 1rem;
+    border: 1px solid rgba(255 255 255 / 0.3);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 5px; /* مسافة بين الأزرار */
+  }
+  .social-btn:hover {
+    transform: scale(1.1) translateY(-8px);
+  }
+  .social-icon {
+    width: 20px;
+    height: 20px;
+    fill: white;
+    display: block; /* إزالة تأثير margin افتراضي */
+  }
+  
+</style>
+
+
+
+<!-- Facebook Button -->
+<a href="#!" aria-label="Facebook" class="social-btn" style="background: linear-gradient(to bottom right, #1877f2, #0043ce); color: white; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 8px; text-decoration: none;">
+<i class="fab fa-facebook-f" style="font-size: 24px;"></i>
+
+</a>
+
+<!-- WhatsApp Button -->
+<a href="#!" aria-label="WhatsApp" class="social-btn" style="background: linear-gradient(to bottom right, #25d366, #128c7e); color: white; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 8px; text-decoration: none;">
+  <i class="fab fa-whatsapp" style="font-size: 24px;"></i>
+</a>
+
+<!-- Instagram Button -->
+<a href="#!" aria-label="Instagram" class="social-btn" style="background: linear-gradient(to bottom right, #f58529, #dd2a7b, #8134af, #515bd4); color: white; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 8px; text-decoration: none;">
+  <i class="fab fa-instagram" style="font-size: 24px;" ></i>
+</a>
+
+<!-- Telegram Button -->
+<a href="#!" aria-label="Telegram" class="social-btn" style="background: linear-gradient(to bottom right, #0088cc, #004c99); 
+color: white; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 10px; text-decoration: none;">
+  <i class="fab fa-telegram-plane" style="font-size: 24px;"></i>
+</a>
+
+
+      </div>
+      <div class="col-lg-4 text-lg-end">
+        <a class="link-dark text-decoration-none me-3" href="#!" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
+        <a class="link-dark text-decoration-none" href="#!" data-en="Terms of Use" data-ar="شروط الاستخدام">Terms of Use</a>
+      </div>
     </div>
+  </div>
+
+  <!-- Include the squircle clip path -->
+  <svg width="0" height="0" style="position: absolute;">
+    <defs>
+      <clipPath id="squircleClip" clipPathUnits="objectBoundingBox">
+        <path d="M 0,0.5 C 0,0 0,0 0.5,0 S 1,0 1,0.5 1,1 0.5,1 0,1 0,0.5"></path>
+      </clipPath>
+    </defs>
+  </svg>
 </footer>
 
+
+
+
+
 <!-- Portfolio item 1 modal popup -->
-<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="close-modal" data-bs-dismiss="modal">
-                <img src="assets/img/close-icon.svg" alt="Close modal" />
-            </div>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <div class="modal-body">
-                            <!-- Project details -->
-                            <h2 class="text-uppercase" data-en="Project Name" data-ar="اسم الجوال">Project Name</h2>
-                            <p class="item-intro text-muted" data-en="Short description of the project." data-ar="وصف مختصر للمشروع.">Short description of the project.</p>
+<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1Label" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content p-4 position-relative" style="max-width: 1200px; width: auto; height: auto; overflow-y: auto; margin: auto; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); border-radius: 10px;">
 
-                            <!-- Main image -->
-                            <img id="mainImage1" class="img-fluid d-block mx-auto mb-4" src="assets/img/portfolio/1.jpg" alt="Main project image" />
+      <!-- Close Button -->
+      <button type="button" class="position-absolute top-0 end-0 m-3 z-3 btn-close-custom" data-bs-dismiss="modal" aria-label="Close" style="background:none; border:none; padding:0; cursor:pointer;">
+        <img src="assets/img/close-icon.svg" alt="Close" style="width:24px; height:24px;" />
+      </button>
 
-                            <!-- Thumbnails -->
-                            <div class="d-flex justify-content-center gap-2 flex-wrap">
-                                <img src="assets/img/portfolio/1.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
-                                <img src="assets/img/portfolio/1.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
-                                <img src="assets/img/portfolio/2.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
-                                <img src="assets/img/portfolio/2.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
-                            </div>
+      <div class="container h-100">
+        <div class="row justify-content-center h-100">
+          <div class="col-lg-10 h-100">
+            <div class="modal-body h-100">
+              <div class="row align-items-start mb-4 g-4 h-100">
 
-                            <!-- Description -->
-                            <p data-en="Use this area to describe your project." data-ar="استخدم هذا القسم لوصف المشروع.">Use this area to describe your project.</p>
-
-                            <ul class="list-inline">
-                                <li><strong data-en="Client:" data-ar="العميل:">Client:</strong> <span data-en="Threads" data-ar="خيوط">Threads</span></li>
-                                <li><strong data-en="Category:" data-ar="الفئة:">Category:</strong> <span data-en="Illustration" data-ar="رسم توضيحي">Illustration</span></li>
-                            </ul>
-
-                            <!-- Product request button -->
-                            <a id="requestProductBtn" class="btn btn-primary btn-xl text-uppercase" href="#">
-                                <span data-en="Request Product" data-ar="طلب المنتج">Request Product</span>
-                            </a>
-                        </div>
-                    </div>
+                <!-- Product Image -->
+                <div class="col-md-6 d-flex align-items-center justify-content-center">
+                  <img
+                    class="img-fluid border main-image"
+                    src="assets/img/portfolio/d1-p1.jpg"
+                    alt="Main project image"
+                    onclick="window.open(this.src, '_blank')"
+                    onmousemove="zoomImage(event, this, this.closest('.modal-body').querySelector('.zoom-box'), this.closest('.modal-body').querySelector('.zoomed-image'))"
+                    onmouseleave="resetZoom(this.closest('.modal-body').querySelector('.zoom-box'), this.closest('.modal-body').querySelector('.zoomed-image'))"
+                    style="cursor: zoom-in; max-height: 100%; width: auto; object-fit: contain;" />
                 </div>
-            </div>
-        </div>
-    </div>
+
+                <!-- Product Info -->
+                <div class="col-md-6 text-start product-info">
+                  <h4 class="text-uppercase fw-bold mb-3 text-center" data-en="Biological Microscope" data-ar="مجهر بيولوجي ">
+                    Biological Microscope
+                  </h4>
+
+                  <p class="text-muted mb-1 text-center">
+                    <strong data-en="Brand:" data-ar="العلامة التجارية:" class="text-dark">Brand:</strong>
+                    <span data-en="Olympus" data-ar="Olympus">Olympus</span>
+                  </p>
+                  <p class="mb-2 text-center">
+                    <strong data-en="Model:" data-ar="الموديل:" class="text-dark">Model:</strong>
+                    <span>CX23LFS1K</span>
+                  </p>
+
+                  <!-- Zoom Box -->
+                  <div class="zoom-box">
+                    <span data-en="Move mouse over the image to zoom" data-ar="حرك الماوس على الصورة للتكبير">Move mouse over the image to zoom</span>
+                    <img class="zoomed-image" src="" alt="Zoomed view" />
+                  </div>
+<!-- Thumbnails -->
+<div class="d-flex justify-content-center gap-2 flex-wrap mt-3">
+  <img src="assets/img/portfolio/d1-p1.jpg" class="img-thumbnail thumbnail-image" style="width:90px; cursor:pointer;">
+  <img src="assets/img/portfolio/d1-p2.png" class="img-thumbnail thumbnail-image" style="width:90px; cursor:pointer;">
+  <img src="assets/img/portfolio/d1-p3.png" class="img-thumbnail thumbnail-image" style="width:90px; cursor:pointer;">
+  <img src="assets/img/portfolio/d1-p4.png" class="img-thumbnail thumbnail-image" style="width:90px; cursor:pointer;">
 </div>
 
-<!-- Portfolio item 2 modal popup-->
-<div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="close-modal" data-bs-dismiss="modal">
-                <img src="assets/img/close-icon.svg" alt="Close modal" />
-            </div>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <div class="modal-body">
-                            <!-- Project details -->
-                            <h2 class="productName text-uppercase" data-en="Project Name" data-ar="اسم المشروع">Project Name</h2>
-                            <p class="productDescription item-intro text-muted" data-en="Short description of the project." data-ar="وصف مختصر للمشروع.">Short description of the project.</p>
 
-                            <!-- Main image -->
-                            <img id="mainImage2" class="img-fluid d-block mx-auto mb-4" src="assets/img/portfolio/1.jpg" alt="Main project image" />
+                  <!-- Buttons -->
+                  <div class="d-flex justify-content-center flex-wrap gap-2 mt-3">
+                    <a class="btn btn-primary btn-lg text-uppercase requestProductBtn" href="#">
+                      <span data-en="Request Product" data-ar="طلب المنتج">Request Product</span>
+                    </a>
+                    <a class="btn btn-outline-secondary btn-lg text-uppercase" href="assets/specs/CX23.pdf" download>
+                      <span data-en="Catalog file" data-ar="كتالوج الجهاز">Download Specs</span>
+                    </a>
+                  </div>
 
-                            <!-- Thumbnails -->
-                            <div class="d-flex justify-content-center gap-2 flex-wrap">
-                                <img src="assets/img/portfolio/1.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage2', this.src)">
-                                <img src="assets/img/portfolio/1.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage2', this.src)">
-                                <img src="assets/img/portfolio/2.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage2', this.src)">
-                                <img src="assets/img/portfolio/2.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage2', this.src)">
-                            </div>
+                </div> <!-- /product info -->
 
-                            <!-- Description -->
-                            <p data-en="Use this area to describe your project." data-ar="استخدم هذا القسم لوصف المشروع.">Use this area to describe your project.</p>
+              </div> <!-- /row -->
+            </div> <!-- /modal-body -->
+          </div> <!-- /col -->
+        </div> <!-- /row -->
+      </div> <!-- /container -->
 
-                            <ul class="list-inline">
-                                <li><strong data-en="Client:" data-ar="العميل:">Client:</strong> <span data-en="Threads" data-ar="خيوط">Threads</span></li>
-                                <li><strong data-en="Category:" data-ar="الفئة:">Category:</strong> <span data-en="Illustration" data-ar="رسم توضيحي">Illustration</span></li>
-                            </ul>
+    </div> <!-- /modal-content -->
+  </div> <!-- /modal-dialog -->
+</div> <!-- /modal -->
 
-                            <!-- Product request button -->
-                            <a class="requestProductBtn btn btn-primary btn-xl text-uppercase" href="#">
-                                <span data-en="Request Product" data-ar="طلب المنتج">Request Product</span>
-                            </a>
-                        </div>
-                    </div>
+
+
+
+<!-- Portfolio item 2 modal popup -->
+<div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content p-4 position-relative" style="max-width: 1200px; width: auto; height: auto; overflow-y: auto; margin: auto; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); border-radius: 10px;">
+
+      <!-- Close Button -->
+      <button type="button" class="position-absolute top-0 end-0 m-3 z-3 btn-close-custom" data-bs-dismiss="modal" aria-label="Close" style="background:none; border:none; padding:0; cursor:pointer;">
+        <img src="assets/img/close-icon.svg" alt="Close" style="width:24px; height:24px;" />
+      </button>
+
+      <div class="container h-100">
+        <div class="row justify-content-center h-100">
+          <div class="col-lg-10 h-100">
+            <div class="modal-body h-100">
+              <div class="row align-items-start mb-4 g-4 h-100">
+
+                <!-- Product Image -->
+                <div class="col-md-6 d-flex align-items-center justify-content-center">
+                  <img
+                    class="img-fluid border main-image"
+                    src="assets/img/portfolio/d2-p1.png"
+                    alt="Main project image"
+                    onclick="window.open(this.src, '_blank')"
+                    onmousemove="zoomImage(event, this, this.closest('.modal-body').querySelector('.zoom-box'), this.closest('.modal-body').querySelector('.zoomed-image'))"
+                    onmouseleave="resetZoom(this.closest('.modal-body').querySelector('.zoom-box'), this.closest('.modal-body').querySelector('.zoomed-image'))"
+                    style="cursor: zoom-in; max-height: 100%; width: auto; object-fit: contain;" />
                 </div>
-            </div>
-        </div>
-    </div>
+
+                <!-- Product Info -->
+                <div class="col-md-6 text-start product-info">
+                  <h4 class="text-uppercase fw-bold mb-3 text-center" 
+                  data-en="Biochemistry analyzer" data-ar="محلل الكيمياء الحيوية">
+                    Biochemistry analyzer
+                  </h4>
+
+                  <p class="text-muted mb-1 text-center">
+                    <strong data-en="Brand:" data-ar="العلامة التجارية:" class="text-dark">Brand:</strong>
+                    <span data-en="BIOLABO" data-ar="BIOLABO">BIOLABO </span>
+                  </p>
+                  <p class="mb-2 text-center">
+                    <strong data-en="Model:" data-ar="الموديل:" class="text-dark">Model:</strong>
+                    <span>Kenza Max BioChemisTry</span>
+                  </p>
+
+                  <!-- Zoom Box -->
+                  <div class="zoom-box">
+                    <span data-en="Move mouse over the image to zoom" data-ar="حرك الماوس على الصورة للتكبير">Move mouse over the image to zoom</span>
+                    <img class="zoomed-image" src="" alt="Zoomed view" />
+                  </div>
+<!-- Thumbnails -->
+<div class="d-flex justify-content-center gap-2 flex-wrap mt-3">
+  <img src="assets/img/portfolio/d2-p1.png" class="img-thumbnail thumbnail-image" style="width:90px; cursor:pointer;">
+  <img src="assets/img/portfolio/d2-p2.jpg" class="img-thumbnail thumbnail-image" style="width:90px; cursor:pointer;">
+  <img src="assets/img/portfolio/d2-p3.jpg" class="img-thumbnail thumbnail-image" style="width:90px; cursor:pointer;">
+  <img src="assets/img/portfolio/d2-p4.jpg" class="img-thumbnail thumbnail-image" style="width:90px; cursor:pointer;">
 </div>
 
+
+                  <!-- Buttons -->
+                  <div class="d-flex justify-content-center flex-wrap gap-2 mt-3">
+                    <a class="btn btn-primary btn-lg text-uppercase requestProductBtn" href="#">
+                      <span data-en="Request Product" data-ar="طلب المنتج">Request Product</span>
+                    </a>
+                    <a class="btn btn-outline-secondary btn-lg text-uppercase" href="assets/specs/device-specs.pdf" download>
+                      <span data-en="Catalog file" data-ar="كتالوج الجهاز">Download Specs</span>
+                    </a>
+                  </div>
+
+                </div> <!-- /product info -->
+
+              </div> <!-- /row -->
+            </div> <!-- /modal-body -->
+          </div> <!-- /col -->
+        </div> <!-- /row -->
+      </div> <!-- /container -->
+
+    </div> <!-- /modal-content -->
+  </div> <!-- /modal-dialog -->
+</div> <!-- /modal -->
 
 
 
 <!-- Portfolio item 3 modal popup -->
-<div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="close-modal" data-bs-dismiss="modal">
-                <img src="assets/img/close-icon.svg" alt="Close modal" />
-            </div>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <div class="modal-body">
-                            <!-- Project details -->
-                            <h2 class="text-uppercase" data-en="Project 3" data-ar="المشروع 3">Project 3</h2>
-                            <p class="item-intro text-muted" data-en="Short description for project 3." data-ar="وصف مختصر للمشروع 3.">Short description for project 3.</p>
+<div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3Label" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content p-4 position-relative" style="max-width: 1200px; width: auto; height: auto; overflow-y: auto; margin: auto; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); border-radius: 10px;">
 
-                            <!-- Main image -->
-                            <img id="mainImage3" class="img-fluid d-block mx-auto mb-4" src="assets/img/portfolio/7.jpg" alt="Main project image" />
+      <!-- Close Button -->
+      <button type="button" class="position-absolute top-0 end-0 m-3 z-3 btn-close-custom" data-bs-dismiss="modal" aria-label="Close" style="background:none; border:none; padding:0; cursor:pointer;">
+        <img src="assets/img/close-icon.svg" alt="Close" style="width:24px; height:24px;" />
+      </button>
 
-                            <!-- Thumbnails -->
-                            <div class="d-flex justify-content-center gap-2 flex-wrap">
-                                <img src="assets/img/portfolio/7.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage3', this.src)">
-                                <img src="assets/img/portfolio/8.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage3', this.src)">
-                                <img src="assets/img/portfolio/9.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage3', this.src)">
-                                <img src="assets/img/portfolio/10.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage3', this.src)">
-                            </div>
+      <div class="container h-100">
+        <div class="row justify-content-center h-100">
+          <div class="col-lg-10 h-100">
+            <div class="modal-body h-100">
+              <div class="row align-items-start mb-4 g-4 h-100">
 
-                            <!-- Description -->
-                            <p data-en="Detailed description of project 3." data-ar="وصف مفصل للمشروع 3.">Detailed description of project 3.</p>
-
-                            <ul class="list-inline">
-                                <li><strong data-en="Client:" data-ar="العميل:">Client:</strong> <span data-en="Client 3" data-ar="العميل 3">Client 3</span></li>
-                                <li><strong data-en="Category:" data-ar="الفئة:">Category:</strong> <span data-en="Branding" data-ar="العلامة التجارية">Branding</span></li>
-                            </ul>
-
-                            <!-- Product request button -->
-                            <a id="requestProductBtn3" class="btn btn-primary btn-xl text-uppercase" href="#">
-                                <span data-en="Request Product" data-ar="طلب المنتج">Request Product</span>
-                            </a>
-                        </div>
-                    </div> 
+                <!-- Product Image -->
+                <div class="col-md-6 d-flex align-items-center justify-content-center">
+                  <img
+                    class="img-fluid border main-image"
+                    src="assets/img/portfolio/d3-p1.png"
+                    alt="Main project image"
+                    onclick="window.open(this.src, '_blank')"
+                    onmousemove="zoomImage(event, this, this.closest('.modal-body').querySelector('.zoom-box'), this.closest('.modal-body').querySelector('.zoomed-image'))"
+                    onmouseleave="resetZoom(this.closest('.modal-body').querySelector('.zoom-box'), this.closest('.modal-body').querySelector('.zoomed-image'))"
+                    style="cursor: zoom-in; max-height: 100%; width: auto; object-fit: contain;" />
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
 
+                <!-- Product Info -->
+                <div class="col-md-6 text-start product-info">
+                  <h4 class="text-uppercase fw-bold mb-3 text-center" data-en="Electrocardiograph (ECG)" data-ar="جهاز تخطيط كهربائية القلب">
+                    Electrocardiograph (ECG)
+                  </h4>
 
+                  <p class="text-muted mb-1 text-center">
+                    <strong data-en="Brand:" data-ar="العلامة التجارية:" class="text-dark">Brand:</strong>
+                    <span data-en="TRIONARA" data-ar="TRIONARA">TRIONARA</span>
+                  </p>
+                  <p class="mb-2 text-center">
+                    <strong data-en="Model:" data-ar="الموديل:" class="text-dark">Model:</strong>
+                    <span>Kardio 1210</span>
+                  </p>
 
-
-<!-- Portfolio item 4 modal popup-->
-<div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="close-modal" data-bs-dismiss="modal">
-                <img src="assets/img/close-icon.svg" alt="Close modal" />
-            </div>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <div class="modal-body">
-                            <!-- Project details -->
-                            <h2 class="text-uppercase" data-en="Project Name" data-ar="اسم المشروع">Project Name</h2>
-                            <p class="item-intro text-muted" data-en="Short description of the project." data-ar="وصف مختصر للمشروع.">Short description of the project.</p>
-
-                            <!-- Main image -->
-                            <img id="mainImage1" class="img-fluid d-block mx-auto mb-4" src="assets/img/portfolio/1.jpg" alt="Main project image" />
-
-                            <!-- Thumbnails -->
-                            <div class="d-flex justify-content-center gap-2 flex-wrap">
-                                <img src="assets/img/portfolio/1.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
-                                <img src="assets/img/portfolio/1.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
-                                <img src="assets/img/portfolio/2.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
-                                <img src="assets/img/portfolio/2.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
-                            </div>
-
-                            <!-- Description -->
-                            <p data-en="Use this area to describe your project." data-ar="استخدم هذا القسم لوصف المشروع.">Use this area to describe your project.</p>
-
-                            <ul class="list-inline">
-                                <li><strong data-en="Client:" data-ar="العميل:">Client:</strong> <span data-en="Threads" data-ar="خيوط">Threads</span></li>
-                                <li><strong data-en="Category:" data-ar="الفئة:">Category:</strong> <span data-en="Illustration" data-ar="رسم توضيحي">Illustration</span></li>
-                            </ul>
-
-                            <!-- Product request button -->
-                            <a id="requestProductBtn4" class="btn btn-primary btn-xl text-uppercase" href="#">
-                                <span data-en="Request Product" data-ar="طلب المنتج">Request Product</span>
-                            </a>
-                        </div>
+                  <!-- Zoom Box -->
+                  <div class="zoom-box">
+                    <span data-en="Move mouse over the image to zoom" data-ar="حرك الماوس على الصورة للتكبير">Move mouse over the image to zoom</span>
+                    <img class="zoomed-image" src="" alt="Zoomed view" />
+                  </div>
+                    <!-- Thumbnails -->
+                    <div class="d-flex justify-content-center gap-2 flex-wrap mt-3">
+                      <img src="assets/img/portfolio/d3-p1.png" class="img-thumbnail thumbnail-image" style="width:90px; cursor:pointer;">
+                      <img src="assets/img/portfolio/d3-p2.png" class="img-thumbnail thumbnail-image" style="width:90px; cursor:pointer;">
                     </div>
+
+
+                  <!-- Buttons -->
+                  <div class="d-flex justify-content-center flex-wrap gap-2 mt-3">
+                    <a class="btn btn-primary btn-lg text-uppercase requestProductBtn" href="#">
+                      <span data-en="Request Product" data-ar="طلب المنتج">Request Product</span>
+                    </a>
+                    <a class="btn btn-outline-secondary btn-lg text-uppercase" href="assets/specs/TD000416-01-Kardio1210Cat-E220305.pdf" download>
+                      <span data-en="Catalog file" data-ar="كتالوج الجهاز">Download Specs</span>
+                    </a>
+                  </div>
+
+                </div> <!-- /product info -->
+
+              </div> <!-- /row -->
+            </div> <!-- /modal-body -->
+          </div> <!-- /col -->
+        </div> <!-- /row -->
+      </div> <!-- /container -->
+
+    </div> <!-- /modal-content -->
+  </div> <!-- /modal-dialog -->
+</div> <!-- /modal -->
+
+
+
+
+<!-- Portfolio item 4 modal popup -->
+<div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModal4Label" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content p-4 position-relative" style="max-width: 1200px; width: auto; height: auto; overflow-y: auto; margin: auto; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); border-radius: 10px;">
+
+      <!-- Close Button -->
+      <button type="button" class="position-absolute top-0 end-0 m-3 z-3 btn-close-custom" data-bs-dismiss="modal" aria-label="Close" style="background:none; border:none; padding:0; cursor:pointer;">
+        <img src="assets/img/close-icon.svg" alt="Close" style="width:24px; height:24px;" />
+      </button>
+
+      <div class="container h-100">
+        <div class="row justify-content-center h-100">
+          <div class="col-lg-10 h-100">
+            <div class="modal-body h-100">
+              <div class="row align-items-start mb-4 g-4 h-100">
+
+                <!-- Product Image -->
+                <div class="col-md-6 d-flex align-items-center justify-content-center">
+                  <img
+                    class="img-fluid border main-image"
+                    src="assets/img/portfolio/d4-p1.png"
+                    alt="Main project image"
+                    onclick="window.open(this.src, '_blank')"
+                    onmousemove="zoomImage(event, this, this.closest('.modal-body').querySelector('.zoom-box'), this.closest('.modal-body').querySelector('.zoomed-image'))"
+                    onmouseleave="resetZoom(this.closest('.modal-body').querySelector('.zoom-box'), this.closest('.modal-body').querySelector('.zoomed-image'))"
+                    style="cursor: zoom-in; max-height: 100%; width: auto; object-fit: contain;" />
                 </div>
-            </div>
-        </div>
-    </div>
+
+                <!-- Product Info -->
+                <div class="col-md-6 text-start product-info">
+                  <h4 class="text-uppercase fw-bold mb-3 text-center" data-en="Microscope Digital Camera" data-ar="كاميرا رقمية للمجهر">
+                  Microscope Digital Camera
+                  </h4>
+
+                  <p class="text-muted mb-1 text-center">
+                    <strong data-en="Brand:" data-ar="العلامة التجارية:" class="text-dark">Brand:</strong>
+                    <span data-en="Olympus" data-ar="Olympus">Olympus</span>
+                  </p>
+                  <p class="mb-2 text-center">
+                    <strong data-en="Model:" data-ar="الموديل:" class="text-dark">Model:</strong>
+                    <span>EP50</span>
+                  </p>
+
+                  <!-- Zoom Box -->
+                  <div class="zoom-box">
+                    <span data-en="Move mouse over the image to zoom" data-ar="حرك الماوس على الصورة للتكبير">Move mouse over the image to zoom</span>
+                    <img class="zoomed-image" src="" alt="Zoomed view" />
+                  </div>
+<!-- Thumbnails -->
+<div class="d-flex justify-content-center gap-2 flex-wrap mt-3">
+  <img src="assets/img/portfolio/d4-p1.png" class="img-thumbnail thumbnail-image" style="width:90px; cursor:pointer;">
+  <img src="assets/img/portfolio/d4-p2.png" class="img-thumbnail thumbnail-image" style="width:90px; cursor:pointer;">
+  <img src="assets/img/portfolio/d4-p3.png" class="img-thumbnail thumbnail-image" style="width:90px; cursor:pointer;">
+  <img src="assets/img/portfolio/d4-p4.png" class="img-thumbnail thumbnail-image" style="width:90px; cursor:pointer;">
 </div>
 
 
+                  <!-- Buttons -->
+                  <div class="d-flex justify-content-center flex-wrap gap-2 mt-3">
+                    <a class="btn btn-primary btn-lg text-uppercase requestProductBtn" href="#">
+                      <span data-en="Request Product" data-ar="طلب المنتج">Request Product</span>
+                    </a>
+                    <a class="btn btn-outline-secondary btn-lg text-uppercase" href="assets/specs/OlympusmicroscopecameraEP50.pdf" download>
+                      <span data-en="Catalog file" data-ar="كتالوج الجهاز">Download Specs</span>
+                    </a>
+                  </div>
 
-<!-- Portfolio item 5 modal popup-->
-<div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="close-modal" data-bs-dismiss="modal">
-                <img src="assets/img/close-icon.svg" alt="Close modal" />
-            </div>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <div class="modal-body">
-                            <!-- Project details -->
-                            <h2 class="text-uppercase" data-en="Project Name" data-ar="اسم المشروع">Project Name</h2>
-                            <p class="item-intro text-muted" data-en="Short description of the project." data-ar="وصف مختصر للمشروع.">Short description of the project.</p>
+                </div> <!-- /product info -->
 
-                            <!-- Main image -->
-                            <img id="mainImage1" class="img-fluid d-block mx-auto mb-4" src="assets/img/portfolio/1.jpg" alt="Main project image" />
+              </div> <!-- /row -->
+            </div> <!-- /modal-body -->
+          </div> <!-- /col -->
+        </div> <!-- /row -->
+      </div> <!-- /container -->
 
-                            <!-- Thumbnails -->
-                            <div class="d-flex justify-content-center gap-2 flex-wrap">
-                                <img src="assets/img/portfolio/1.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
-                                <img src="assets/img/portfolio/1.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
-                                <img src="assets/img/portfolio/2.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
-                                <img src="assets/img/portfolio/2.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
-                            </div>
+    </div> <!-- /modal-content -->
+  </div> <!-- /modal-dialog -->
+</div> <!-- /modal -->
 
-                            <!-- Description -->
-                            <p data-en="Use this area to describe your project." data-ar="استخدم هذا القسم لوصف المشروع.">Use this area to describe your project.</p>
 
-                            <ul class="list-inline">
-                                <li><strong data-en="Client:" data-ar="العميل:">Client:</strong> <span data-en="Threads" data-ar="خيوط">Threads</span></li>
-                                <li><strong data-en="Category:" data-ar="الفئة:">Category:</strong> <span data-en="Illustration" data-ar="رسم توضيحي">Illustration</span></li>
-                            </ul>
 
-                            <!-- Product request button -->
-                            <a id="requestProductBtn5" class="btn btn-primary btn-xl text-uppercase" href="#">
-                                <span data-en="Request Product" data-ar="طلب المنتج">Request Product</span>
-                            </a>
-                        </div>
-                    </div>
+
+<!-- Portfolio item 5 modal popup -->
+<div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" aria-labelledby="portfolioModal5Label" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content p-4 position-relative" style="max-width: 1200px; width: auto; height: auto; overflow-y: auto; margin: auto; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); border-radius: 10px;">
+
+      <!-- Close Button -->
+      <button type="button" class="position-absolute top-0 end-0 m-3 z-3 btn-close-custom" data-bs-dismiss="modal" aria-label="Close" style="background:none; border:none; padding:0; cursor:pointer;">
+        <img src="assets/img/close-icon.svg" alt="Close" style="width:24px; height:24px;" />
+      </button>
+
+      <div class="container h-100">
+        <div class="row justify-content-center h-100">
+          <div class="col-lg-10 h-100">
+            <div class="modal-body h-100">
+              <div class="row align-items-start mb-4 g-4 h-100">
+
+                <!-- Product Image -->
+                <div class="col-md-6 d-flex align-items-center justify-content-center">
+                  <img
+                    class="img-fluid border main-image"
+                    src="assets/img/portfolio/d5-p1.png"
+                    alt="Main project image"
+                    onclick="window.open(this.src, '_blank')"
+                    onmousemove="zoomImage(event, this, this.closest('.modal-body').querySelector('.zoom-box'), this.closest('.modal-body').querySelector('.zoomed-image'))"
+                    onmouseleave="resetZoom(this.closest('.modal-body').querySelector('.zoom-box'), this.closest('.modal-body').querySelector('.zoomed-image'))"
+                    style="cursor: zoom-in; max-height: 100%; width: auto; object-fit: contain;" />
                 </div>
-            </div>
-        </div>
-    </div>
+
+                <!-- Product Info -->
+                <div class="col-md-6 text-start product-info">
+                  <h4 class="text-uppercase fw-bold mb-3 text-center" data-en="Bed Side Monitor" data-ar="شاشة مراقبة بجانب السرير">
+                  Bed Side Monitor
+                  </h4>
+
+                  <p class="text-muted mb-1 text-center">
+                    <strong data-en="Brand:" data-ar="العلامة التجارية:" class="text-dark">Brand:</strong>
+                    <span data-en="TRIONARA" data-ar="TRIONARA">TRIONARA</span>
+                  </p>
+                  <p class="mb-2 text-center">
+                    <strong data-en="Model:" data-ar="الموديل:" class="text-dark">Model:</strong>
+                    <span>VITUS 18</span>
+                  </p>
+
+                  <!-- Zoom Box -->
+                  <div class="zoom-box">
+                    <span data-en="Move mouse over the image to zoom" data-ar="حرك الماوس على الصورة للتكبير">Move mouse over the image to zoom</span>
+                    <img class="zoomed-image" src="" alt="Zoomed view" />
+                  </div>
+<!-- Thumbnails -->
+<div class="d-flex justify-content-center gap-2 flex-wrap mt-3">
+  <img src="assets/img/portfolio/d5-p1.png" class="img-thumbnail thumbnail-image" style="width:90px; cursor:pointer;">
+  <img src="assets/img/portfolio/d5-p2.png" class="img-thumbnail thumbnail-image" style="width:90px; cursor:pointer;">
+  <img src="assets/img/portfolio/d5-p3.png" class="img-thumbnail thumbnail-image" style="width:90px; cursor:pointer;">
+  <img src="assets/img/portfolio/d5-p4.png" class="img-thumbnail thumbnail-image" style="width:90px; cursor:pointer;">
 </div>
 
 
+                  <!-- Buttons -->
+                  <div class="d-flex justify-content-center flex-wrap gap-2 mt-3">
+                    <a class="btn btn-primary btn-lg text-uppercase requestProductBtn" href="#">
+                      <span data-en="Request Product" data-ar="طلب المنتج">Request Product</span>
+                    </a>
+                    <a class="btn btn-outline-secondary btn-lg text-uppercase" href="assets/specs/TD000087-02-PUB-Vitus18Cat-181202.pdf" download>
+                      <span data-en="Catalog file" data-ar="كتالوج الجهاز">Download Specs</span>
+                    </a>
+                  </div>
 
-<!-- Portfolio item 6 modal popup-->
-<div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="close-modal" data-bs-dismiss="modal">
-                <img src="assets/img/close-icon.svg" alt="Close modal" />
-            </div>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <div class="modal-body">
-                            <!-- Project details -->
-                            <h2 class="text-uppercase" data-en="Project Name" data-ar="اسم المشروع">Project Name</h2>
-                            <p class="item-intro text-muted" data-en="Short description of the project." data-ar="وصف مختصر للمشروع.">Short description of the project.</p>
+                </div> <!-- /product info -->
 
-                            <!-- Main image -->
-                            <img id="mainImage1" class="img-fluid d-block mx-auto mb-4" src="assets/img/portfolio/1.jpg" alt="Main project image" />
+              </div> <!-- /row -->
+            </div> <!-- /modal-body -->
+          </div> <!-- /col -->
+        </div> <!-- /row -->
+      </div> <!-- /container -->
 
-                            <!-- Thumbnails -->
-                            <div class="d-flex justify-content-center gap-2 flex-wrap">
-                                <img src="assets/img/portfolio/1.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
-                                <img src="assets/img/portfolio/1.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
-                                <img src="assets/img/portfolio/2.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
-                                <img src="assets/img/portfolio/2.jpg" class="img-thumbnail" style="width: 100px; cursor: pointer;" onclick="setMainImage('mainImage1', this.src)">
-                            </div>
+    </div> <!-- /modal-content -->
+  </div> <!-- /modal-dialog -->
+</div> <!-- /modal -->
 
-                            <!-- Description -->
-                            <p data-en="Use this area to describe your project." data-ar="استخدم هذا القسم لوصف المشروع.">Use this area to describe your project.</p>
 
-                            <ul class="list-inline">
-                                <li><strong data-en="Client:" data-ar="العميل:">Client:</strong> <span data-en="Threads" data-ar="خيوط">Threads</span></li>
-                                <li><strong data-en="Category:" data-ar="الفئة:">Category:</strong> <span data-en="Illustration" data-ar="رسم توضيحي">Illustration</span></li>
-                            </ul>
 
-                            <!-- Product request button -->
-                            <a id="requestProductBtn6" class="btn btn-primary btn-xl text-uppercase" href="#">
-                                <span data-en="Request Product" data-ar="طلب المنتج">Request Product</span>
-                            </a>
-                        </div>
-                    </div>
+<!-- Portfolio item 6 modal popup -->
+<div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" aria-labelledby="portfolioModal6Label" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content p-4 position-relative" style="max-width: 1200px; width: auto; height: auto; overflow-y: auto; margin: auto; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); border-radius: 10px;">
+
+      <!-- Close Button -->
+      <button type="button" class="position-absolute top-0 end-0 m-3 z-3 btn-close-custom" data-bs-dismiss="modal" aria-label="Close" style="background:none; border:none; padding:0; cursor:pointer;">
+        <img src="assets/img/close-icon.svg" alt="Close" style="width:24px; height:24px;" />
+      </button>
+
+      <div class="container h-100">
+        <div class="row justify-content-center h-100">
+          <div class="col-lg-10 h-100">
+            <div class="modal-body h-100">
+              <div class="row align-items-start mb-4 g-4 h-100">
+
+                <!-- Product Image -->
+                <div class="col-md-6 d-flex align-items-center justify-content-center">
+                  <img
+                    class="img-fluid border main-image"
+                    src="assets/img/portfolio/d6-p1.png"
+                    alt="Main project image"
+                    onclick="window.open(this.src, '_blank')"
+                    onmousemove="zoomImage(event, this, this.closest('.modal-body').querySelector('.zoom-box'), this.closest('.modal-body').querySelector('.zoomed-image'))"
+                    onmouseleave="resetZoom(this.closest('.modal-body').querySelector('.zoom-box'), this.closest('.modal-body').querySelector('.zoomed-image'))"
+                    style="cursor: zoom-in; max-height: 100%; width: auto; object-fit: contain;" />
                 </div>
-            </div>
-        </div>
-    </div>
+
+                <!-- Product Info -->
+                <div class="col-md-6 text-start product-info">
+                  <h4 class="text-uppercase fw-bold mb-3 text-center" data-en="Central Monitoring System" data-ar="نظام المراقبة المركزي">
+                    Central Monitoring System
+                  </h4>
+
+                  <p class="text-muted mb-1 text-center">
+                    <strong data-en="Brand:" data-ar="العلامة التجارية:" class="text-dark">Brand:</strong>
+                    <span data-en="TRIONARA" data-ar="TRIONARA">TRIONARA</span>
+                  </p>
+                  <p class="mb-2 text-center">
+                    <strong data-en="Model:" data-ar="الموديل:" class="text-dark">Model:</strong>
+                    <span>VITUS CS</span>
+                  </p>
+
+                  <!-- Zoom Box -->
+                  <div class="zoom-box">
+                    <span data-en="Move mouse over the image to zoom" data-ar="حرك الماوس على الصورة للتكبير">Move mouse over the image to zoom</span>
+                    <img class="zoomed-image" src="" alt="Zoomed view" />
+                  </div>
+<!-- Thumbnails -->
+<div class="d-flex justify-content-center gap-2 flex-wrap mt-3">
+  <img src="assets/img/portfolio/d6-p1.png" class="img-thumbnail thumbnail-image" style="width:90px; cursor:pointer;">
+  <img src="assets/img/portfolio/d6-p2.png" class="img-thumbnail thumbnail-image" style="width:90px; cursor:pointer;">
+  <img src="assets/img/portfolio/d6-p3.png" class="img-thumbnail thumbnail-image" style="width:90px; cursor:pointer;">
 </div>
+
+
+                  <!-- Buttons -->
+                  <div class="d-flex justify-content-center flex-wrap gap-2 mt-3">
+                    <a class="btn btn-primary btn-lg text-uppercase requestProductBtn" href="#">
+                      <span data-en="Request Product" data-ar="طلب المنتج">Request Product</span>
+                    </a>
+                    <a class="btn btn-outline-secondary btn-lg text-uppercase" href="assets/specs/TD000093-01-PUB-VitusCSCat-181202.pdf" download>
+                      <span data-en="Catalog file" data-ar="كتالوج الجهاز">Download Specs</span>
+                    </a>
+                  </div>
+
+                </div> <!-- /product info -->
+
+              </div> <!-- /row -->
+            </div> <!-- /modal-body -->
+          </div> <!-- /col -->
+        </div> <!-- /row -->
+      </div> <!-- /container -->
+
+    </div> <!-- /modal-content -->
+  </div> <!-- /modal-dialog -->
+</div> <!-- /modal -->
+
+
+
+
+
+
+
+
+
+<style>
+/* Zoom Box Styles */
+.zoom-box {
+  width: 100%;
+  max-width: 400px;
+  height: 250px;
+  border: 1.5px solid #bbb;
+  border-radius: 12px;
+  background-color: #fff;
+  margin: 15px auto;
+  position: relative;
+  user-select: none;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: #666;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow: hidden;
+  animation: fadeInZoomBox 0.3s ease forwards;
+}
+
+.zoom-box.zooming {
+  color: transparent;
+  font-weight: normal;
+  background-color: #f9f9f9;
+  border-color: #888;
+}
+
+.zoom-box span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  user-select: none;
+}
+
+.zoom-box .zoomed-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  user-select: none;
+  display: none;
+  max-width: none;
+  max-height: none;
+  will-change: transform;
+  pointer-events: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.zoom-box.zooming .zoomed-image {
+  display: block;
+}
+
+@keyframes fadeInZoomBox {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Image Zoom Hover */
+.image-zoom-container {
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+  max-height: 400px;
+}
+
+.image-zoom-container img {
+  transition: transform 0.3s ease;
+}
+
+.image-zoom-container:hover img {
+  transform: scale(1.5);
+  cursor: zoom-in;
+}
+
+/* Responsive Thumbnail Styles */
+@media (max-width: 576px) {
+  .portfolio-modal .d-flex.justify-content-center.gap-2.flex-wrap.mt-3 {
+    flex-wrap: nowrap !important;
+    overflow-x: hidden;
+  }
+
+  .portfolio-modal .img-thumbnail {
+    flex: 0 0 25%;
+    max-width: 25%;
+    cursor: pointer;
+    margin-right: 0;
+  }
+}
+
+/* ** إخفاء مربع التكبير في الشاشات الصغيرة أقل من 992 بكسل ** */
+@media (max-width: 991.98px) {
+  .zoom-box {
+    display: none !important;
+  }
+}
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // 1. توزيع الصور المصغرة تلقائيًا حسب عددها
+    function adjustAllThumbnails() {
+      const containers = document.querySelectorAll('.portfolio-modal .d-flex.justify-content-center.gap-2.flex-wrap.mt-3');
+
+      containers.forEach(container => {
+        const thumbnails = container.querySelectorAll('.thumbnail-image'); // تأكد من وجود الكلاس هذا
+        const count = thumbnails.length;
+        if (count === 0) return;
+
+        const widthPercent = Math.min(80 / count, 25); // لا تزيد عن 25% لكل صورة
+
+        thumbnails.forEach(thumb => {
+          thumb.style.flex = `0 0 ${widthPercent}%`;
+          thumb.style.maxWidth = `${widthPercent}%`;
+          thumb.style.marginRight = '0';
+        });
+
+        container.style.flexWrap = 'nowrap';
+        container.style.overflowX = 'auto';
+      });
+    }
+
+    // 2. تعيين الصورة الرئيسية عند الضغط على المصغرات
+    function setupThumbnailClicks() {
+      document.querySelectorAll('.thumbnail-image').forEach(function (thumb) {
+        thumb.addEventListener('click', function () {
+          const modal = this.closest('.modal-body');
+          const mainImage = modal.querySelector('.main-image');
+          const zoomedImage = modal.querySelector('.zoomed-image');
+          const newSrc = this.src;
+
+          if (mainImage) mainImage.src = newSrc;
+          if (zoomedImage) zoomedImage.src = newSrc;
+        });
+      });
+    }
+
+    // 3. منطق التكبير عند تمرير الماوس
+    function zoomImage(event, mainImage, zoomBox, zoomedImage) {
+      if (window.innerWidth < 992) return; // تعطيل التكبير في الهواتف
+
+      zoomBox.classList.add('zooming');
+      zoomedImage.style.display = 'block';
+      zoomedImage.src = mainImage.src;
+
+      const rect = mainImage.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+
+      const scale = 2;
+      zoomedImage.style.width = mainImage.offsetWidth * scale + 'px';
+      zoomedImage.style.height = mainImage.offsetHeight * scale + 'px';
+
+      let left = -(x * scale - zoomBox.offsetWidth / 2);
+      let top = -(y * scale - zoomBox.offsetHeight / 2);
+
+      left = Math.min(0, Math.max(left, zoomBox.offsetWidth - zoomedImage.offsetWidth));
+      top = Math.min(0, Math.max(top, zoomBox.offsetHeight - zoomedImage.offsetHeight));
+
+      zoomedImage.style.left = left + 'px';
+      zoomedImage.style.top = top + 'px';
+    }
+
+    function resetZoom(zoomBox, zoomedImage) {
+      if (window.innerWidth < 992) return;
+      zoomBox.classList.remove('zooming');
+      zoomedImage.style.display = 'none';
+    }
+
+    // 4. عند تحميل الصفحة: نفّذ الإعدادات
+    adjustAllThumbnails();
+    setupThumbnailClicks();
+
+    // 5. إعادة تهيئة المصغرات عند تغيير حجم النافذة
+    window.addEventListener('resize', adjustAllThumbnails);
+
+    // 6. توفير وظائف التكبير للعناصر الموجودة في الصفحة
+    window.zoomImage = zoomImage;
+    window.resetZoom = resetZoom;
+  });
+</script>
+
+
+
+
+
+
 
 <form id="contactForm" data-sb-form-api-token="API_TOKEN">
 

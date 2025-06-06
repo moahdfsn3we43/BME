@@ -11000,7 +11000,7 @@ header.masthead::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4); /* قيمة الشفافية هنا */
+  background-color: rgba(0, 0, 0, 0.6); /* قيمة الشفافية هنا */
   z-index: -1; /* تحت النص ولكن فوق الخلفية */
 }
 
@@ -11043,6 +11043,7 @@ header.masthead .masthead-heading {
   max-width: 26rem;
   margin-left: auto;
   margin-right: auto;
+  
 }
 #portfolio .portfolio-item .portfolio-link {
   position: relative;

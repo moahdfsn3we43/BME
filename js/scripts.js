@@ -180,5 +180,65 @@ function setupRequestProductLinks(modal) {
     });
 }
 
+// كود صفحة التحميل
+window.addEventListener("load", function () {
+  // إخفاء شاشة التحميل مباشرة عند تحميل الصفحة
+  document.getElementById("loading-screen").style.display = "none";
+});
+
+document.querySelectorAll("a.nav-link").forEach(function(link) {
+  link.addEventListener("click", function(event) {
+    event.preventDefault();
+    const href = this.getAttribute("href");
+
+    // عرض شاشة التحميل مباشرة
+    document.getElementById("loading-screen").style.display = "flex";
+
+    // الانتقال للصفحة مباشرة بدون تأخير
+    window.location.href = href;
+  });
+});
 
 
+
+// كود الصو
+  let slideIndex = 0;
+  const slides = document.querySelectorAll('.slide');
+  const nextBtn = document.querySelector('.next');
+  const prevBtn = document.querySelector('.prev');
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      if (i === index) slide.classList.add('active');
+    });
+  }
+
+  function nextSlide() {
+    slideIndex = (slideIndex + 1) % slides.length;
+    showSlide(slideIndex);
+  }
+
+  function prevSlide() {
+    slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+    showSlide(slideIndex);
+  }
+
+  nextBtn.addEventListener('click', nextSlide);
+  prevBtn.addEventListener('click', prevSlide);
+
+  // تشغيل تلقائي
+  setInterval(nextSlide, 50000); // كل 5 ثواني
+
+  const lenis = new Lenis({
+    duration: 1.4,      // مدة الحركة
+    easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // دالة الزخم
+    smooth: true
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);

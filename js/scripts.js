@@ -180,24 +180,7 @@ function setupRequestProductLinks(modal) {
     });
 }
 
-// كود صفحة التحميل
-window.addEventListener("load", function () {
-  // إخفاء شاشة التحميل مباشرة عند تحميل الصفحة
-  document.getElementById("loading-screen").style.display = "none";
-});
 
-document.querySelectorAll("a.nav-link").forEach(function(link) {
-  link.addEventListener("click", function(event) {
-    event.preventDefault();
-    const href = this.getAttribute("href");
-
-    // عرض شاشة التحميل مباشرة
-    document.getElementById("loading-screen").style.display = "flex";
-
-    // الانتقال للصفحة مباشرة بدون تأخير
-    window.location.href = href;
-  });
-});
 
 
 

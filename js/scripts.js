@@ -181,9 +181,6 @@ function setupRequestProductLinks(modal) {
 }
 
 
-
-
-
 // كود الصو
   let slideIndex = 0;
   const slides = document.querySelectorAll('.slide');

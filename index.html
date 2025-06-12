@@ -3,642 +3,420 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <title>عرب لاب للأدوية والمستلزمات الطبية</title>
+  <title data-ar="عرب لاب للأدوية والمستلزمات الطبية" data-en="Arab Lab for Medicines & Medical Supplies">عرب لاب للأدوية والمستلزمات الطبية</title>
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  
+  <!-- Font Awesome -->
   <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-
-  <!-- Google fonts -->
+  
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- Core theme CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Amiri:700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Files -->
   <link href="css/styles.css" rel="stylesheet" />
-
-
-          <!-- صفحة التحميل -->
-
-
-
-
-
+  
   <style>
-    body[lang="ar"] {
-      direction: rtl;
-      font-family: 'Cairo', sans-serif;
+    /* إضافة بسيطة للتبديل بين اللغات */
+    [data-lang="en"] {
+      display: none;
     }
-
-    body[lang="en"] {
+    html[lang="en"] [data-lang="ar"] {
+      display: none;
+    }
+    html[lang="en"] [data-lang="en"] {
+      display: block;
+    }
+    html[lang="en"] {
       direction: ltr;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    /* تعديل خلفية الشريط لتكون سوداء شفافة دائمًا */
-    .navbar.transparent {
-      background-color: rgba(0, 0, 0, 0.6) !important;
-      box-shadow: none;
-    }
-
-
-    .navbar {
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    /* روابط الشريط */
-    .navbar.transparent .navbar-nav .nav-link,
-    .navbar.transparent .lang-toggle {
-      color: #ffffff;
-    }
-
-    .navbar-nav .nav-link:hover,
-    .navbar-nav .nav-link:focus {
-      color: #007bff !important;
-    }
-
-    /* تمييز الرابط النشط */
-    .navbar-nav .nav-link.active {
-      color: #007bff !important;
-      font-weight: bold;
-    }
-
-    /* زر تغيير اللغة */
-    .navbar .lang-toggle {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 1030;
-      background-color: transparent;
-      border: 1px solid currentColor;
-      transition: all 0.3s ease;
-    }
-
-    .navbar .lang-toggle:hover {
-      background-color: rgba(255, 255, 255, 0.2);
-      border-color: #007bff;
-      color: #007bff;
-    }
-
-    body[lang="ar"] .navbar .lang-toggle {
-      left: 15px;
-      right: auto;
-    }
-
-    body[lang="en"] .navbar .lang-toggle {
-      right: 15px;
-      left: auto;
-    }
-
-    body[lang="ar"] .navbar-nav {
-      margin-left: 0 !important;
-      margin-right: auto !important;
-      text-align: right;
-    }
-
-    body[lang="en"] .navbar-nav {
-      margin-right: 0 !important;
-      margin-left: auto !important;
-      text-align: left;
-    }
-
-    body[lang="ar"] #navbarResponsive {
-      flex-direction: row-reverse;
-    }
-
-    body[lang="en"] #navbarResponsive {
-      flex-direction: row;
-    }
-
-    .navbar-logo {
-      width: 150px;
-      height: auto;
     }
   </style>
 </head>
+<body>
+    <!-- الشريط العلوي -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="assets/img/navbar-logo.svg" alt="عرب لاب">
+            </a>
+            <div class="nav-links">
+                <a href="#services" data-ar="الخدمات" data-en="Services">الخدمات</a>
+                <a href="#products" data-ar="المنتجات" data-en="Products">المنتجات</a>
+                <a href="#about" data-ar="من نحن" data-en="About Us">من نحن</a>
+                <a href="#clients" data-ar="العملاء" data-en="Clients">العملاء</a>
+                <a href="#contact" data-ar="اتصل بنا" data-en="Contact Us">اتصل بنا</a>
+                <button class="lang-btn" id="langToggle">English</button>
+            </div>
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
 
-<body id="page-top">
+    <!-- السلايدر الرئيسي -->
+    <header class="slider">
+        <div class="slides">
+            <div class="slide active" style="background-image: url('assets/img/header-bg.webp');">
+                <div class="overlay"></div>
+            </div>
+            <div class="slide" style="background-image: url('assets/img/dasadasdad.png');">
+                <div class="overlay"></div>
+            </div>
+            <div class="slide" style="background-image: url('assets/img/ddd.png');">
+                <div class="overlay"></div>
+            </div>
+            <div class="slide" style="background-image: url('assets/img/dhwh.png');">
+                <div class="overlay"></div>
+            </div>
+        </div>
+        
+        <div class="slider-content">
+            <img src="assets/img/navbar-logo.svg" alt="عرب لاب" class="main-logo">
+            <h1 class="main-title" data-ar="عرب لاب" data-en="Arab Lab">عرب لاب</h1>
+            <h2 class="sub-title" data-ar="للأدوية والمستلزمات الطبية" data-en="for Medicines & Medical Supplies">للأدوية والمستلزمات الطبية</h2>
+            <div class="expert-badge">
+                <i class="fas fa-award"></i>
+                <span data-ar="خبراء التجهيزات الطبية" data-en="Medical Equipment Experts">خبراء التجهيزات الطبية</span>
+            </div>
+            <div class="typing-text">
+                <span id="typed-text" data-ar="نقدم أفضل الحلول الطبية..." data-en="We provide the best medical solutions..."></span>
+                <span class="cursor">|</span>
+            </div>
+            <div class="cta-buttons">
+                <a href="#products" class="btn btn-primary" data-ar="تصفح منتجاتنا" data-en="Browse Products">تصفح منتجاتنا</a>
+                <a href="#contact" class="btn btn-secondary" data-ar="اتصل بالخبراء" data-en="Contact Experts">اتصل بالخبراء</a>
+            </div>
+        </div>
+        
+        <button class="slider-nav prev"><i class="fas fa-chevron-right"></i></button>
+        <button class="slider-nav next"><i class="fas fa-chevron-left"></i></button>
+        
+        <div class="slider-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </header>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top transparent" id="mainNav">
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Services Section -->
+  <section class="page-section" id="services">
     <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars ms-1"></i>
-      </button>
-      <a href="index.html">
-        <img src="assets/img/navbar-logo.svg" alt="Logo" class="navbar-logo">
+      <div class="text-center">
+        <h2 class="section-heading text-uppercase" data-en="Our Services" data-ar="خدماتنا">خدماتنا</h2>
+        <h3 class="section-subheading text-muted" data-en="" data-ar=""></h3>
+      </div>
+      
+      <div class="row text-center">
+        <div class="col-md-4">
+          <span class="fa-stack fa-4x">
+            <span class="fa-stack-2x gradient-circle"></span>
+            <i class="fas fa-stethoscope fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="my-3" data-en="Equipment" data-ar="تجهيزات ">تجهيزات</h4>
+          <p class="text-muted" data-en="Medical Equipment for Hospitals, Laboratories, and Diagnostic Centers"
+            data-ar="تجهيز مستشفيات - مختبرات - معامل طبية">تجهيز مستشفيات - مختبرات - معامل طبية</p>
+        </div>
+        
+        <div class="col-md-4">
+          <span class="fa-stack fa-4x">
+            <span class="fa-stack-2x gradient-circle"></span>
+            <i class="fas fa-tools fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="my-3" data-en="Maintenance " data-ar="صيانة">صيانة</h4>
+          <p class="text-muted" data-en="Maintenance of Medical Devices and Equipment"
+            data-ar="صيانة الأجهزة والمعدات الطبية">صيانة الأجهزة والمعدات الطبية</p>
+        </div>
+        
+        <div class="col-md-4">
+          <span class="fa-stack fa-4x">
+            <span class="fa-stack-2x gradient-circle"></span>
+            <i class="fas fa-project-diagram fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="my-3" data-en="Planning" data-ar=" تخطيط">تخطيط</h4>
+          <p class="text-muted" data-en="Project Planning and Implementation "
+            data-ar="تخطيط وتنفيذ المشاريع">تخطيط وتنفيذ المشاريع</p>
+        </div>
+        
+        <div class="col-md-4">
+          <span class="fa-stack fa-4x">
+            <span class="fa-stack-2x gradient-circle"></span>
+            <i class="fas fa-comments fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="my-3" data-en="Consultations" data-ar="استشارات">استشارات</h4>
+          <p class="text-muted" data-en="" data-ar=""></p>
+        </div>
+        
+        <div class="col-md-4">
+          <span class="fa-stack fa-4x">
+            <span class="fa-stack-2x gradient-circle"></span>
+            <i class="fas fa-pills fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="my-3" data-en="Medical Supplies" data-ar="التوريدات الطبية">التوريدات الطبية</h4>
+          <p class="text-muted" data-en="" data-ar=""></p>
+        </div>
+        
+        <div class="col-md-4">
+          <span class="fa-stack fa-4x">
+            <span class="fa-stack-2x gradient-circle"></span>
+            <i class="fas fa-chalkboard-teacher fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="my-3" data-en="Training" data-ar="تدريب">تدريب</h4>
+          <p class="text-muted" data-en="" data-ar=""></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Grid -->
+  <section class="page-section bg-light" id="portfolio">
+    <div class="container">
+      <a href="products.html" style="text-decoration: none; color: inherit; cursor: pointer;">
+        <div class="text-center">
+          <h2 class="section-heading text-uppercase" data-en="Our Products" data-ar="منتجاتنا">منتجاتنا</h2>
+          <h3 class="section-subheading text-muted" data-en="We present a curated selection of our outstanding products."
+              data-ar="نُقدم مجموعة مختارة من منتجاتنا المميزة.">نُقدم مجموعة مختارة من منتجاتنا المميزة.</h3>
+        </div>
       </a>
-
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav text-uppercase py-4 py-lg-0">
-          <li class="nav-item"><a class="nav-link" data-en="Services" data-ar="الخدمات" href="#services">الخدمات</a></li>
-          <li class="nav-item"><a class="nav-link" data-en="Products" data-ar="المنتجات" href="products.html">المنتجات</a></li>
-          <li class="nav-item"><a class="nav-link" data-en="About" data-ar="من نحن" href="#about">من نحن</a></li>
-          <li class="nav-item"><a class="nav-link" data-en="Customers" data-ar="العملاء" href="clients.html">العملاء</a></li>
-          <!-- <li class="nav-item"><a class="nav-link" data-en="Team" data-ar="الفريق" href="#team">الفريق</a></li> -->
-          <li class="nav-item"><a class="nav-link" data-en="Contact" data-ar="اتصل بنا" href="#contact">اتصل بنا</a></li>
-        </ul>
-        <button class="btn lang-toggle" onclick="toggleLanguage()">English</button>
+      
+      <style>
+        .shadow-3d {
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .shadow-3d:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+      </style>
+     <div class="row">
+        <!-- Portfolio Item 1 -->
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <div class="shadow-3d">
+            <div class="portfolio-item">
+              <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                <div class="portfolio-hover">
+                  <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                </div>
+                <img class="img-fluid" src="assets/img/portfolio/pageup/d1-p1.webp" alt="..." />
+              </a>
+              <div class="portfolio-caption">
+                <div class="portfolio-caption-heading" data-en="Biological Microscope" data-ar="مجهر بيولوجي">مجهر بيولوجي</div>
+                <div class="portfolio-caption-subheading text-muted" data-en="OLYMPUS CX23" data-ar="OLYMPUS CX23">OLYMPUS CX23</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Portfolio Item 2 -->
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <div class="shadow-3d">
+            <div class="portfolio-item">
+              <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                <div class="portfolio-hover">
+                  <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                </div>
+                <img class="img-fluid" src="assets/img/portfolio/pageup/d2-p1.webp" loading="lazy" alt="..." />
+              </a>
+              <div class="portfolio-caption">
+                <div class="portfolio-caption-heading" data-en="CT Scanner" data-ar="الماسح الضوئي المقطعي">الماسح الضوئي المقطعي</div>
+                <div class="portfolio-caption-subheading text-muted" data-en="SternMed CYTOM 16" data-ar="SternMed CYTOM 16">SternMed CYTOM 16</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Portfolio Item 3 -->
+        <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+          <div class="shadow-3d">
+            <div class="portfolio-item">
+              <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+                <div class="portfolio-hover">
+                  <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                </div>
+                <img class="img-fluid" src="assets/img/portfolio/pageup/d3-p1.webp" loading="lazy" alt="..." />
+              </a>
+              <div class="portfolio-caption">
+                <div class="portfolio-caption-heading" data-en="Electrocardiograph (ECG)" data-ar="جهاز تخطيط كهربائية القلب">جهاز تخطيط كهربائية القلب</div>
+                <div class="portfolio-caption-subheading text-muted" data-en="TRIONARA Kardio 1210" data-ar="TRIONARA Kardio 1210">TRIONARA Kardio 1210</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Portfolio Item 4 -->
+        <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+          <div class="shadow-3d">
+            <div class="portfolio-item">
+              <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
+                <div class="portfolio-hover">
+                  <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                </div>
+                <img class="img-fluid" src="assets/img/portfolio/pageup/d4-p1.webp" alt="..." />
+              </a>
+              <div class="portfolio-caption">
+                <div class="portfolio-caption-heading" data-en="digital ultrasonic diagnostic system" data-ar="نظام تشخيص بالموجات فوق الصوتية الرقمي">
+                  نظام تشخيص بالموجات فوق الصوتية الرقمي
+                </div>
+                <div class="portfolio-caption-subheading text-muted" data-en="DAWEI DW-580" data-ar="DAWEI DW-580">DAWEI DW-580</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Portfolio Item 5 -->
+        <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+          <div class="shadow-3d">
+            <div class="portfolio-item">
+              <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
+                <div class="portfolio-hover">
+                  <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                </div>
+                <img class="img-fluid" src="assets/img/portfolio/pageup/d5-p1.webp" loading="lazy" alt="..." />
+              </a>
+              <div class="portfolio-caption">
+                <div class="portfolio-caption-heading" data-en="Infusion Pump" data-ar="مضخة تسريب">
+                  مضخة تسريب
+                </div>
+                <div class="portfolio-caption-subheading text-muted" data-en="BIOLABO Kenza Max BioChemisTry" data-ar="KellyMed KL-8071A">KellyMed KL-8071A</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Portfolio Item 6 -->
+        <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+          <div class="shadow-3d">
+            <div class="portfolio-item">
+              <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
+                <div class="portfolio-hover">
+                  <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                </div>
+                <img class="img-fluid" src="assets/img/portfolio/pageup/d6-p1.webp" alt="..." />
+              </a>
+              <div class="portfolio-caption">
+                <div class="portfolio-caption-heading" data-en="Central Monitoring System" data-ar="نظام المراقبة المركزي"></div>
+                <div class="portfolio-caption-subheading text-muted" data-en="TRIONARA VITUS CS" data-ar="TRIONARA VITUS CS">TRIONARA VITUS CS</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-4">
+        <a href="products.html" class="btn btn-outline-primary btn-lg" id="viewTeamBtn"
+           data-ar="رؤية بقية المنتجات" data-en="View the Rest of the products">
+          <span class="btn-text">رؤية بقية المنتجات</span>
+          <i id="btnArrowIcon" class="fas fa-arrow-right ms-2"></i>
+        </a>
       </div>
     </div>
-  </nav>
+  </section>
 
+  <!-- Back to Top Button -->
+  <button class="button" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+    <svg class="svgIcon" viewBox="0 0 384 512">
+      <path
+        d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+      ></path>
+    </svg>
+  </button>
 
-<!-- Masthead -->
-<div class="slider-container">
-  <div class="slider">
-    <div class="slide active" style="background-image: url('assets/img/header-bg.webp');">
-      <div class="slide-text">
-        <h1 class="masthead-title">نص الشريحة 1</h1>
-        <p class="masthead-subheading">وصف الشريحة 1</p>
-      </div>
-    </div>
-    <div class="slide" style="background-image: url('assets/img/header-bg.webp');">
-      <div class="slide-text">
-        <h1 class="masthead-title">نص الشريحة 2</h1>
-        <p class="masthead-subheading">وصف الشريحة 2</p>
-      </div>
-    </div>
-    <div class="slide" style="background-image: url('assets/img/header-bg.webp');">
-      <div class="slide-text">
-        <h1 class="masthead-title">نص الشريحة 3</h1>
-        <p class="masthead-subheading">وصف الشريحة 3</p>
-      </div>
-    </div>
-    <div class="slide" style="background-image: url('assets/img/header-bg.webp');">
-      <div class="slide-text">
-        <h1 class="masthead-title">نص الشريحة 4</h1>
-        <p class="masthead-subheading">وصف الشريحة 4</p>
-      </div>
-    </div>
-    <div class="slide" style="background-image: url('assets/img/header-bg.webp');">
-      <div class="slide-text">
-        <h1 class="masthead-title">نص الشريحة 5</h1>
-        <p class="masthead-subheading">وصف الشريحة 5</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- الأسهم -->
-  <button class="prev">&#10095;</button>
-  <button class="next">&#10094;</button>
-</div>
-
-
-  
-<style>.slider-container {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.slider {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.slide {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  z-index: 0;
-  transition: opacity 1s ease-in-out;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: #fff;
-  text-align: center;
-}
-
-.slide.active {
-  opacity: 1;
-  z-index: 1;
-}
-
-.slide-text {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 25px;
-  border-radius: 12px;
-  max-width: 80%;
-}
-
-.prev, .next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.4);
-  color: #fff;
-  border: none;
-  padding: 15px;
-  font-size: 28px;
-  cursor: pointer;
-  z-index: 2;
-  border-radius: 50%;
-}
-
-.prev { left: 20px; }
-.next { right: 20px; }
-
-/* نصوص */
-.masthead-title {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.masthead-subheading {
-  font-size: 1.5rem;
-  font-style: italic;
-}
-
-@media (max-width: 768px) {
-  .masthead-title {
-    font-size: 2rem;
-  }
-
-  .masthead-subheading {
-    font-size: 1.2rem;
-  }
-}
-</style>
-  <!-- <div class="container">
-    <div class="masthead-title text-uppercase" data-en="Arab Lab" data-ar="عرب لاب">عرب لاب</div>
-    <div class="masthead-subtitle text-uppercase" data-en="Medicines & Medical Supplies" data-ar="للأدوية والمستلزمات الطبية">للأدوية والمستلزمات الطبية</div>
-    <div class="masthead-subheading" data-en="Medical Equipment Experts" data-ar="خبراء التجهيزات الطبية">خبراء التجهيزات الطبية</div>
-    <a class="btn btn-primary btn-xl text-uppercase" href="#services" data-en="Tell Me More" data-ar="أخبرني المزيد">أخبرني المزيد</a>
-  </div> -->
-</header>
-
-
-
-<!-- JavaScript -->
-<script>
-  const defaultLang = 'ar';
-
-  function toggleLanguage() {
-    const currentLang = document.body.getAttribute('lang');
-    const newLang = currentLang === 'en' ? 'ar' : 'en';
-    setLanguage(newLang);
-  }
-
-  function setLanguage(lang) {
-    document.body.setAttribute('lang', lang);
-    document.documentElement.setAttribute('dir', lang === 'en' ? 'ltr' : 'rtl');
-    document.querySelector('.lang-toggle').textContent = lang === 'en' ? 'العربية' : 'English';
-
-    // تحديث النصوص العادية
-    document.querySelectorAll('[data-en]').forEach(el => {
-      el.textContent = el.getAttribute(`data-${lang}`);
-    });
-
-    // تحديث زر رؤية بقية الفريق
-    const teamBtn = document.getElementById('viewTeamBtn');
-    const teamText = teamBtn?.querySelector('.btn-text');
-    const teamIcon = document.getElementById('btnArrowIcon');
-    if (teamBtn && teamText && teamIcon) {
-      teamText.textContent = teamBtn.getAttribute(`data-${lang}`);
-      if (lang === 'en') {
-        teamIcon.classList.remove('fa-arrow-right');
-        teamIcon.classList.add('fa-arrow-left');
-      } else {
-        teamIcon.classList.remove('fa-arrow-left');
-        teamIcon.classList.add('fa-arrow-right');
+  <style>
+    .button {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: rgb(20, 20, 20);
+      border: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0px 0px 0px 4px rgba(0, 113, 38, 0.253);
+      cursor: pointer;
+      transition-duration: 0.3s;
+      overflow: hidden;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 1000;
+    }
+    
+    .svgIcon {
+      width: 20px;
+      height: 20px;
+      transition-duration: 0.3s;
+    }
+    
+    .svgIcon path {
+      fill: white;
+    }
+    
+    .button:hover {
+      width: 140px;
+      border-radius: 50px;
+      transition-duration: 0.3s;
+      background: linear-gradient(45deg, #28a745, #1e90ff);
+      align-items: center;
+    }
+    
+    .button:hover .svgIcon {
+      transition-duration: 0.3s;
+      transform: translateY(-200%);
+    }
+    
+    .button::before {
+      position: absolute;
+      bottom: -20px;
+      content: "العودة للأعلى";
+      color: white;
+      font-size: 0px;
+      opacity: 0;
+      transition: font-size 0.3s, opacity 0.3s, bottom 0.3s;
+    }
+    
+    .button:hover::before {
+      font-size: 13px;
+      opacity: 1;
+      bottom: unset;
+    }
+    
+    @media (max-width: 768px) {
+      .button:hover {
+        width: 50px !important;
+        border-radius: 50% !important;
+        background: rgb(20, 20, 20) !important;
+        align-items: center !important;
+      }
+      
+      .button:hover .svgIcon {
+        transform: translateY(0) !important;
+      }
+      
+      .button:hover::before {
+        font-size: 0 !important;
+        opacity: 0 !important;
       }
     }
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    setLanguage(defaultLang);
-  });
-
-  // إبراز العنصر النشط أثناء التمرير
-  const sections = document.querySelectorAll("section[id]");
-  const navLinks = document.querySelectorAll(".navbar .nav-link");
-
-  function activateNavLink() {
-    let scrollY = window.pageYOffset;
-
-    sections.forEach(current => {
-      const sectionHeight = current.offsetHeight;
-      const sectionTop = current.offsetTop - 80;
-      const sectionId = current.getAttribute("id");
-
-      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-        navLinks.forEach(link => {
-          link.classList.remove("active");
-          if (link.getAttribute("href").includes(sectionId)) {
-            link.classList.add("active");
-          }
-        });
-      }
-    });
-  }
-
-  window.addEventListener("scroll", activateNavLink);
-</script>
-
-
-    <!-- Services-->
-    <section class="page-section" id="services">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-heading text-uppercase" data-en="Our Services" data-ar="خدماتنا">خدماتنا</h2>
-                <h3 class="section-subheading text-muted" data-en=""
-                data-ar=""></h3></h3>
-            </div>
-            <div class="row text-center">
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-<span class="fa-stack-2x gradient-circle"></span>
-<i class="fas fa-stethoscope fa-stack-1x fa-inverse"></i>  <!-- أيقونة سماعة طبية -->
-                    </span>
-                    <h4 class="my-3" data-en="Equipment" data-ar="تجهيزات ">تجهيزات</h4>
-                    <p class="text-muted" data-en="Medical Equipment for Hospitals, Laboratories, and Diagnostic Centers"
-                    data-ar="تجهيز مستشفيات - مختبرات - معامل طبية">تجهيز مستشفيات - مختبرات - معامل طبية</p>
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-<span class="fa-stack-2x gradient-circle"></span>
-<i class="fas fa-tools fa-stack-1x fa-inverse"></i> <!-- أيقونة أدوات -->
-                    </span>
-                    <h4 class="my-3" data-en="Maintenance " data-ar="صيانة">صيانة</h4>
-                    <p class="text-muted" data-en="Maintenance of Medical Devices and Equipment"
-                    data-ar="صيانة الأجهزة والمعدات الطبية">صيانة الأجهزة والمعدات الطبية</p>
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-<span class="fa-stack-2x gradient-circle"></span>
-<i class="fas fa-project-diagram fa-stack-1x fa-inverse"></i> <!-- أيقونة تخطيط -->
-                    </span>
-                    <h4 class="my-3" data-en="Planning" data-ar=" تخطيط">تخطيط</h4>
-                    <p class="text-muted" data-en="Project Planning and Implementation "
-                    data-ar="تخطيط وتنفيذ المشاريع">تخطيط وتنفيذ المشاريع</p>
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-<span class="fa-stack-2x gradient-circle"></span>
-<i class="fas fa-comments fa-stack-1x fa-inverse"></i> <!-- أيقونة تعليقات -->
-                    </span>
-                    <h4 class="my-3" data-en="Consultations" data-ar="استشارات">استشارات</h4>
-                    <p class="text-muted" data-en=""
-                    data-ar=""></p>
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-<span class="fa-stack-2x gradient-circle"></span>
-<i class="fas fa-pills fa-stack-1x fa-inverse"></i> <!-- أيقونة حبوب -->
-                    </span>
-                    <h4 class="my-3" data-en="Medical Supplies" data-ar="التوريدات الطبية">التوريدات الطبية</h4>
-                    <p class="text-muted" data-en=""
-                    data-ar=""></p></p> 
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-<span class="fa-stack-2x gradient-circle"></span>
-<i class="fas fa-chalkboard-teacher fa-stack-1x fa-inverse"></i> <!-- أيقونة مدرب -->
-                    </span>
-                    <h4 class="my-3" data-en="Training" data-ar="تدريب">تدريب</h4>
-                    <p class="text-muted" data-en=""
-                        data-ar=""></p>
-                </div>
-            </div>
-    </section>
-<!-- Portfolio Grid-->
-<section class="page-section bg-light" id="portfolio">
-    <div class="container">
-        <a href="products.html" style="text-decoration: none; color: inherit; cursor: pointer;">
-            <div class="text-center">
-                <h2 class="section-heading text-uppercase" data-en="Our Products" data-ar="منتجاتنا">منتجاتنا</h2>
-                <h3 class="section-subheading text-muted" data-en="We present a curated selection of our outstanding products."
-                    data-ar="نُقدم مجموعة مختارة من منتجاتنا المميزة.">نُقدم مجموعة مختارة من منتجاتنا المميزة.</h3>
-            </div>
-        </a>
-        <style>.shadow-3d {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.shadow-3d:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-
-}
-</style>
-        <div class="row">
-            <div class="col-lg-4 col-sm-6 mb-4">
-<!-- Portfolio item 1-->
-    <div class="shadow-3d">
-    <div class="portfolio-item">
-        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
-            <div class="portfolio-hover">
-                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-            </div>
-            <img class="img-fluid" src="assets/img/portfolio/pageup/d1-p1.webp" alt="..." />
-        </a>
-        <div class="portfolio-caption">
-            <div class="portfolio-caption-heading" data-en="Biological Microscope" data-ar="مجهر بيولوجي">مجهر بيولوجي</div>
-            <div class="portfolio-caption-subheading text-muted" data-en="OLYMPUS CX23" data-ar="OLYMPUS CX23">OLYMPUS CX23</div>
-        </div>
-        </div>
-    </div>
-</div>
-
-<!-- Portfolio item 2-->
-<div class="col-lg-4 col-sm-6 mb-4">
-    <div class="shadow-3d">
-    <div class="portfolio-item">
-        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
-            <div class="portfolio-hover">
-                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-            </div>
-            <img class="img-fluid" src="assets/img/portfolio/pageup/d2-p1.webp" loading="lazy" alt="..." />
-        </a>
-        <div class="portfolio-caption">
-            <div class="portfolio-caption-heading" data-en="CT Scanner" data-ar="الماسح الضوئي المقطعي">الماسح الضوئي المقطعي</div>
-            <div class="portfolio-caption-subheading text-muted" data-en="SternMed CYTOM 16" data-ar="SternMed CYTOM 16">SternMed CYTOM 16</div>
-        </div>
-        </div>
-    </div>
-</div>
-
-<!-- Portfolio item 3-->
-<div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-    <div class="shadow-3d">
-    <div class="portfolio-item">
-        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
-            <div class="portfolio-hover">
-                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-            </div>
-            <img class="img-fluid" src="assets/img/portfolio/pageup/d3-p1.webp" loading="lazy" alt="..." />
-        </a>
-        <div class="portfolio-caption">
-            <div class="portfolio-caption-heading" data-en="Electrocardiograph (ECG)" data-ar="جهاز تخطيط كهربائية القلب">جهاز تخطيط كهربائية القلب</div>
-            <div class="portfolio-caption-subheading text-muted" data-en="TRIONARA Kardio 1210" data-ar="TRIONARA Kardio 1210">TRIONARA Kardio 1210</div>
-        </div>
-        </div>
-    </div>
-</div>
-<!-- Portfolio item 4-->
-<div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-      <div class="shadow-3d">
-
-    <div class="portfolio-item">
-        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
-            <div class="portfolio-hover">
-                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-            </div>
-            <img class="img-fluid" src="assets/img/portfolio/pageup/d4-p1.webp"            <img class="img-fluid" src="assets/img/portfolio/pageup/d2-p1.webp" loading="lazy" alt="..." /> alt="..." />
-        </a>
-        <div class="portfolio-caption">
-            <div class="portfolio-caption-heading" data-en="digital ultrasonic diagnostic system" data-ar="
-نظام تشخيص بالموجات فوق الصوتية الرقمي">
-نظام تشخيص بالموجات فوق الصوتية الرقمي</div>
-            <div class="portfolio-caption-subheading text-muted" data-en="DAWEI DW-580" data-ar="DAWEI DW-580">DAWEI DW-580</div>
-        </div>
-    </div>
-    </div>
-</div>
-
-<!-- Portfolio item 5-->
-<div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-      <div class="shadow-3d">
-    <div class="portfolio-item">
-        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
-            <div class="portfolio-hover">
-                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-            </div>
-            <img class="img-fluid" src="assets/img/portfolio/pageup/d5-p1.webp" loading="lazy" alt="..." />
-        </a>
-        <div class="portfolio-caption">
-            <div class="portfolio-caption-heading" data-en="Infusion Pump" data-ar="مضخة تسريب">
-مضخة تسريب</div>
-            <div class="portfolio-caption-subheading text-muted" data-en="BIOLABO Kenza Max BioChemisTry" data-ar="KellyMed KL-8071A">KellyMed KL-8071A</div>
-        </div>
-        </div>
-    </div>
-</div>
-
-<!-- Portfolio item 6-->
-<div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-      <div class="shadow-3d">
-            <div class="portfolio-item">
-        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
-            <div class="portfolio-hover">
-                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-            </div>
-            <img class="img-fluid" src="assets/img/portfolio/pageup/d6-p1.webp"             <img class="img-fluid" src="assets/img/portfolio/pageup/d2-p1.webp" loading="lazy" alt="..." /> alt="..." />
-        </a>
-        <div class="portfolio-caption">
-            <div class="portfolio-caption-heading" data-en="Central Monitoring System" data-ar="نظام المراقبة المركزي"></div>
-            <div class="portfolio-caption-subheading text-muted" data-en="TRIONARA VITUS CS" data-ar="TRIONARA VITUS CS">TRIONARA VITUS CS</div>
-    </div>
-    </div>
-    </div>
-</div>
-
-<div class="text-center mt-4">
-  <a href="products.html" class="btn btn-outline-primary btn-lg" id="viewTeamBtn"
-     data-ar="رؤية بقية المنتجات" data-en="View the Rest of the products">
-    <span class="btn-text">رؤية بقية المنتجات</span>
-    <i id="btnArrowIcon" class="fas fa-arrow-right ms-2"></i>
-  </a>
-</div>
-
-</section>
-
-<!-- From Uiverse.io by vinodjangid07 --> 
-<button class="button" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
-  <svg class="svgIcon" viewBox="0 0 384 512">
-    <path
-      d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
-    ></path>
-  </svg>
-</button>
-
-<style>
-.button {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: rgb(20, 20, 20);
-  border: none;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0px 0px 0px 4px rgba(0, 113, 38, 0.253);
-  cursor: pointer;
-  transition-duration: 0.3s;
-  overflow: hidden;
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  z-index: 1000;
-}
-
-.svgIcon {
-  width: 20px; /* حجم أصغر */
-  height: 20px; /* ارتفاع متناسب */
-  transition-duration: 0.3s;
-}
-
-.svgIcon path {
-  fill: white;
-}
-
-.button:hover {
-  width: 140px;
-  border-radius: 50px;
-  transition-duration: 0.3s;
-  background: linear-gradient(45deg, #28a745, #1e90ff); /* تدرج أخضر إلى أزرق */
-  align-items: center;
-}
-
-.button:hover .svgIcon {
-  transition-duration: 0.3s;
-  transform: translateY(-200%);
-}
-
-.button::before {
-  position: absolute;
-  bottom: -20px;
-  content: "العودة للأعلى";
-  color: white;
-  font-size: 0px;
-  opacity: 0;
-  transition: font-size 0.3s, opacity 0.3s, bottom 0.3s;
-}
-
-.button:hover::before {
-  font-size: 13px;
-  opacity: 1;
-  bottom: unset;
-}
-
-/* تعطيل تأثير hover في الشاشات الصغيرة (الهواتف) */
-@media (max-width: 768px) {
-  .button:hover {
-    width: 50px !important;
-    border-radius: 50% !important;
-    background: rgb(20, 20, 20) !important;
-    align-items: center !important;
-  }
-  
-  .button:hover .svgIcon {
-    transform: translateY(0) !important;
-  }
-  
-  .button:hover::before {
-    font-size: 0 !important;
-    opacity: 0 !important;
-  }
-}
-</style>
+  </style>
 
 <!-- Clients -->
 <section class="page-section bg-light" id="clients">
@@ -753,7 +531,7 @@
                         <h4 class="subheading" data-en="Customer Satisfaction & Quality Care" data-ar="رضا العملاء وجودة الرعاية">Customer Satisfaction & Quality Care</h4>
                     </div>
 <div class="timeline-body">
-  <p class="text-muted" data-en="We aim to maintain customer satisfaction and provide meaningful support to the high-quality businesses we represent. We believe that the key to the company’s continued growth is staying committed to its founding principle of focusing on high-value healthcare." data-ar="نحن نهدف إلى استمرار رضا العملاء وتقديم الدعم الهادف لأعمال عالية الجودة التي نمثلها.
+  <p class="text-muted" data-en="We aim to maintain customer satisfaction and provide meaningful support to the high-quality businesses we represent. We believe that the key to the company's continued growth is staying committed to its founding principle of focusing on high-value healthcare." data-ar="نحن نهدف إلى استمرار رضا العملاء وتقديم الدعم الهادف لأعمال عالية الجودة التي نمثلها.
 نؤمن أن سر النمو المستمر للشركة هو البقاء ملتزمين بمبدأها التأسيسي للتركيز على القيمة العالية للرعاية الصحية">
     نحن نهدف إلى استمرار رضا العملاء وتقديم الدعم الهادف لأعمال عالية الجودة التي نمثلها.
     نؤمن أن سر النمو المستمر للشركة هو البقاء ملتزمين بمبدأها التأسيسي للتركيز على القيمة العالية للرعاية الصحية
@@ -777,69 +555,15 @@
 </section>
 
 
-
-<!-- Team
-<section class="page-section" id="team">
-    <div class="container">
-        <div class="text-center">
-            <h2 class="section-heading text-uppercase" data-en="Our Amazing Team" data-ar="فريقنا الرائع">Our Amazing Team</h2>
-            <h3 class="section-subheading text-muted" data-en="A team of top specialists driving our vision." data-ar="نخبة من المتخصصين يقودون رؤيتنا.">A team of top specialists driving our vision.</h3>
-        </div>
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="team-member">
-                    <img class="mx-auto rounded-circle" src="assets/img/team/1.webp" alt="..." />
-                    <h4 data-en="Parveen Anand" data-ar="بارفين أناند">Parveen Anand</h4>
-                    <p class="text-muted" data-en="Lead Designer" data-ar="المصمم الرئيسي">Lead Designer</p>
-                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Twitter Profile"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="team-member">
-                    <img class="mx-auto rounded-circle" src="assets/img/team/2.webp" alt="..." />
-                    <h4 data-en="Diana Petersen" data-ar="ديانا بيترسن">Diana Petersen</h4>
-                    <p class="text-muted" data-en="Lead Marketer" data-ar="مديرة التسويق">Lead Marketer</p>
-                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Twitter Profile"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="team-member">
-                    <img class="mx-auto rounded-circle" src="assets/img/team/3.webp" alt="..." />
-                    <h4 data-en="Larry Parker" data-ar="لاري باركر">Larry Parker</h4>
-                    <p class="text-muted" data-en="Lead Developer" data-ar="المطور الرئيسي">Lead Developer</p>
-                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Twitter Profile"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-8 mx-auto text-center">
-                <p class="large text-muted" data-en="Our team consists of passionate professionals dedicated to serving our clients and achieving the best results." data-ar="فريقنا مكون من محترفين شغوفين بخدمة عملائنا وتحقيق أفضل النتائج.">Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-            </div>
-        </div>
-    </div>
-<div class="text-center mt-4">
-  <a href="team.html" class="btn btn-outline-primary btn-lg" id="viewTeamBtn"
-     data-ar="رؤية بقية الفريق" data-en="View the Rest of the Team">
-    <span class="btn-text">رؤية بقية الفريق</span>
-    <i id="btnArrowIcon" class="fas fa-arrow-right ms-2"></i>
-  </a>
-</div>
-</section> -->
 <!-- Contact -->
 <section class="page-section" id="contact">
   <div class="container">
     <div class="text-center mb-5">
       <h2 class="section-heading text-uppercase" data-en="Contact Us" data-ar="تواصل معنا">Contact Us</h2>
       <h3 class="section-subheading text-muted"
-          data-en="We’re here to help and answer any question you might have."
+          data-en="We're here to help and answer any question you might have."
           data-ar="نحن هنا للرد على استفساراتك وتقديم الدعم اللازم.">
-        We’re here to help and answer any question you might have.
+        We're here to help and answer any question you might have.
       </h3>
     </div>
 
@@ -883,7 +607,6 @@
     </form>
   </div>
 </section>
-
 
 <!-- Footer-->
 <footer class="footer py-4">
@@ -1575,89 +1298,7 @@ color: white; display: inline-flex; align-items: center; justify-content: center
 }
 </style>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // 1. توزيع الصور المصغرة تلقائيًا حسب عددها
-    function adjustAllThumbnails() {
-      const containers = document.querySelectorAll('.portfolio-modal .d-flex.justify-content-center.gap-2.flex-wrap.mt-3');
 
-      containers.forEach(container => {
-        const thumbnails = container.querySelectorAll('.thumbnail-image'); // تأكد من وجود الكلاس هذا
-        const count = thumbnails.length;
-        if (count === 0) return;
-
-        const widthPercent = Math.min(80 / count, 25); // لا تزيد عن 25% لكل صورة
-
-        thumbnails.forEach(thumb => {
-          thumb.style.flex = `0 0 ${widthPercent}%`;
-          thumb.style.maxWidth = `${widthPercent}%`;
-          thumb.style.marginRight = '0';
-        });
-
-        container.style.flexWrap = 'nowrap';
-        container.style.overflowX = 'auto';
-      });
-    }
-
-    // 2. تعيين الصورة الرئيسية عند الضغط على المصغرات
-    function setupThumbnailClicks() {
-      document.querySelectorAll('.thumbnail-image').forEach(function (thumb) {
-        thumb.addEventListener('click', function () {
-          const modal = this.closest('.modal-body');
-          const mainImage = modal.querySelector('.main-image');
-          const zoomedImage = modal.querySelector('.zoomed-image');
-          const newSrc = this.src;
-
-          if (mainImage) mainImage.src = newSrc;
-          if (zoomedImage) zoomedImage.src = newSrc;
-        });
-      });
-    }
-
-    // 3. منطق التكبير عند تمرير الماوس
-    function zoomImage(event, mainImage, zoomBox, zoomedImage) {
-      if (window.innerWidth < 992) return; // تعطيل التكبير في الهواتف
-
-      zoomBox.classList.add('zooming');
-      zoomedImage.style.display = 'block';
-      zoomedImage.src = mainImage.src;
-
-      const rect = mainImage.getBoundingClientRect();
-      const x = event.clientX - rect.left;
-      const y = event.clientY - rect.top;
-
-      const scale = 2;
-      zoomedImage.style.width = mainImage.offsetWidth * scale + 'px';
-      zoomedImage.style.height = mainImage.offsetHeight * scale + 'px';
-
-      let left = -(x * scale - zoomBox.offsetWidth / 2);
-      let top = -(y * scale - zoomBox.offsetHeight / 2);
-
-      left = Math.min(0, Math.max(left, zoomBox.offsetWidth - zoomedImage.offsetWidth));
-      top = Math.min(0, Math.max(top, zoomBox.offsetHeight - zoomedImage.offsetHeight));
-
-      zoomedImage.style.left = left + 'px';
-      zoomedImage.style.top = top + 'px';
-    }
-
-    function resetZoom(zoomBox, zoomedImage) {
-      if (window.innerWidth < 992) return;
-      zoomBox.classList.remove('zooming');
-      zoomedImage.style.display = 'none';
-    }
-
-    // 4. عند تحميل الصفحة: نفّذ الإعدادات
-    adjustAllThumbnails();
-    setupThumbnailClicks();
-
-    // 5. إعادة تهيئة المصغرات عند تغيير حجم النافذة
-    window.addEventListener('resize', adjustAllThumbnails);
-
-    // 6. توفير وظائف التكبير للعناصر الموجودة في الصفحة
-    window.zoomImage = zoomImage;
-    window.resetZoom = resetZoom;
-  });
-</script>
 
 
 

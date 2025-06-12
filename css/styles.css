@@ -1506,17 +1506,18 @@ body {
     right: 0;
     padding: 20px 0;
     z-index: 1000;
-    transition: var(--transition);
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.4s ease;
+    background-color: rgba(255, 255, 255, 0.1); /* شفاف في البداية */
+    backdrop-filter: blur(10px); /* تأثير الضبابية */
+    -webkit-backdrop-filter: blur(10px); /* لدعم سفاري */
 }
 
+
 .navbar.scrolled {
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.95); /* أبيض شبه معتم عند التمرير */
     padding: 12px 0;
-    box-shadow: var(--shadow);
-    backdrop-filter: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: none; /* إزالة الضبابية عند التمرير */
 }
 
 .navbar.scrolled .nav-links a {
@@ -1524,6 +1525,7 @@ body {
 }
 
 .navbar.scrolled .logo img {
+    filter: none; /* إزالة الفلتر عند التمرير */
     height: 40px;
 }
 
@@ -1536,12 +1538,13 @@ body {
 .logo img {
     height: 50px;
     transition: var(--transition);
+    filter: brightness(0) invert(1); /* يجعل الشعار أبيض */
 }
-
 /* Navigation Links */
 .nav-links {
     display: flex;
     align-items: center;
+    gap: 30px;
 }
 
 .nav-links a {
@@ -1550,9 +1553,7 @@ body {
     font-weight: 600;
     transition: var(--transition);
     position: relative;
-    margin-left: 20px;
 }
-
 .navbar.scrolled .nav-links a:hover {
     color: var(--accent-color);
 }

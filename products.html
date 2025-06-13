@@ -18,97 +18,23 @@
     <!-- Custom CSS -->
     <link href="css/styles.css" rel="stylesheet" />
 
- <style>
+    <!-- صفحة التحميل -->
+<div id="loading-screen">
+  <div class="loader-container">
+    <img src="\assets\img\navbar-logo.svg" alt="شعار الموقع" class="logo" >
     
-    body[lang="ar"] {
-      direction: rtl;
-      font-family: 'Cairo', sans-serif;
-    }
+    <!-- From Uiverse.io by jack0237 -->
+    <div class="loader">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+</div>
 
-    body[lang="en"] {
-      direction: ltr;
-      font-family: 'Montserrat', sans-serif;
-    }
 
-    /* تعديل خلفية الشريط لتكون سوداء شفافة دائمًا */
-    .navbar.transparent {
-      background-color: rgba(0, 0, 0, 0.6) !important;
-      box-shadow: none;
-    }
-
-    .navbar {
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    /* روابط الشريط */
-    .navbar.transparent .navbar-nav .nav-link,
-    .navbar.transparent .lang-toggle {
-      color: #ffffff;
-    }
-
-    .navbar-nav .nav-link:hover,
-    .navbar-nav .nav-link:focus {
-      color: #007bff !important;
-    }
-
-    /* تمييز الرابط النشط */
-    .navbar-nav .nav-link.active {
-      color: #007bff !important;
-      font-weight: bold;
-    }
-
-    /* زر تغيير اللغة */
-    .navbar .lang-toggle {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 1030;
-      background-color: transparent;
-      border: 1px solid currentColor;
-      transition: all 0.3s ease;
-    }
-
-    .navbar .lang-toggle:hover {
-      background-color: rgba(255, 255, 255, 0.2);
-      border-color: #007bff;
-      color: #007bff;
-    }
-
-    body[lang="ar"] .navbar .lang-toggle {
-      left: 15px;
-      right: auto;
-    }
-
-    body[lang="en"] .navbar .lang-toggle {
-      right: 15px;
-      left: auto;
-    }
-
-    body[lang="ar"] .navbar-nav {
-      margin-left: 0 !important;
-      margin-right: auto !important;
-      text-align: right;
-    }
-
-    body[lang="en"] .navbar-nav {
-      margin-right: 0 !important;
-      margin-left: auto !important;
-      text-align: left;
-    }
-
-    body[lang="ar"] #navbarResponsive {
-      flex-direction: row-reverse;
-    }
-
-    body[lang="en"] #navbarResponsive {
-      flex-direction: row;
-    }
-
-    .navbar-logo {
-      width: 150px;
-      height: auto;
-    }
-  </style>
 </head>
 
 <body id="page-top" lang="ar">
@@ -139,71 +65,7 @@
   </nav>
 
 
-<!-- JavaScript -->
-<script>
-  const defaultLang = 'ar';
 
-  function toggleLanguage() {
-    const currentLang = document.body.getAttribute('lang');
-    const newLang = currentLang === 'en' ? 'ar' : 'en';
-    setLanguage(newLang);
-  }
-
-  function setLanguage(lang) {
-    document.body.setAttribute('lang', lang);
-    document.documentElement.setAttribute('dir', lang === 'en' ? 'ltr' : 'rtl');
-    document.querySelector('.lang-toggle').textContent = lang === 'en' ? 'العربية' : 'English';
-
-    // تحديث النصوص العادية
-    document.querySelectorAll('[data-en]').forEach(el => {
-      el.textContent = el.getAttribute(`data-${lang}`);
-    });
-
-    // تحديث زر رؤية بقية الفريق
-    const teamBtn = document.getElementById('viewTeamBtn');
-    const teamText = teamBtn?.querySelector('.btn-text');
-    const teamIcon = document.getElementById('btnArrowIcon');
-    if (teamBtn && teamText && teamIcon) {
-      teamText.textContent = teamBtn.getAttribute(`data-${lang}`);
-      if (lang === 'en') {
-        teamIcon.classList.remove('fa-arrow-right');
-        teamIcon.classList.add('fa-arrow-left');
-      } else {
-        teamIcon.classList.remove('fa-arrow-left');
-        teamIcon.classList.add('fa-arrow-right');
-      }
-    }
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    setLanguage(defaultLang);
-  });
-
-  // إبراز العنصر النشط أثناء التمرير
-  const sections = document.querySelectorAll("section[id]");
-  const navLinks = document.querySelectorAll(".navbar .nav-link");
-
-  function activateNavLink() {
-    let scrollY = window.pageYOffset;
-
-    sections.forEach(current => {
-      const sectionHeight = current.offsetHeight;
-      const sectionTop = current.offsetTop - 80;
-      const sectionId = current.getAttribute("id");
-
-      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-        navLinks.forEach(link => {
-          link.classList.remove("active");
-          if (link.getAttribute("href").includes(sectionId)) {
-            link.classList.add("active");
-          }
-        });
-      }
-    });
-  }
-
-  window.addEventListener("scroll", activateNavLink);
-</script>
 <!-- Portfolio Section -->
 <section class="page-section" id="portfolio">
     <div class="container">

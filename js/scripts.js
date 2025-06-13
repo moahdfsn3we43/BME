@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     const langToggle = document.getElementById('langToggle');
-    let currentLang = "en";
+    let currentLang = document.documentElement.lang || "en"; // Initialize from HTML lang attribute
 
     // Translations object
     const translations = {
@@ -120,6 +120,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const newPlaceholder = el.getAttribute(`data-${lang}-placeholder`);
             if (newPlaceholder !== null) el.placeholder = newPlaceholder;
         });
+        
+        // Update toggle button text based on current language
+        if (langToggle) {
+            langToggle.textContent = translations[lang].langToggle;
+        }
     }
 
     function toggleLanguage() {
@@ -178,8 +183,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     if (langToggle) {
-        // إزالة أي معالج حدث موجود مسبقًا قبل إضافة المعالج الجديد
-        langToggle.removeEventListener('click', toggleLanguage);
         langToggle.addEventListener('click', toggleLanguage);
     }
 
@@ -223,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function() {
     handleNavbarScroll();
     if (slides.length > 0) initSlider();
     if (typedText) setTimeout(typeWriter, 2000);
-    applyLanguage();
+    applyLanguage(); // Apply language on initial load
 });
 
 // Utility functions
@@ -341,29 +344,16 @@ document.addEventListener('DOMContentLoaded', function () {
     window.resetZoom = resetZoom;
 });
 
-
-window.addEventListener("load", function () {
-  setTimeout(() => {
-    document.getElementById("loading-screen").style.display = "none";
-  }, 1000); // تأخير 1 ثانية بعد تحميل الصفحة
-});
-
-document.querySelectorAll("a.nav-link").forEach(function(link) {
-  link.addEventListener("click", function(event) {
-    // التحقق من أن الرابط ليس رابطًا خارجيًا
-    if (!this.href || this.href.startsWith('http') && !this.href.includes(window.location.host)) {
-      return;
-    }
+window.addEventListener('load', function() {
+  // إخفاء شاشة التحميل بعد تحميل الصفحة بالكامل
+  setTimeout(function() {
+    const loadingScreen = document.getElementById('loading-screen');
+    loadingScreen.style.opacity = '0';
+    loadingScreen.style.pointerEvents = 'none';
     
-    event.preventDefault();
-    const href = this.getAttribute("href");
-
-    // عرض شاشة التحميل من جديد
-    document.getElementById("loading-screen").style.display = "flex";
-
-    // بعد 1 ثانية انتقل للصفحة
-    setTimeout(() => {
-      window.location.href = href;
-    }, 1000);
-  });
+    // إزالة العنصر من DOM بعد انتهاء الانتقال
+    setTimeout(function() {
+      loadingScreen.remove();
+    }, 500);
+  }, 1000); // يمكنك تغيير هذا الرقم حسب الحاجة (1000 = 1 ثانية)
 });

@@ -1660,7 +1660,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 95, 140, 0.5);
+    background-color: rgba(0, 95, 140, 0.6);
 }
 
 .slider-content {
@@ -1676,8 +1676,9 @@ body {
 }
 
 .main-logo {
-    height: 100px;
+    height: 90px;
     margin-bottom: 20px;
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5  )); /* ظل ثري دي للشعار */
     animation: fadeIn 1s ease;
 }
 
@@ -1690,9 +1691,10 @@ body {
 }
 
 .sub-title {
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: var(--secondary-color);
     margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     animation: slideIn 1s ease 0.3s forwards;
     opacity: 0;
 }
@@ -1701,7 +1703,8 @@ body {
     display: inline-flex;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.2);
-    padding: 8px 15px;
+    padding: 8px 30px;
+    font-size: 1.3rem;
     border-radius: 20px;
     margin-bottom: 30px;
     animation: fadeIn 1s ease 0.6s forwards;
@@ -1713,9 +1716,10 @@ body {
     color: gold;
 }
 
+
 .typing-text {
     min-height: 60px;
-    font-size: 1.3rem;
+    font-size: 1.7rem;
     margin-bottom: 30px;
     animation: fadeIn 1s ease 0.9s forwards;
     opacity: 0;
@@ -1739,7 +1743,7 @@ body {
     padding: 12px 30px;
     border-radius: 30px;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     transition: var(--transition);
 }
 
@@ -2004,6 +2008,22 @@ body {
     .nav-links.active {
         top: 0;
     }
+    .expert-badge {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 8px 30px;
+    font-size: 1rem;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    animation: fadeIn 1s ease 0.6s forwards;
+    opacity: 0;
+}
+
+.expert-badge i {
+    margin-left: 8px;
+    color: gold;
+}
     
     .navbar.scrolled .nav-links {
         background: rgba(255, 255, 255, 0.95);
@@ -2051,11 +2071,11 @@ body {
     }
     
     .main-title {
-        font-size: 2.5rem;
+        font-size: 3.5rem;
     }
     
     .sub-title {
-        font-size: 1.2rem;
+        font-size: 1.7rem;
     }
     
     .cta-buttons {
@@ -2071,15 +2091,15 @@ body {
 
 @media (max-width: 480px) {
     .main-title {
-        font-size: 2rem;
+        font-size: 3rem;
     }
     
     .sub-title {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
     
     .typing-text {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
     
     .nav-links {
@@ -2091,4 +2111,201 @@ body {
         padding: 8px 15px;
         font-size: 1rem;
     }
+        .expert-badge {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 8px 30px;
+    font-size: 2rem;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    animation: fadeIn 1s ease 0.6s forwards;
+    opacity: 0;
 }
+
+.expert-badge i {
+    margin-left: 8px;
+    color: gold;
+}
+}
+
+
+/* Zoom Box Styles */
+.zoom-box {
+  width: 100%;
+  max-width: 400px;
+  height: 250px;
+  border: 1.5px solid #bbb;
+  border-radius: 12px;
+  background-color: #fff;
+  margin: 15px auto;
+  position: relative;
+  user-select: none;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: #666;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow: hidden;
+  animation: fadeInZoomBox 0.3s ease forwards;
+}
+
+.zoom-box.zooming {
+  color: transparent;
+  font-weight: normal;
+  background-color: #f9f9f9;
+  border-color: #888;
+}
+
+.zoom-box span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  user-select: none;
+}
+
+.zoom-box .zoomed-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  user-select: none;
+  display: none;
+  max-width: none;
+  max-height: none;
+  will-change: transform;
+  pointer-events: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.zoom-box.zooming .zoomed-image {
+  display: block;
+}
+
+@keyframes fadeInZoomBox {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Image Zoom Hover */
+.image-zoom-container {
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+  max-height: 400px;
+}
+
+.image-zoom-container img {
+  transition: transform 0.3s ease;
+}
+
+.image-zoom-container:hover img {
+  transform: scale(1.5);
+  cursor: zoom-in;
+}
+
+/* Responsive Thumbnail Styles */
+@media (max-width: 576px) {
+  .portfolio-modal .d-flex.justify-content-center.gap-2.flex-wrap.mt-3 {
+    flex-wrap: nowrap !important;
+    overflow-x: hidden;
+  }
+
+  .portfolio-modal .img-thumbnail {
+    flex: 0 0 25%;
+    max-width: 25%;
+    cursor: pointer;
+    margin-right: 0;
+  }
+}
+
+/* ** إخفاء مربع التكبير في الشاشات الصغيرة أقل من 992 بكسل ** */
+@media (max-width: 991.98px) {
+  .zoom-box {
+    display: none !important;
+  }
+}
+
+
+/* فئة أساسية لجميع نوافذ المنتجات المنبثقة */
+.portfolio-modal {
+  --modal-position: center; /* يمكن تغييرها لـ 'top' أو 'bottom' */
+  --modal-width: 90%; /* عرض النافذة */
+  --modal-max-width: 1200px; /* أقصى عرض */
+  --modal-height: auto; /* ارتفاع تلقائي أو قيمة محددة */
+  --modal-max-height: 90vh; /* أقصى ارتفاع */
+  --modal-margin: 3rem auto; /* هامش خارجي */
+}
+
+.portfolio-modal .modal-dialog {
+  margin: var(--modal-margin);
+  max-width: var(--modal-max-width);
+  width: var(--modal-width);
+  height: var(--modal-height);
+  max-height: var(--modal-max-height);
+}
+
+.portfolio-modal .modal-content {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+}
+
+/* تحديد موقع النافذة (أعلى، وسط، أسفل) */
+.portfolio-modal[data-position="top"] .modal-dialog {
+  margin-top: 0;
+  margin-bottom: auto;
+}
+
+.portfolio-modal[data-position="center"] .modal-dialog {
+  margin: auto;
+}
+
+.portfolio-modal[data-position="bottom"] .modal-dialog {
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+/* أحجام مختلفة للنوافذ */
+.portfolio-modal[data-size="small"] {
+  --modal-width: 60%;
+  --modal-max-width: 800px;
+}
+
+.portfolio-modal[data-size="medium"] {
+  --modal-width: 75%;
+  --modal-max-width: 1000px;
+}
+
+.portfolio-modal[data-size="large"] {
+  --modal-width: 90%;
+  --modal-max-width: 1200px;
+}
+
+/* التكيف مع الشاشات الصغيرة */
+@media (max-width: 768px) {
+  .portfolio-modal {
+    --modal-width: 95%;
+    --modal-max-height: 85vh;
+  }
+  
+  .portfolio-modal[data-size="small"],
+  .portfolio-modal[data-size="medium"],
+  .portfolio-modal[data-size="large"] {
+    --modal-width: 95%;
+  }
+}
+

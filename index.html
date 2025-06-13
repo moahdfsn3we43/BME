@@ -35,6 +35,23 @@
   </style>
 </head>
 <body>
+  
+      <!-- صفحة التحميل -->
+<div id="loading-screen">
+  <div class="loader-container">
+    <img src="\assets\img\navbar-logo.svg" alt="شعار الموقع" class="logo" >
+    
+    <!-- From Uiverse.io by jack0237 -->
+    <div class="loader">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+</div>
+
     <!-- الشريط العلوي -->
     <nav class="navbar">
         <div class="container">
@@ -78,6 +95,7 @@
             <img src="assets/img/navbar-logo.svg" alt="عرب لاب" class="main-logo">
             <h1 class="main-title" data-ar="عرب لاب" data-en="Arab Lab">عرب لاب</h1>
             <h2 class="sub-title" data-ar="للأدوية والمستلزمات الطبية" data-en="for Medicines & Medical Supplies">للأدوية والمستلزمات الطبية</h2>
+            
             <div class="expert-badge">
                 <i class="fas fa-award"></i>
                 <span data-ar="خبراء التجهيزات الطبية" data-en="Medical Equipment Experts">خبراء التجهيزات الطبية</span>
@@ -92,9 +110,10 @@
             </div>
         </div>
         
+        
+        
         <button class="slider-nav prev"><i class="fas fa-chevron-right"></i></button>
         <button class="slider-nav next"><i class="fas fa-chevron-left"></i></button>
-        
         <div class="slider-dots">
             <span class="dot active"></span>
             <span class="dot"></span>
@@ -102,16 +121,6 @@
             <span class="dot"></span>
         </div>
     </header>
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1180,130 +1189,6 @@ color: white; display: inline-flex; align-items: center; justify-content: center
     </div> <!-- /modal-content -->
   </div> <!-- /modal-dialog -->
 </div> <!-- /modal -->
-
-
-
-
-
-
-
-
-
-<style>
-/* Zoom Box Styles */
-.zoom-box {
-  width: 100%;
-  max-width: 400px;
-  height: 250px;
-  border: 1.5px solid #bbb;
-  border-radius: 12px;
-  background-color: #fff;
-  margin: 15px auto;
-  position: relative;
-  user-select: none;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  color: #666;
-  font-weight: 600;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  overflow: hidden;
-  animation: fadeInZoomBox 0.3s ease forwards;
-}
-
-.zoom-box.zooming {
-  color: transparent;
-  font-weight: normal;
-  background-color: #f9f9f9;
-  border-color: #888;
-}
-
-.zoom-box span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  user-select: none;
-}
-
-.zoom-box .zoomed-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  user-select: none;
-  display: none;
-  max-width: none;
-  max-height: none;
-  will-change: transform;
-  pointer-events: none;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-}
-
-.zoom-box.zooming .zoomed-image {
-  display: block;
-}
-
-@keyframes fadeInZoomBox {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Image Zoom Hover */
-.image-zoom-container {
-  overflow: hidden;
-  display: inline-block;
-  position: relative;
-  max-height: 400px;
-}
-
-.image-zoom-container img {
-  transition: transform 0.3s ease;
-}
-
-.image-zoom-container:hover img {
-  transform: scale(1.5);
-  cursor: zoom-in;
-}
-
-/* Responsive Thumbnail Styles */
-@media (max-width: 576px) {
-  .portfolio-modal .d-flex.justify-content-center.gap-2.flex-wrap.mt-3 {
-    flex-wrap: nowrap !important;
-    overflow-x: hidden;
-  }
-
-  .portfolio-modal .img-thumbnail {
-    flex: 0 0 25%;
-    max-width: 25%;
-    cursor: pointer;
-    margin-right: 0;
-  }
-}
-
-/* ** إخفاء مربع التكبير في الشاشات الصغيرة أقل من 992 بكسل ** */
-@media (max-width: 991.98px) {
-  .zoom-box {
-    display: none !important;
-  }
-}
-</style>
-
-
-
-
-
-
-
 
 
 <form id="contactForm" data-sb-form-api-token="API_TOKEN">

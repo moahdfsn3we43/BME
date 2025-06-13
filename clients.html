@@ -18,213 +18,75 @@
     <!-- Custom CSS -->
     <link href="css/styles.css" rel="stylesheet" />
 
- <style>
+
+        <!-- صفحة التحميل -->
+<div id="loading-screen">
+  <div class="loader-container">
+    <img src="\assets\img\navbar-logo.svg" alt="شعار الموقع" class="logo" >
     
-    body[lang="ar"] {
-      direction: rtl;
-      font-family: 'Cairo', sans-serif;
-    }
-
-    body[lang="en"] {
-      direction: ltr;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    /* تعديل خلفية الشريط لتكون سوداء شفافة دائمًا */
-    .navbar.transparent {
-      background-color: rgba(0, 0, 0, 0.6) !important;
-      box-shadow: none;
-    }
-
-    .navbar {
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    /* روابط الشريط */
-    .navbar.transparent .navbar-nav .nav-link,
-    .navbar.transparent .lang-toggle {
-      color: #ffffff;
-    }
-
-    .navbar-nav .nav-link:hover,
-    .navbar-nav .nav-link:focus {
-      color: #007bff !important;
-    }
-
-    /* تمييز الرابط النشط */
-    .navbar-nav .nav-link.active {
-      color: #007bff !important;
-      font-weight: bold;
-    }
-
-    /* زر تغيير اللغة */
-    .navbar .lang-toggle {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 1030;
-      background-color: transparent;
-      border: 1px solid currentColor;
-      transition: all 0.3s ease;
-    }
-
-    .navbar .lang-toggle:hover {
-      background-color: rgba(255, 255, 255, 0.2);
-      border-color: #007bff;
-      color: #007bff;
-    }
-
-    body[lang="ar"] .navbar .lang-toggle {
-      left: 15px;
-      right: auto;
-    }
-
-    body[lang="en"] .navbar .lang-toggle {
-      right: 15px;
-      left: auto;
-    }
-
-    body[lang="ar"] .navbar-nav {
-      margin-left: 0 !important;
-      margin-right: auto !important;
-      text-align: right;
-    }
-
-    body[lang="en"] .navbar-nav {
-      margin-right: 0 !important;
-      margin-left: auto !important;
-      text-align: left;
-    }
-
-    body[lang="ar"] #navbarResponsive {
-      flex-direction: row-reverse;
-    }
-
-    body[lang="en"] #navbarResponsive {
-      flex-direction: row;
-    }
-
-    .navbar-logo {
-      width: 150px;
-      height: auto;
-    }
-  </style>
-</head>
-
-<body id="page-top" lang="ar">
-<!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top transparent" id="mainNav">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars ms-1"></i>
-      </button>
-      <a href="index.html">
-        <img src="assets/img/navbar-logo.svg" alt="Logo" class="navbar-logo">
-      </a>
-
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav text-uppercase py-4 py-lg-0">
-          <li class="nav-item"><a class="nav-link" data-en="Services" data-ar="الخدمات" href="index.html">الخدمات</a></li>
-          <li class="nav-item"><a class="nav-link" data-en="Products" data-ar="المنتجات" href="products.html">المنتجات</a></li>
-          <li class="nav-item"><a class="nav-link" data-en="About" data-ar="من نحن" href="index.html">من نحن</a></li>
-          <li class="nav-item"><a class="nav-link" data-en="Clients" data-ar="العملاء" href="#Portfolio">العملاء</a></li>
-          <!-- <li class="nav-item"><a class="nav-link" data-en="Team" data-ar="الفريق" href="#index.htmlteam">الفريق</a></li> -->
-          <li class="nav-item"><a class="nav-link" data-en="Contact" data-ar="اتصل بنا" href="contact.html">اتصل بنا</a></li>
-        </ul>
-        <button class="btn lang-toggle" onclick="toggleLanguage()">English</button>
-      </div>
+    <!-- From Uiverse.io by jack0237 -->
+    <div class="loader">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
     </div>
-  </nav>
+  </div>
+</div>
 
 
-<!-- JavaScript -->
-<script>
-  const defaultLang = 'ar';
 
-  function toggleLanguage() {
-    const currentLang = document.body.getAttribute('lang');
-    const newLang = currentLang === 'en' ? 'ar' : 'en';
-    setLanguage(newLang);
-  }
+    <!-- الشريط العلوي -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="assets/img/navbar-logo.svg" alt="عرب لاب">
+            </a>
+            <div class="nav-links">
+                <a href="index.html" data-ar="الخدمات" data-en="Services">الخدمات</a>
+                <a href="products.html" data-ar="المنتجات" data-en="Products">المنتجات</a>
+                <a href="index.html" data-ar="من نحن" data-en="About Us">من نحن</a>
+                <a href="clients.html" data-ar="العملاء" data-en="Clients">العملاء</a>
+                <a href="contact.html" data-ar="اتصل بنا" data-en="Contact Us">اتصل بنا</a>
+                <button class="lang-btn" id="langToggle">English</button>
+            </div>
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    <!-- السلايدر الرئيسي -->
+<style>:root {
+    --primary-color: #005f8c;
+    --secondary-color: #ffffff;
+    --accent-color: #2e7d32;
+    --text-dark: #333;
+    --text-light: #005f8c;
+    --bg-light: #005f8c;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
 
-  function setLanguage(lang) {
-    document.body.setAttribute('lang', lang);
-    document.documentElement.setAttribute('dir', lang === 'en' ? 'ltr' : 'rtl');
-    document.querySelector('.lang-toggle').textContent = lang === 'en' ? 'العربية' : 'English';
-
-    // تحديث النصوص العادية
-    document.querySelectorAll('[data-en]').forEach(el => {
-      el.textContent = el.getAttribute(`data-${lang}`);
-    });
-
-    // تحديث زر رؤية بقية الفريق
-    const teamBtn = document.getElementById('viewTeamBtn');
-    const teamText = teamBtn?.querySelector('.btn-text');
-    const teamIcon = document.getElementById('btnArrowIcon');
-    if (teamBtn && teamText && teamIcon) {
-      teamText.textContent = teamBtn.getAttribute(`data-${lang}`);
-      if (lang === 'en') {
-        teamIcon.classList.remove('fa-arrow-right');
-        teamIcon.classList.add('fa-arrow-left');
-      } else {
-        teamIcon.classList.remove('fa-arrow-left');
-        teamIcon.classList.add('fa-arrow-right');
-      }
-    }
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    setLanguage(defaultLang);
-  });
-
-  // إبراز العنصر النشط أثناء التمرير
-  const sections = document.querySelectorAll("section[id]");
-  const navLinks = document.querySelectorAll(".navbar .nav-link");
-
-  function activateNavLink() {
-    let scrollY = window.pageYOffset;
-
-    sections.forEach(current => {
-      const sectionHeight = current.offsetHeight;
-      const sectionTop = current.offsetTop - 80;
-      const sectionId = current.getAttribute("id");
-
-      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-        navLinks.forEach(link => {
-          link.classList.remove("active");
-          if (link.getAttribute("href").includes(sectionId)) {
-            link.classList.add("active");
-          }
-        });
-      }
-    });
-  }
-
-  window.addEventListener("scroll", activateNavLink);
-</script>
-
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-
-  main {
-    flex: 1;
-  }
-
-  footer {
-    margin-top: auto;
-  }
-
-  .py-5:last-child {
-    padding-bottom: 0 !important;
-  }
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 0;
+    z-index: 1000;
+    transition: all 0.4s ease;
+    background-color: rgba(255, 255, 255, 0.1); /* شفاف في البداية */
+    backdrop-filter: blur(10px); /* تأثير الضبابية */
+    -webkit-backdrop-filter: blur(10px); /* لدعم سفاري */
+}
+.logo img {
+    height: 50px;
+    transition: var(--transition);
+    filter: brightness(1) invert(0); /* يجعل الشعار أبيض */
+}
 </style>
 
 <!-- Products Section -->

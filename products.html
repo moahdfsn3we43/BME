@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>المنتجات</title>
+<title id="pageTitle" data-ar="المنتجات" data-en="Products">Products</title>    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     
     <!-- Google Fonts -->
@@ -18,13 +18,11 @@
     <!-- Custom CSS -->
     <link href="css/styles.css" rel="stylesheet" />
 
-    <!-- صفحة التحميل -->
+    
 <div id="loading-screen">
   <div class="loader-container">
-    <img src="\assets\img\navbar-logo.svg" alt="شعار الموقع" class="logo" >
-    
-    <!-- From Uiverse.io by jack0237 -->
-    <div class="loader">
+    <img src="/assets/img/navbar-logo.svg" alt="شعار الموقع" class="logo">
+    <div class="dots-container">
       <div class="dot"></div>
       <div class="dot"></div>
       <div class="dot"></div>
@@ -35,36 +33,61 @@
 </div>
 
 
-</head>
-
-<body id="page-top" lang="ar">
-<!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top transparent" id="mainNav">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars ms-1"></i>
-      </button>
-      <a href="index.html">
-        <img src="assets/img/navbar-logo.svg" alt="Logo" class="navbar-logo">
-      </a>
-
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav text-uppercase py-4 py-lg-0">
-          <li class="nav-item"><a class="nav-link" data-en="Services" data-ar="الخدمات" href="index.html">الخدمات</a></li>
-          <li class="nav-item"><a class="nav-link" data-en="Products" data-ar="المنتجات" href="#portfolio">المنتجات</a></li>
-          <li class="nav-item"><a class="nav-link" data-en="About" data-ar="من نحن" href="index.html">من نحن</a></li>
-          <li class="nav-item"><a class="nav-link" data-en="Clients" data-ar="العملاء" href="clients.html">العملاء</a></li>
-          <!-- <li class="nav-item"><a class="nav-link" data-en="Team" data-ar="الفريق" href="#index.htmlteam">الفريق</a></li> -->
-          <li class="nav-item"><a class="nav-link" data-en="Contact" data-ar="اتصل بنا" href="contact.html">اتصل بنا</a></li>
-        </ul>
-        <button class="btn lang-toggle" onclick="toggleLanguage()">English</button>
-      </div>
-    </div>
-  </nav>
 
 
+
+
+    <!-- الشريط العلوي -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/img/navbar-logo.svg" alt="عرب لاب">
+            </a>
+            <div class="nav-links">
+                <a href="index.html" data-ar="الخدمات" data-en="Services">الخدمات</a>
+                <a href="products.html" data-ar="المنتجات" data-en="Products">المنتجات</a>
+                <a href="index.html" data-ar="من نحن" data-en="About Us">من نحن</a>
+                <a href="clients.html" data-ar="العملاء" data-en="Clients">العملاء</a>
+                <a href="contact.html" data-ar="اتصل بنا" data-en="Contact Us">اتصل بنا</a>
+                <button class="lang-btn" id="langToggle">English</button>
+            </div>
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    <!-- السلايدر الرئيسي -->
+<style>:root {
+    --primary-color: #005f8c;
+    --secondary-color: #ffffff;
+    --accent-color: #2e7d32;
+    --text-dark: #333;
+    --text-light: #005f8c;
+    --bg-light: #005f8c;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 0;
+    z-index: 1000;
+    transition: all 0.4s ease;
+    background-color: rgba(255, 255, 255, 0.1); /* شفاف في البداية */
+    backdrop-filter: blur(10px); /* تأثير الضبابية */
+    -webkit-backdrop-filter: blur(10px); /* لدعم سفاري */
+}
+.logo img {
+    height: 50px;
+    transition: var(--transition);
+    filter: brightness(1) invert(0); /* يجعل الشعار أبيض */
+}
+</style>
 
 <!-- Portfolio Section -->
 <section class="page-section" id="portfolio">

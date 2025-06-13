@@ -3,12 +3,12 @@ const modalsContainer = document.getElementById("modalsContainer");
 
 // إدخال الشعارات يدويًا حسب الفهرس الذي تريده
 const logos = [
-  { index: 0, src: "assets/img/portfolio/cha_profile.png", width: 500 },
-  { index: 3, src: "assets/img/portfolio/channels4_profile.png", width: 500 },
-  { index: 5, src: "assets/img/portfolio/dawei.png", width: 500 },
-  { index: 6, src: "assets/img/portfolio/biolabio.png", width: 500 },
-  { index: 7, src: "assets/img/portfolio/kellymed.png", width: 500 },
-  { index: 25, src: "assets/img/portfolio/sternmed.png", width: 500 },
+  { index: 0, src: "assets/img/portfolio/cha_profile.webp", width: 500 },
+  { index: 3, src: "assets/img/portfolio/channels4_profile.webp", width: 500 },
+  { index: 5, src: "assets/img/portfolio/dawei.webp", width: 500 },
+  { index: 6, src: "assets/img/portfolio/biolabio.webp", width: 500 },
+  { index: 7, src: "assets/img/portfolio/kellymed.webp", width: 500 },
+  { index: 25, src: "assets/img/portfolio/sternmed.webp", width: 500 },
   // أضف المزيد حسب الحاجة
 ];
 
@@ -109,7 +109,7 @@ products.forEach((product, index) => {
                       ${thumbnailsHTML}
                     </div>
                     <div class="d-flex justify-content-center flex-wrap gap-2 mt-3">
-                      <a class="btn btn-primary btn-lg text-uppercase requestProductBtn" href="#">
+                      <a class="btn btn-outline-primary btn-lg text-uppercase requestProductBtn" href="#">
                         <span data-en="Request Product" data-ar="طلب المنتج">Request Product</span>
                       </a>
                       <a class="btn btn-outline-secondary btn-lg text-uppercase" href="${product.catalog}" download>

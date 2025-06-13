@@ -19,6 +19,7 @@
   <link href="css/styles.css" rel="stylesheet" />
   
   <style>
+    
     /* إضافة بسيطة للتبديل بين اللغات */
     [data-lang="en"] {
       display: none;
@@ -32,6 +33,19 @@
     html[lang="en"] {
       direction: ltr;
     }
+        /*الشريط العلوي*/
+    .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 0;
+    z-index: 1000;
+    transition: all 0.4s ease;
+    background-color: rgba(255, 255, 255, 0.1); /* شفاف في البداية */
+    backdrop-filter: blur(10px); /* تأثير الضبابية */
+    -webkit-backdrop-filter: blur(10px); /* لدعم سفاري */
+}
   </style>
 </head>
 <body>
@@ -60,9 +74,9 @@
             </a>
             <div class="nav-links">
                 <a href="#services" data-ar="الخدمات" data-en="Services">الخدمات</a>
-                <a href="#products" data-ar="المنتجات" data-en="Products">المنتجات</a>
+                <a href="products.html" data-ar="المنتجات" data-en="Products">المنتجات</a>
                 <a href="#about" data-ar="من نحن" data-en="About Us">من نحن</a>
-                <a href="#clients" data-ar="العملاء" data-en="Clients">العملاء</a>
+                <a href="clients.html" data-ar="العملاء" data-en="Clients">العملاء</a>
                 <a href="#contact" data-ar="اتصل بنا" data-en="Contact Us">اتصل بنا</a>
                 <button class="lang-btn" id="langToggle">English</button>
             </div>

@@ -345,7 +345,7 @@ document.addEventListener('DOMContentLoaded', function () {
 window.addEventListener("load", function () {
   setTimeout(() => {
     document.getElementById("loading-screen").style.display = "none";
-  }, 1); // تأخير 1 ثانية بعد تحميل الصفحة
+  }, 10); // تأخير 1 ثانية بعد تحميل الصفحة
 });
 
 document.querySelectorAll("a.nav-link").forEach(function(link) {
@@ -359,6 +359,6 @@ document.querySelectorAll("a.nav-link").forEach(function(link) {
     // بعد 2 ثانية انتقل للصفحة
     setTimeout(() => {
       window.location.href = href;
-    }, 2);
+    }, 10);
   });
 });

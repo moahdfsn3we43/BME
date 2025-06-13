@@ -345,20 +345,25 @@ document.addEventListener('DOMContentLoaded', function () {
 window.addEventListener("load", function () {
   setTimeout(() => {
     document.getElementById("loading-screen").style.display = "none";
-  }, 10); // تأخير 1 ثانية بعد تحميل الصفحة
+  }, 1000); // تأخير 1 ثانية بعد تحميل الصفحة
 });
 
 document.querySelectorAll("a.nav-link").forEach(function(link) {
   link.addEventListener("click", function(event) {
+    // التحقق من أن الرابط ليس رابطًا خارجيًا
+    if (!this.href || this.href.startsWith('http') && !this.href.includes(window.location.host)) {
+      return;
+    }
+    
     event.preventDefault();
     const href = this.getAttribute("href");
 
     // عرض شاشة التحميل من جديد
     document.getElementById("loading-screen").style.display = "flex";
 
-    // بعد 2 ثانية انتقل للصفحة
+    // بعد 1 ثانية انتقل للصفحة
     setTimeout(() => {
       window.location.href = href;
-    }, 10);
+    }, 1000);
   });
 });

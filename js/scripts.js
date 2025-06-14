@@ -345,15 +345,8 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 window.addEventListener('load', function() {
-  // إخفاء شاشة التحميل بعد تحميل الصفحة بالكامل
-  setTimeout(function() {
-    const loadingScreen = document.getElementById('loading-screen');
-    loadingScreen.style.opacity = '0';
-    loadingScreen.style.pointerEvents = 'none';
-    
-    // إزالة العنصر من DOM بعد انتهاء الانتقال
-    setTimeout(function() {
-      loadingScreen.remove();
-    }, 500);
-  }, 1000); // يمكنك تغيير هذا الرقم حسب الحاجة (1000 = 1 ثانية)
+  const loadingScreen = document.getElementById('loading-screen');
+  
+  // إزالة العنصر مباشرة بدون تأخير أو تأثيرات
+  loadingScreen.remove();
 });

@@ -344,9 +344,17 @@ document.addEventListener('DOMContentLoaded', function () {
     window.resetZoom = resetZoom;
 });
 
-window.addEventListener('load', function() {
+window.addEventListener('DOMContentLoaded', function() {
   const loadingScreen = document.getElementById('loading-screen');
   
-  // إزالة العنصر مباشرة بدون تأخير أو تأثيرات
-  loadingScreen.remove();
+  // إخفاء شاشة التحميل بعد 10 ثوانٍ (10000 مللي ثانية)
+  setTimeout(function() {
+    loadingScreen.style.opacity = '0';
+    loadingScreen.style.pointerEvents = 'none';
+    
+    // إزالة العنصر من DOM بعد انتهاء الانتقال
+    setTimeout(function() {
+      loadingScreen.remove();
+    }, 500); // وقت تأثير التلاشي (0.5 ثانية)
+  }, 5000); // 10000 = 10 ثوانٍ
 });
